@@ -4,11 +4,17 @@
 %\documentclass[3p]{elsarticle}
 %\documentclass[5p]{elsarticle}
 \documentclass[final,5p,times,twocolumn]{elsarticle}
+%\documentclass[final,5p,twocolumn]{elsarticle}
+\usepackage[russian,english]{babel}
+\usepackage[utf8]{inputenc} % Включаем поддержку UTF8
+%\usepackage[T2A]{fontenc}
 
-\usepackage{lineno,hyperref}
-%\usepackage{xcolor}
+
+\usepackage{lineno}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage[pdftex, backref, colorlinks]{hyperref}
+
 \modulolinenumbers[5]
 %\journal{Journal of \LaTeX\ Templates}
 %\journal{Journal}
@@ -47,8 +53,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %\hyphenpenalty=10000
 
-%\graphicspath{{figures/}} % Пути к изображениям
-
 \begin{document}
 \begin{frontmatter}
 \title{Observation of reflected EAS Cherenkov light with the SPHERE-2 detector}
@@ -77,6 +81,7 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 
 %\tableofcontents
 
+
 \begin{figure*}[tb]
 \begin{minipage}[t]{0.47\textwidth}
 \centering
@@ -96,17 +101,25 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 
 \section{Introduction}
 
-Extensive air showers (EAS) --- cascades of particles in the Earth atmosphere --- allow to study cosmic rays (CR) in a wide energy region $E$ from 1~PeV to 100~EeV ($10^{15}$--$10^{20}$ eV), recording fluxes as small as one particle per 1000 km$^{2}$ per year~\cite{abu12,aab15,abb08,iva09}. Besides hadrons, leptons and high-energy $\gamma$-rays, EAS also produce optical photons by means of Vavilov-Cherenkov radiation (hereafter simply `Cherenkov light', CL)~\cite{bla47} and air fluorescence \cite{chu62, suga62}. EAS CL in the atmosphere has sharp angular profile peaked in the direction of the primary nucleus while fluorescent light (FL) is isotropic. CL and FL photons are the most numerous component of EAS, their number is several orders of magnitude greater than the number of charged particles and high energy $\gamma$-rays combined. These optical radiations may travel many kilometers in the atmosphere without strong absorption and thus they represent a good remote probe of EAS. 
+Extensive air showers (EAS) --- cascades of particles in the Earth atmosphere --- allow to study cosmic rays (CR) in a wide energy region $E$ from 1~PeV to 100~EeV ($10^{15}$--$10^{20}$ eV), recording fluxes as small as one particle per 1000 km$^{2}$ per year~\cite{abu12,aab15,abb08,iva09}. Besides hadrons, leptons and high-energy $\gamma$-rays, EAS also produce optical photons by means of Vavilov-Cherenkov radiation (hereafter simply `Cherenkov light', CL)~\cite{bla47} and air fluorescence~\cite{chu62, suga62}. EAS CL in the atmosphere has sharp angular profile peaked in the direction of the primary nucleus while fluorescent light (FL) is isotropic. CL and FL photons are the most numerous component of EAS, their number is several orders of magnitude greater than the number of charged particles and high energy $\gamma$-rays combined. These optical radiations may travel many kilometers in the atmosphere without strong absorption and thus they represent a good remote probe of EAS. 
 
-Modern EAS arrays such as the Telescope Array (TA) detector and the Pierre Auger Observatory (PAO) are ground-based structures spread over hundreds~\cite{abu12} or thousands ~\cite{aab15} square kilometers. Significant efforts are needed in order to install sensitive elements of such vast arrays and to keep them power-supplied and time-synchronized. Therefore, it is very tempting to use a compact device to observe EAS. Fluorescent light of EAS can be observed by Earth-based detectors~\cite{fly75,abb08,abu12,aab15} due to its isotropic angular distribution. Direct EAS Cherenkov light in the atmosphere, however, typically has a very sharp directional pattern and could not be observed by detectors more than 1 km far from the shower axis. On the other hand, CL reflected from natural surfaces such as snow could indeed be recorded due to diffuse reflection pattern of such surfaces~\cite{chu74, ant99, ant15a, ant19}. EAS FL also may be observed by a space-based\cite{lin81, adam15a} or balloon-based~\cite{adam15c} detector.
+Modern EAS arrays such as the Telescope Array (TA) detector and the Pierre Auger Observatory (PAO) are ground-based structures spread over hundreds~\cite{abu12} or thousands~\cite{aab15} square kilometers. Significant efforts are needed in order to install sensitive elements of such vast arrays and to keep them power-supplied and time-synchronized. Therefore, it is very tempting to use a compact device to observe EAS. Fluorescent light of EAS can be observed by Earth-based detectors~\cite{abu12,aab15,abb08,fly75} due to its isotropic angular distribution. Direct EAS Cherenkov light in the atmosphere, however, typically has a very sharp directional pattern and could not be observed by detectors more than 1 km far from the shower axis. On the other hand, CL reflected from natural surfaces such as snow could indeed be recorded due to diffuse reflection pattern of such surfaces~\cite{chu74, ant99, ant15a, ant19}. EAS FL also may be observed by a space-based~\cite{lin81, adam15a} or balloon-based~\cite{adam15c} detector.
 
-Search for fluorescent tracks of EAS appeared to be a very hard task beyond the capabilities of present-day experiments and analyses. Indeed, no clear events of such kind were reported yet~\cite{abd18, tus18}. In this paper we report on observation of reflected CL events with the SPHERE-2 detector~\cite{ant15a}. This is the first detailed study of such kind. In total, we found more than one thousand EAS events. We note that our approach to analyses and our technique for search of EAS events could be helpful for other experiments such as JEM-EUSO balloon or JEM-EUSO. The paper is organized as follows. In Sect.~\ref{sect:detector} we describe the SPHERE-2 detector. (...). Finally, we summarize in Conclusions.
+Search for fluorescent tracks of EAS appeared to be a very hard task beyond the capabilities of present-day experiments and analyses. Indeed, no clear events of such kind were reported yet~\cite{abd18, tus18}. In this paper we report on observation of reflected CL events with the SPHERE-2 detector~\cite{ant15a}. This is the first detailed study of such kind. In total, we found more than one thousand EAS events. We note that our approach to analyses and our technique for search of EAS events could be helpful for other experiments such as JEM-EUSO balloon or JEM-EUSO. The paper is organized as follows. In Sect.~\ref{sect:detector} we describe the SPHERE-2 detector. (...). 
+
+{\Russian
+Здесь еще нужно поработать.
+}
+
+Finally, we summarize in Conclusions.
+
+
 
 \section{The SPHERE-2 detector \label{sect:detector}}
 
-The SPHERE is a cosmic ray experiment based on the registration of Vavilov-Cherenkov radiation generated by extensive air showers (EAS) in the atmosphere and reflected from the ground snow covered ground surface. The experiment is aimed at accurate registration and reconstruction of every event  allowing event-by-event approach to the EAS primary particle identification and primary spectra study. The present paper is dedicated to the SPHERE experiment stage performed with the compact detector SPHERE-2 in Baikal Lake region during 2009--2013 winter seasons. The previous stages of the SPHERE experiment are decribed in~\cite{ant15a}.
+The SPHERE is a cosmic ray experiment based on the registration of Vavilov-Cherenkov radiation generated by extensive air showers (EAS) in the atmosphere and reflected from the snow covered ground surface. The experiment is aimed at accurate registration and reconstruction of every event allowing the event-by-event approach to the EAS primary particle identification and primary spectra study. The present paper is dedicated to the SPHERE experiment stage performed with the compact detector SPHERE-2 in Baikal Lake region during 2009--2013 winter seasons. The previous stages of the SPHERE experiment are decribed in~\cite{ant15a}.
 
-The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cherenkov light from the balloon elevated to altitudes up to 3~km above the Earth snow covered surface. Special tethered balloon BAPA developed and created by Russian Augur agency for this experiment was used.  
+The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cherenkov light from the balloon elevated to altitudes up to 3~km above the Earth snow covered surface. Special tethered balloon BAPA developed and created by Russian Augur agency for this experiment was used.
 
 \subsection{Optics system}
 
@@ -121,7 +134,8 @@ The electronics part includes a data acquisition system (DAQ), trigger system, c
 
 \subsection{Trigger system}
 
-The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when the trigger condition is satisfied. The trigger condition was: signal levels in $N$ adjacent PMTs exceeded the threshold within 1~${\mu}$s time window -- so called `local' trigger $LN$ or in any $M$ PMTs -- `global' trigger $GM$. The number of channels to exceed the threshold level was varied from flight to flight to decrease the energy threshold, but the most of the data was obtained under trigger conditions `$L3$ OR $G5$' then one of two trigger conditions have to be satisfied. The posterior analysis shows that some events was recorded under trigger $L2$ although the condition $L3$ was set.
+The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when the trigger condition is satisfied. The trigger condition was: 1~${\mu}$s time window -- so called `local' trigger $LN$ or in any $M$ PMTs -- `global' trigger $GM$. The number of channels to exceed the threshold level was varied from flight to flight to decrease the energy threshold, but the most of the data was obtained under trigger conditions `$L3$ OR $G5$' then one of two trigger conditions have to be satisfied. The posterior analysis shows that some events was recorded under trigger $L2$ although the condition $L3$ was set.
+
 
 \subsection{Data acquisition} 
 
@@ -213,7 +227,7 @@ The magnetometer compass measures the angle of the detector's orientation relati
 
 The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector retina axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.1^\circ$ and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
 
-The type of used inclinometer allows fast angles measurements with low power consumption, but contrary to the gyroscopic ones it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
+The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
 
 The GPS sensor Garmin 16xHVS, located on the control unit was used to measure coordinates and elevation above sea level.
 
@@ -223,7 +237,7 @@ During every experimental flight a lot of information about the detector status 
 
 Every second the detector position and orientation was recorded. The GPS data of altitude, latitude and longitude, universal global time UTC, the angles of detector inclination by the inclinometer sensor, magnetometer compass data and the control block inner temperature was monitored. The additional GPS and barometer were deployed on the Baikal Lake ice surface level.
 
-Every minute the PMT and the power status was monitored. Anode currents of all photomultipliers, the PMT retina temperature and the temperature of the photomultipliers high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors was polled every minute also. 
+Every minute the PMT and the power status was monitored. Anode currents of all photomultipliers, the PMT retina temperature and the temperature of the photomultipliers high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors were polled every minute also.
 
 Every ten minutes the PMT supply voltage, voltage at the first and tenth dynodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
 
@@ -231,7 +245,7 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dynodes
 
 \section{Experimental data \label{sect:data}}
 
-The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008-2013.  The Baikal lake ice thickness reaches 40-60 cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$47'48.923''N, 104$^\circ$23'19.187"E. 
+The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008-2013. The Baikal lake ice thickness reaches 40-60 cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$47'48.923''N, 104$^\circ$23'19.187"E. 
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
 The balloon attracted the attention of a large number of Baikal tourists. 
 
@@ -239,11 +253,13 @@ The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitude
 
 Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
 
+
 \subsection{Weather and snow}
 
-Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near -15~$^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations number 30818 and 30710 the horizontal visibility was at least 10 km, and the height of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
+Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near -15~$^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the height of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
 
 Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a device sensitive to light intensity in the optical band (“luxmeter”). The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{ant19}. 
+
 
 \subsection{Detector orientation and telemetry data\label{sect:telemetrydata}}
 
@@ -281,9 +297,34 @@ Background light effects the PMT current. Current of the central PMT is shown on
 .. Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ...
 
 
+\subsection{Pulse noise}
+
+{\Russian
+
+В русле дальнейшего сравнения моделирования для СФЕРЫ с экспериментальными данными был проверен шум импульсный, наблюдающийся невооружённым глазом в отдельных каналах.
+
+Первое, были вычислены коэффициенты корреляции между отдельными каналами. Брались данные 2013 года, все события от ШАЛ и линии, а также их калибровочные кадры. Данные проверялись на синхронность всех каналов (случаются выбросы). В кадрах с отступом в 10 бин от края кадра брались 300 бин до триггера и 300 бин до синхроимпульса в событиях и в линиях, и только первые 300 бин в калибровочных кадрах. Полученные коэффициенты корреляции приведены на рисунке channel correlation. Видно, что ряд каналов неплохо коррелируют друг на друга, т.е. имеют некий общий вклад поверх независимого шума от светового фона.
+
+На тех же данных были получены ковариации каналов. В предположении, что в каждом канале поверх независимого оптического фона накладывается с какой-то амплитудой общий для всех каналов шум аппаратуры были оценены вклады этого общего аппаратного шума в каждый канал (как величина равная сумме всех коэффициентов ковариации данного канала со всем остальными каналам, нормированная на самую большую такую сумму). Оценка не является точной, но это поправимо. Полученные коэффициенты см в файле channel correlations.txt.
+
+Т.к. предполагалось, что "коррелированный" шум носит импульсный нерегулярный характер, то в каждом событии была выделена скоррелированная шумовая составляющая как сумма всех каналов с учётом полученных чуть выше коэффициентов. Т.к. в каждом временном бине суммировались данные с весами, равными ожидаемому вкладу шума в этот канал. Случайный шум от оптического фона должен давать 0, как сумма 109 независимых случайных величин с мат.ожиданием 0. А вот общий для всех шум, одинаковый во всех каналах, должен сложиться и стать заметным.
+Эта процедура была проделана со всеми теми же данными (см. Noise.jpg). Если развернуть поближе (Noise  closeup.jpg), то видно, что шум действительно импульсный и имеет некую повторяющую структуру из выброса вверх (светлая полоса), за ним выброса вниз (тёмная полоса), затем небольшое плато, выброс вниз, затем выброс вверх. чтобы выяснить, так ли это и является ли это общей закономерностью всегда, развёртки отдельных событий были выровнены по шумовым импульсам (Nsync.jpg). Шум в итоге регулярный, имеет постоянную амплитуду во всех событиях (т.е. это наводка на аппаратуре, не на ФЭУ, т.к. тут не применены коэффициенты калибровки).
+Сумму всех событий с учётом синхронизации шумовых импульсов см. на noise full length (или выделенный повторяющийся сегмент на noise segment). Шаг повторений 252 бина, что соответствует частоте 317460-317800 Гц (но это уже не ко мне, что там так шумит). В остатке имеем, что во всех кадрах присутствует вот такая наводка on the Fig.~\ref{fig:pulse_noise_segment}  c шагом повторений 252 бина по времени.
+
+}
+
+
+\begin{figure}[tb]
+\includegraphics[width=0.48\textwidth]{figs/pulse_noise_segment.eps}
+\caption{Pulse noise segment}
+\label{fig:pulse_noise_segment}
+\end{figure}
+
+
+
 \section{Corrections}
 
-The position and inclination of the SPHERE-2 detector are the important values to correct calculations of detected EAS Cherenkov light characteristics. In contrast to ground-based Cherenkov light installations, the detector SPHERE-2 has a variable recording area depending on both the altitude and the inclination angle of the detector. 
+The position and inclination of the SPHERE-2 detector are the important values to correct calculations of detected EAS Cherenkov light characteristics. In contrast to ground-based Cherenkov light installations, the detector SPHERE-2 has a variable recording area depending on both the altitude and the inclination angle of the detector.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[tb]
@@ -300,7 +341,8 @@ The position and inclination of the SPHERE-2 detector are the important values t
 %\includegraphics[width=0.49\textwidth]{figs/fov_log.eps}%
 \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:retina} in assuption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformely.}
 \label{fig:pmt_fov}
-\end{figure*} 
+\end{figure*}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -312,7 +354,7 @@ This expected consistent behavior is observed when balloon altitude is generally
 
 However, there are regions in data in which $h$ and $\Delta p$ behave rather inconsistently. On Fig.~\ref{fig:dp-h-bad} such region in the flight 4 data is shown (these data are scaled without any filtering). When barometer data change rapidly indicating sudden lift of balloon GPS data starts to change with significant delay and in unnatural smoothed fashion. Such regions in GPS data are observed during almost every abrupt changes in balloon altitude. We believe that this is due to some internal algorithm of the GPS module. Module was designed to be used on ships so it probably handles rapid change in height as an error and tries to smooth it.
 
-Internal algotithm of the GPS module is not available so we've made an attempt to reconstruct correct height data based on pressure measurements which are found to be directly linked to height. After we manually identified smoothed regions such as that shown on Fig.~\ref{fig:dp-h-bad} we picked two adjacent regions of relatively stable altitude before and after it (example of these regions is shown on Fig.~\ref{fig:dp-h-bad} with red bands). In these regions pressure and GPS height data behave consistently (in terms of filtered short-term fluctuations) so we assumed that both measurements are valid. Between these regions the GPS height data are invalid and to be replaced with 'barometric' height logarithmic interpolation in the form of $h-h_0 = - a \, \ln(p/p_0)$. Obtained coefficient $a$ describes local atmosphere and is close to widely adopted value of $8$~km.
+Internal algorithm of the GPS module is not available so we've made an attempt to reconstruct correct height data based on pressure measurements which are found to be directly linked to height. After we manually identified smoothed regions such as that shown on Fig.~\ref{fig:dp-h-bad} we picked two adjacent regions of relatively stable altitude before and after it (example of these regions is shown on Fig.~\ref{fig:dp-h-bad} with red bands). In these regions pressure and GPS height data behave consistently (in terms of filtered short-term fluctuations) so we assumed that both measurements are valid. Between these regions the GPS height data are invalid and to be replaced with 'barometric' height logarithmic interpolation in the form of $h-h_0 = - a \, \ln(p/p_0)$. Obtained coefficient $a$ describes local atmosphere and is close to widely adopted value of $8$~km.
 
 After the corrections to GPS height data had been made we estimated the atmosphere density profile. The description is in~\ref{sect:atmosphere-profile}.
 
@@ -325,11 +367,11 @@ After the corrections to GPS height data had been made we estimated the atmosphe
     \includegraphics[width=0.92\textwidth, bb=0 0 776 386]{figs/frames_bw.pdf}
     \caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a - is an `event' frame, b - calibration frame, c - direct light, d - random noise, e - longtime events}
     \label{fig:frames}
-\end{figure*}
+%\end{figure*}
 
 %%% Data frame Pulses and Sums
-\begin{figure*}[btp]
-\centering
+%\begin{figure*}[btp]
+%\centering
 \includegraphics[width=0.9\textwidth]{figs/pulses.eps}%
 %\includegraphics[width=0.5\textwidth]{figs/event_channels.eps}%
 \caption{Pulses in channels with maximal signal in the same frames as on Fig.~\ref{fig:frames}. The baselines are subtracted, time drift is corrected, calibration coefficients are applied.}
@@ -345,18 +387,20 @@ After the corrections to GPS height data had been made we estimated the atmosphe
 
 \subsection{PMTs' field-of-views correction}
 
-In flight during measurements whenever the detector become inclined the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
+In flight during measurements whenever the detector become inclined, the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
 
-In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflectivity coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambertian scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2. 
+In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflectivity coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambertian scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2.
 
-At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflectivity coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly. 
+At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflectivity coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
 
-Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector). 
-Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:retina}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT retina center on Fig.~\ref{fig:retina}. The PMT1 is the Hamamatsu photodetector that has the larger sensitive photocathode area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
+Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector).
+Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:retina}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT retina center on Fig.~\ref{fig:retina}. The PMT1 is the Hamamatsu photodetector that has the larger sensitive photocathode area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
 
 The same calculations was made for the detector position with different detector axis inclination angles. From the known PMT FOV the coordinates for FOV center were obtained and later used in shower arrival direction reconstruction and shower axis location.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event selection\label{sect:classification}}
 
 \subsection{Trigger data}
@@ -469,7 +513,23 @@ The altitude distribution of detected events classified as EAS is shown on the F
 
 \section{Conclusions \label{sect:conclusions}}
 
-In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works. We demonstrate that the SPHERE-2 detector detected EAS Cherenkov light reflected from the snow Baikal Lake surface. The EAS event selection procedure is described.
+{
+\Russian
+
+В статье мы описали как в эксперименте мы измеряем параметры установки  СФЕРА-2, важные для восстановления черенковских событий.  В частности, высота установки над уровнем земли измеряется двумя способами, что позволяет определить истинное значение высоты. Мы видим, что установка стабильна в воздушном потоке.} 
+In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works. 
+
+{
+\Russian
+Зарегистрированный установкой сигнал очищается от аппаратных эффектов. Мы выявили и учли импульсный шум аппаратуры каналов, влияние звездного фона. 
+
+Зарегистрированные события подверглись классификации. Из них выделены события от черенковского света ШАЛ. }The EAS event selection procedure is described.
+
+{
+\Russian
+Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
+}
+
 
 \section*{References}
 \bibliography{Sphere-Data.bib}
