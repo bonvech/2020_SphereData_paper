@@ -91,19 +91,32 @@ The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirro
 
 The PMT retina is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on fig.~\ref{fig:retina}. The central PMT of the retina is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the retina and the detector orientation.
 
+
+\subsection{Orientation control system}
+% описание датчиков (Чернов)
+
 The detector axis at the rest state is oriented vertically and detector observes the snow covered lake surface just under the detector. During the measurements, the detector hanging under the balloon, swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determined the overall geometry of the experiment. To control the position and rotation of the detector an inclinometer and a magnetometer compass are installed on the PMT retina control board. 
 
 The magnetometer compass measures the angle of the detector's orientation relative to the Earth's magnetic field with 0.1~degree precision.
 
 The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector retina axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.1^\circ$ and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
 
-The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. 
+The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
+
 The GPS sensor Garmin 16xHVS, located on the control unit was used to measure coordinates and elevation above sea level.
+
 
 \subsection{Electronics}
 
 The electronics part includes a data acquisition system (DAQ), trigger system, calibration system etc. The DAQ contains a 10-bit flash analog-to-digital converters (FADC) with 40~MHz sampling frequency and provided 12.5~ns discretization using two \mbox{FADCs} per one optical channel. DAQ worked in a continuous mode first forking the signal from each PMT to trigger system and to a 6~$\mu$s delay line. The details on the \mbox{SPHERE-2} apparatus construction and DAQ system operation see in~\cite{Ant15a}. 
 
+%%  FADC summation figure
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.35\textwidth]{figs/int_discr.eps}
+\caption{Functional diagram of the summation of the FADC pulses for channel's discriminator.}
+\label{fig:int_discr}
+\end{figure}
 
 \subsection{Trigger system}
 % описание работы фрегата с триггером, блоки, флаги, настройки, дискриминаторы, сумматоры (Бонвеч, Чернов)
@@ -112,19 +125,25 @@ The electronics part includes a data acquisition system (DAQ), trigger system, c
 % блок-схема триггера
 The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when the trigger condition is satisfied. The trigger condition was: 1~${\mu}$s time window --- so called `local' trigger $LN$ or in any $M$ PMTs --- `global' trigger $GM$. The number of channels to exceed the threshold level was varied from flight to flight to decrease the energy threshold, but the most of the data was obtained under trigger conditions `$L3$ or $G5$' then at least one of two trigger conditions have to be satisfied. The posterior analysis shows that some events was recorded under trigger $L2$ although the condition $L3$ was set.
 
-\begin{figure}[tb]
+
+% блок-схема работа считывания данных (Бонвеч)
+%% get_event_algorithm
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.35\textwidth]{figs/int_discr.eps}
-\caption{Functional diagram of the summation of the FADC pulses for channel's discriminator.}
-\label{fig:int_discr}
+\includegraphics[width=0.3\textwidth]{figs/get_event_algorithm.png}\hspace{2pc}%
+\caption{The scheme of the procedure to read event data from the buffer.}
+\label{fig:get_event_algorithm}
 \end{figure}
 
-\subsection{Data acquisition} 
-% блок-схема работа считывания данных (Бонвеч)
-% определение frame - 112х2х510
-When the TS produced an `event' signal the DAQ started recording 12.8~$\mu$s of signal from the delay line including capturing $\sim 6~\mu$s of the signal prior to the trigger signal and formed an `event' frame. One detector `event' frame contains a 12.8~$\mu$s record of the PMT DAQ signal data from measuring channels with 12.5~ns discretization, in total 1020 10-bit signal values per every of 109 PMT channels. If the signal value exceeded the 10-bit number the 11$^{th}$ bit of the recorded signal value number was set to 1 to indicate the overflowing of the FADC counter and to 0 otherwise. A highest 12$^{th}$ bit of signal value number is set to 1 if the PMT signal exceeds the trigger level. In addition to PMT data the following event information is stored: GPS  coordinates, altitude, UTC time, local time, trigger time, angles of detector inclination, magnetometer data, every PMT average anode currents. One `event' frame information takes 220 KBytes.
 
-All the data is saved to a binary file on the detector onboard computer SSD drive. From primary binary files the work files were created during frames preprocessing. Preprocessing included baselines estimation and substraction, time drift detection and correction, for detail see~\ref{sect:preprocessing}.
+\subsection{Data acquisition} 
+
+% определение frame - 112х2х510
+When the TS produced an `event' signal the DAQ started recording 12.8~$\mu$s of signal from the delay line including capturing $\sim 6~\mu$s of the signal prior to the trigger signal and formed an `event' frame. One detector `event' frame contains a 12.8~$\mu$s record of the PMT DAQ signal data from measuring channels with 12.5~ns discretization, in total 1020 10-bit signal values per every of 109 PMT channels. If the signal value exceeded the 10-bit number the 11$^{th}$ bit of the recorded signal value number was set to 1 to indicate the overflowing of the FADC counter and to 0 otherwise. A highest 12$^{th}$ bit of signal value number is set to 1 if the PMT signal exceeds the trigger level. In addition to PMT data the following event information is stored: GPS  coordinates, altitude, UTC time, local time, trigger time, angles of detector inclination, magnetometer data, every PMT average anode currents. 
+
+The scheme of the reading data from the buffer procedure is shown on the figure~\ref{fig:get_event_algorithm}.
+
+One `event' frame information takes 220 KBytes. All the data is saved to a binary file on the detector onboard computer SSD drive. From primary binary files the work frames files were created during data preprocessing. Preprocessing included baselines estimation and substraction, time drift detection and correction, for detail see~\ref{sect:preprocessing}.
 
 
 \begin{table}[b]
@@ -173,12 +192,6 @@ Additionally, the small voltage variations around the initially set value
 \label{fig:gps_compass}
 \end{figure}
 
-
-\subsection{Detector orientation control system}
-% поднять наверх (Бонвеч) описание датчиков (Чернов)
-
-
-As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
 
 
 %%  4 telemetry  pictures %%%
