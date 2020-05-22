@@ -5,10 +5,10 @@
 %\documentclass[5p]{elsarticle}
 \documentclass[final,5p,times,twocolumn]{elsarticle}
 %\documentclass[final,5p,twocolumn]{elsarticle}
-\usepackage[russian,english]{babel}
-\usepackage[utf8]{inputenc} % Включаем поддержку UTF8
-%\usepackage[T2A]{fontenc}
 
+\usepackage[utf8]{inputenc} % Включаем поддержку UTF8
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
 
 \usepackage{lineno}
 \usepackage{graphicx}
@@ -166,8 +166,9 @@ The procedure described in~\cite{Ant16} since had some updates. First one was a 
 
 Additionally, the small voltage variations around the initially set value
 
+%% detector drift figure %% fig:gps-compass
 \begin{figure}[tb]
-\includegraphics[width=0.45\textwidth]{figs/GPS+quiver.eps}\hspace{2pc}%
+\includegraphics[width=0.45\textwidth]{figs/GPS+quiver.pdf}\hspace{2pc}%
 \caption{The SPHERE-2 detector drift during 2013 flight. The arrows indicate the detector magnetometer orientation. The start point is located at zero coordinates.}
 \label{fig:gps_compass}
 \end{figure}
@@ -180,7 +181,7 @@ Additionally, the small voltage variations around the initially set value
 As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
 
 
-%%%%%%%%%%%%%%
+%%  4 telemetry  pictures %%%
 \begin{figure*}[tb]
     \begin{minipage}{0.48\textwidth}
     \centering
@@ -213,8 +214,6 @@ As we will see in sec~\ref{sect:telemetrydata} during detector flights there wer
     \end{minipage}
 \end{figure*}
 %%%%%%%%%%%%%%
-
-
 
 
 \subsection{Telemetry monitoring\label{sect:telemetry}}
@@ -453,9 +452,9 @@ The same calculations was made for the detector position with different detector
 
 }
 
-
+%% noise segment
 \begin{figure}[tb]
-\includegraphics[width=0.48\textwidth]{figs/pulse_noise_segment.eps}
+\includegraphics[width=0.48\textwidth]{figs/pulse_noise_segment.pdf}
 \caption{Pulse noise segment}
 \label{fig:pulse_noise_segment}
 \end{figure}
@@ -568,10 +567,8 @@ The rest number of event was iqual to 491 (or 575 in case of criteria Dt $>$ 5).
     \includegraphics[width=19pc]{figs/time_on_altitude.pdf}\hspace{2pc}%
     \caption{The altitude distribution experiment time in 2013.}
     \label{fig:time_on_altitude}
-\end{figure}
-
-
-\begin{figure}[t]
+%\end{figure}
+%\begin{figure}[t]
     \includegraphics[width=19pc]{figs/height_eas.pdf}\hspace{2pc}%
     \caption{The altitude distribution of detected EAS events in 2013.}
     \label{fig:height_eas}
@@ -713,6 +710,13 @@ Along with average value for each channel the standard deviations of signals in 
     \caption{The signals of the PMT retina with time step 12.5~ns for the EAS classified event with number 11588 the same as on fig.~\ref{fig:frames}a, fig.~\ref{fig:pulses}a, fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. %высота?!?!?!?!?!?!?!
     }
     \label{fig:retina_eas}
+\end{figure*}
+\begin{figure*}[pt]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/retina_11588_log1.pdf}%
+    \caption{The signals of the PMT retina with time step 12.5~ns for the EAS classified event with number 11588 the same as on fig.~\ref{fig:frames}a, fig.~\ref{fig:pulses}a, fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. %высота?!?!?!?!?!?!?!
+    }
+    \label{fig:retina_eas2}
 \end{figure*}
 
 
