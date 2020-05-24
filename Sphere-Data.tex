@@ -8,7 +8,7 @@
 
 \usepackage[utf8]{inputenc} % Включаем поддержку UTF8
 \usepackage[T2A]{fontenc}
-\usepackage[russian,english]{babel}
+\usepackage[russian,english]{babel}   % убрать русский перед отправкой статьи
 
 \usepackage{lineno}
 \usepackage{graphicx}
@@ -178,12 +178,14 @@ The PMT sensitivity in general depends on the temperature, background light, pow
 
 Each trigger `event' frame is paired by a follow-up `calibration event' that was saved in the same format as the main `event' data. The `calibration event' is caused by the illumination of the PMT mosaic by the LEDs from the mirror surface level via optical fibers. The individual LED flashes duration was set according to the calibration algorithm. Each LED produced two flashes with known light distribution over the PMT mosaic. 
 
-The `calibration' frame was used estimate PMTs relative sensitivity and check PMTs for possible non-linearity. The procedure for obtaining calibration and linearity corrections data was described in detail in the dedicated paper~\cite{Ant16}. 
+The `calibration' frame was used to estimate PMTs relative sensitivity and check PMTs for possible non-linearity. The procedure for obtaining calibration and linearity corrections data was described in detail in the dedicated paper~\cite{Ant16}. 
 
 %\subsection update to the procedure
-The procedure described in~\cite{Ant16} since had some updates. First one was a described below in section~\ref{sect:noiseremoval} procedure of and identified and specific noise removal from every frame. This made the data more reliable and finer details became accessible. More precise data allowed a better estimation of the calibration LEDs optical fibers orientation. This in turn allowed to account for the PMTs entry window reflectivity. The PMT entry window surface being a flat air-glass border reflects some light depending on the the light incidence angle. The reflected light is then reflected back by the mirror to the mosaic. The amount of additional light in some PMTs was comparable to direct one. 
+The procedure described in~\cite{Ant16} since had some updates. First one was a described below in section~\ref{sect:noiseremoval} procedure of identification and specific noise removal from every frame. This made the data more reliable and finer details became accessible. More precise data allowed a better estimation of the calibration LEDs optical fibers orientation. This in turn allowed to account for the PMTs entry window reflectivity. The PMT entry window surface being a flat air-glass border reflects some light depending on the the light incidence angle. The reflected light is then reflected back by the mirror to the mosaic. The amount of additional light in some PMTs was comparable to or exceeded the direct light.
 
-Additionally, the small voltage variations around the initially set value
+Additionally, the small voltage variations around the initially set value was taken into account lowering the overall uncertainty. 
+
+The calibration da 
 
 %% detector drift figure %% fig:gps-compass
 \begin{figure}[tb]
