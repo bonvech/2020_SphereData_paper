@@ -132,11 +132,11 @@ The electronics part includes a data acquisition system (DAQ), trigger system, c
 The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when the trigger condition is satisfied. The trigger condition was: 1~${\mu}$s time window --- so called `local' trigger $LN$ or in any $M$ PMTs --- `global' trigger $GM$. The number of channels to exceed the threshold level was varied from flight to flight to decrease the energy threshold, but the most of the data was obtained under trigger conditions `$L3$ or $G5$' then at least one of two trigger conditions have to be satisfied. The posterior analysis shows that some events was recorded under trigger $L2$ although the condition $L3$ was set.
 
 
-% блок-схема работа считывания данных (Бонвеч)
+%% блок-схема работа считывания данных (Бонвеч)
 %% get_event_algorithm
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.3\textwidth]{figs/get_event_algorithm.png}\hspace{2pc}%
+\includegraphics[width=0.43\textwidth]{figs/get_event_algorithm.pdf}\hspace{2pc}%
 \caption{The scheme of the procedure to read event data from the buffer.}
 \label{fig:get_event_algorithm}
 \end{figure}
@@ -145,9 +145,12 @@ The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when
 \subsection{Data acquisition} 
 
 % определение frame - 112х2х510
-When the TS produced an `event' signal the DAQ started recording 12.8~$\mu$s of signal from the delay line including capturing $\sim 6~\mu$s of the signal prior to the trigger signal and formed an `event' frame. One detector `event' frame contains a 12.8~$\mu$s record of the PMT DAQ signal data from measuring channels with 12.5~ns discretization, in total 1020 10-bit signal values per every of 109 PMT channels. If the signal value exceeded the 10-bit number the 11$^{th}$ bit of the recorded signal value number was set to 1 to indicate the overflowing of the FADC counter and to 0 otherwise. A highest 12$^{th}$ bit of signal value number is set to 1 if the PMT signal exceeds the trigger level. In addition to PMT data the following event information is stored: GPS  coordinates, altitude, UTC time, local time, trigger time, angles of detector inclination, magnetometer data, every PMT average anode currents. 
+When the TS produced an `event' signal the DAQ started recording 12.8~$\mu$s of signal from the delay line including capturing $\sim 6~\mu$s of the signal prior to the trigger signal and formed an `event' frame. One detector `event' frame contains a 12.8~$\mu$s record of the PMT DAQ signal data from measuring channels with 12.5~ns discretization, in total 1020 10-bit signal values per every of 109 PMT channels. If the signal value exceeded the 10-bit number the 11$^{th}$ bit of the recorded signal value number was set to 1 to indicate the overflowing of the FADC counter and to 0 otherwise. A highest 12$^{th}$ bit of signal value number is set to 1 if the PMT signal exceeds the trigger level. 
 
-The scheme of the reading data from the buffer procedure is shown on the figure~\ref{fig:get_event_algorithm}.
+The scheme of the reading data from the buffer procedure is shown on the figure~\ref{fig:get_event_algorithm}. 
+The telemetry data written to binary file is: event number, localtime, two inclination angles, gps data, trigger time, magnitometer angle, currents for 109 PMT, measured before the trigger. 
+In addition to PMT data the following event information is stored: GPS  coordinates, altitude, UTC time, local time, trigger time, angles of detector inclination, magnetometer data, every PMT average anode currents. 
+% На схеме видна возможная причина большого количества плохих кадров. Если в буфере есть несколько событий и при чтении первого события произошла ошибка чтения FIFO, то следующие события все равно читаются и сохраняются, хотя было бы лучше их выбрасывать, сразу очищая буфер.
 
 One `event' frame information takes 220 KBytes. All the data is saved to a binary file on the detector onboard computer SSD drive. From primary binary files the work frames files were created during data preprocessing. Preprocessing included baselines estimation and substraction, time drift detection and correction, for detail see~\ref{sect:preprocessing}.
 
