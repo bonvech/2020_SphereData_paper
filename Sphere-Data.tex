@@ -92,6 +92,10 @@ The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirro
 
 The PMT retina is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on fig.~\ref{fig:retina}. The central PMT of the retina is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the retina and the detector orientation.
 
+\subsection{Control block telemetry}
+% поднять выше, перед ориентацией и GPS
+% кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
+% кратко про мозаику
 
 \subsection{Orientation control system}
 % описание датчиков (Чернов)
@@ -106,13 +110,10 @@ The type of inclinometer used allows fast angles measurements with low power con
 
 The GPS sensor Garmin 16xHVS, located on the control unit was used to measure coordinates and elevation above sea level.
 
-\subsection{Control block telemetry}
-% поднять выше, перед ориентацией и GPS
-% кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
-% кратко про мозаику
+
 
 \subsection{Electronics}
-% логика работы элементов детектора 
+% логика работы элементов детектора (возможно переименовать раздел)
 The electronics part includes a data acquisition system (DAQ), trigger system, calibration system etc. The DAQ contains a 10-bit flash analog-to-digital converters (FADC) with 40~MHz sampling frequency and provided 12.5~ns discretization using two \mbox{FADCs} per one optical channel. DAQ worked in a continuous mode first forking the signal from each PMT to trigger system and to a 6~$\mu$s delay line. The details on the \mbox{SPHERE-2} apparatus construction and DAQ system operation see in~\cite{Ant15a}. 
 
 %%  FADC summation figure
@@ -195,7 +196,7 @@ The all the absolute calibration data and procedure was rechecked. Small was cor
 
 %%%% Какая есть телеметрия %%%%%
 \subsection{Telemetry monitoring\label{sect:telemetry}}
-
+%% возможно поднять в 2.2 к контролю состояния блока аппаратуры
 
 %% сделать табличку параметр, точность измерения, диапазон измерения, интервал измерения (Бонвеч, Чернов)
 
@@ -227,11 +228,11 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dynodes
 %\section{Site and weather}
 \label{sect:data}
  
-The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$47'48.923''N, 104$^\circ$23'19.187"E. 
+The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$~47'~48.923''~N, 104$^\circ$~23'~19.187"~E. 
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
 The balloon attracted the attention of a large number of Baikal tourists. 
 
-The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Table~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from 25 ns to 12.5~ns.
+The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Table~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from~25 ns to 12.5~ns.
 
 Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
 
@@ -240,7 +241,7 @@ Unless otherwise specified, all illustrations in the paper are given for the \mb
 
 Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the height of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
 
-Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a device sensitive to light intensity in the optical band (“luxmeter”). The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
+Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a device sensitive to light intensity in the optical band (`luxmeter'). The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
 
 
 \subsection{Detector orientation and telemetry data\label{sect:telemetrydata}}
