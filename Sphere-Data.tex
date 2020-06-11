@@ -91,7 +91,6 @@ The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirro
 The PMT retina is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on fig.~\ref{fig:retina}. The central PMT of the retina is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the retina and the detector orientation.
 
 \subsection{Control block telemetry}
-% поднять выше, перед ориентацией и GPS
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
 
@@ -150,6 +149,7 @@ Unless otherwise specified, all illustrations in the paper are given for the \mb
 
 
 \subsection{Weather and snow}
+% внести результаты собственного измерения условий на снегу
 
 Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the height of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
 
@@ -312,9 +312,57 @@ Calculated experimental points for $T$ and $\rho$ in each flight are shown in fi
 
 It's seen that previously picked atmosphere is inconsistent with experimental data for $T$ in terms of absolute values, but their derivatives lie relatively close. Therefore either full remodelling with better fitting atmosphere or some correction of final data is required to reduce systematic errors in energy and composition estimation.
 
+CORSIKA atmosphere model 11 was used all through the modeling runs. Modeling lasted for about 2 years and at that time it was not possible to choose an atmospheric model close to reality.
+The use of the experimental points in $T$ or $\rho$ cannot provide a reasonable  choice of the model, it can only give us some clue as to what the model should be. Full-fledged choice must
+include data on vertical profile of atmosphere layer up to altitudes at least 20 km above the lake Baikal level because the Cherenkov light mostly comes from this layer. Still we can make some
+conclusions on the atmosphere model effect on primary energy and mass estimates by comparing the artificial showers simulated for different models.
+
+We produced such artificial events initiated by 1 PeV protons for a number of models,  passing close to the experimental $T$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
+The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tyled with 2.5m $\times$ 2.5m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50m squares approximately imitating the sensitivity spots of telescope pixels.
+Sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows mean values and variations of Cherenkov photon number ratios for two pairs of CORSIKA atmosphere models (3/4 and 3/11). The corresponding ratios of sample mean lateral distributions for these pairs are shown in Fig.~\ref{fig:3d4} and Fig.~\ref{fig:3d11}, respectively. Pair 3/4 reflects maximum effect of atmosphere model choice from the viewpoint of experimental $T$ and $\rho$ measurements. Pair 3/11 compares the model 11 used in simulations to the model 3 which approximates the experimental data and is the most distant from model 11 in terms of $T$.
+Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about 5-7\% (7-15\%) near the shower core, closer than 80 m, and about 2-5\% (-2 to +7\%) in 80-150m circle for 3/4 (3/11) pair, which definitely affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
 
 %% влияние атмосферы на высоты генерации света на (Галкин)
 %% картинки
+\begin{table}[t]
+\centering
+\caption{Cherenkov number ratios for different CORSIKA atmosphere model pairs: means, variations, relative variations}
+\label{tab:atmmod}
+\vspace{1pc}
+\begin{tabular}{|c||c|c|c|}
+\hline
+model pair  & mean &  variation   & relative variation \\ 
+            &  $m$ & $\sigma$     & $\sigma/m$          \\ 
+\hline 
+\hline 
+ 3/4 &  1.015    &  0.0490     &   0.0483   \\
+\hline
+3/11 &  1.028    &  0.0464     &   0.0452    \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=19pc]{figs/3d4.eps}%
+%\vspace{-1.0pc}
+\caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
+pair 3/4. Bin size $50m \times 50m$. Sample volume 30 events.}
+\label{fig:3d4}
+\end{figure}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=19pc]{figs/3d11_20.eps}%
+\vspace{-1.0pc}
+\caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
+pair 3/11. Bin size $50\times 50$~m$^2$. Sample volume 30 events.}
+\label{fig:3d11}
+\end{figure}
+
+
 
 
 %% Retina picture
@@ -475,14 +523,14 @@ fig.~\ref{fig:pulses} shows signal pulses in channels with the largest signal ma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Data frames
 
-%%%%   2013-3559!!!!!!!!!!!!!!!!!!!!!!
+%%%%   2012-3559!!!!!!!!!!!!!!!!!!!!!!
 
 \begin{figure*}[btp]
 \centering
 %\includegraphics[width=\textwidth]{figs/frames.eps}%
 %ebb -v figs/frames_col.pdf -- to know boundaries bb
 \includegraphics[width=0.92\textwidth, bb=0 0 776 386]{figs/frames_bw.pdf}
-\caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a --- is an `event' frame, b --- calibration frame, c --- direct light, d --- random noise, e --- longtime events}
+\caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a --- is an `event' frame, b --- calibration frame, c --- direct CL, d --- direct CL, e --- longtime events}
 \label{fig:frames}
 
 %%% Data frame Pulses and Sums
