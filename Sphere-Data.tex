@@ -125,7 +125,7 @@ The GPS sensor Garmin 16xHVS, located on the control unit was used to measure co
 \vspace{1pc}
 \begin{tabular}{|c|l|l|c|c|c|}
 \hline
-\multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{to monitore} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{1}{c|}{range}  & \multicolumn{1}{c|}{units} \\
+\multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{1}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 \hline
 \hline
 \multirow{6}{*}{1 sec} & \multirow{3}{*}{position} &GPS altitude &&& m a.s.l.\\
@@ -134,9 +134,9 @@ The GPS sensor Garmin 16xHVS, located on the control unit was used to measure co
                                                       \cline{3-6}
                        &                              & GPS time &&&\\
                        \cline{2-6}
-                       & \multirow{2}{*}{orientation} & inclination angles& 0.1&-90-90&deg\\
+                       & \multirow{2}{*}{orientation} & inclination angles& 0.1&$-$90--90&deg\\
                                                       \cline{3-6}
-                       &                              & compass azimut &0.1&0-360&deg\\
+                       &                              & compass azimuth &0.1&0--360&deg\\
                        \cline{2-6}
                        &control block                 & inner temperature&&&deg, C\\
 \hline
@@ -255,7 +255,7 @@ fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 %% radius-inclination
 \begin{figure}[tb]
 %\includegraphics[width=0.48\textwidth]{figs/radius-inclination.pdf}
-\includegraphics[width=0.48\textwidth]{figs/tg-inclination.pdf}
+\includegraphics[width=0.48\textwidth]{figs/2013_tg-inclination.pdf}
 \caption{Detector inclination vs the detector drift from the start point to the detector altitude ratio which roughly translates into the tether inclination angle.}
 \label{fig:drift-inclination}
 \end{figure}
@@ -617,7 +617,7 @@ All the data frames are pre-processed, including baselines estimation and substr
     \hline
     Year & \multicolumn{2}{|c||}{2011} & \multicolumn{2}{|c||}{2012} & \multicolumn{2}{|c|}{2013} \\
     \hline
-    Total         & \multicolumn{2}{|c||}{20571} & \multicolumn{2}{|c||}{7716} & \multicolumn{2}{|c|}{3813}\\
+    Total triggers & \multicolumn{2}{|c||}{20571} & \multicolumn{2}{|c||}{7716} & \multicolumn{2}{|c|}{3813}\\
     \hline
     \hline
     Criteria & Reject & Result & Reject & Result & Reject & Result\\ 
@@ -659,13 +659,14 @@ The rest number of event was iqual to 491 (or 575 in case of criteria Dt $>$ 5).
 
 
 \begin{figure}[t]
-    \includegraphics[width=19pc]{figs/time_on_altitude.pdf}\hspace{2pc}%
-    \caption{The altitude distribution experiment time in 2013.}
+    \includegraphics[width=19pc]{figs/time_on_altitude.pdf}%
+    \caption{The altitude distribution of experiment time.}
     \label{fig:time_on_altitude}
 %\end{figure}
+\vspace{2pc}
 %\begin{figure}[t]
-    \includegraphics[width=19pc]{figs/height_eas.pdf}\hspace{2pc}%
-    \caption{The altitude distribution of detected EAS events in 2013.}
+    \includegraphics[width=19pc]{figs/height_eas.pdf}
+    \caption{The altitude distribution of detected EAS events.}
     \label{fig:height_eas}
 \end{figure}
 
