@@ -125,46 +125,47 @@ The GPS sensor Garmin 16xHVS, located on the control unit was used to measure co
 \href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
 \vspace{1pc}
-\begin{tabular}{|c|l|l|c|c|c|}
+\begin{tabular}{|c|l|l|c|rcl|c|}
 \hline
-\multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{1}{c|}{range}  & \multicolumn{1}{c|}{units} \\
+\multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 %\hline
 \hline
-\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude &&& m a.s.l.\\
-                                                      \cline{3-6}
-                       &                              & GPS coordinates &&&\\
-                                                      \cline{3-6}
-                       &                              & GPS time &&&\\
-                       \cline{2-6}
-                       & \multirow{2}{*}{Detector orientation} & inclination angles& 0.1&$-$90--90&deg\\
-                                                      \cline{3-6}
-                       &                              & compass azimuth &0.1&0--360&deg\\
-                       \cline{2-6}
-                       &Control block                 & inner temperature&&&deg, C\\
+\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (?) &  -1500&--&18000  & m a.s.l.\\
+                                                      \cline{3-8}
+                       &                              & GPS coordinates & 3-5(?) & &&& m\\
+                                                      \cline{3-8}
+                       &                              & GPS time (PPS)& $\pm$1 & &&& $\mu$s \\
+                       \cline{2-8}
+                       & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg\\
+                                                      \cline{3-8}
+                       &                              & compass azimuth (resolution) Z &2.5 (0.5)&0&--&360&deg\\
+                       \cline{2-8}
+                       &Control block                 & inner temperature& $\pm$1.5 & $-40$&--&70 &deg,$^\circ$C\\
 \hline
-\multirow{7}{*}{1 min} & \multirow{2}{*}{PMT status} & anode current &&& mA\\
-                                                      \cline{3-6}
-                       &                              & retina temperature &&& deg, C\\
-                       \cline{2-6}
-                       & Power source                 & high voltage &&& V\\
-                       \cline{2-6}
-                       & \multirow{2}{*}{Barometer}   & pressure & && Hpa\\
-                                                      \cline{3-6}
-                       &                              & temperature&&&deg, C\\
-                       \cline{2-6}
-                       & Battery                      & voltage &&& V\\
-                       \cline{2-6}
-                       & Constant voltage source      & voltage &&& V\\
+\multirow{7}{*}{1 min} & \multirow{2}{*}{PMT status} & anode current & 0.03 & 0&--&125 & $\mu$A\\
+                                                      \cline{3-8}
+                       &                              & retina temperature & $\pm$1.5 & $-40$&--&70 & deg,$^\circ$C\\
+                       \cline{2-8}
+                       & Power source                 & high voltage (HV1) & 0.1 & 0&--&250 & V\\
+                       \cline{2-8}
+                       & \multirow{2}{*}{Barometer}   & pressure & $\pm$5 & 750&--&1100
+ & hpa\\
+                                                      \cline{3-8}
+                       &                              & temperature& $\pm$2 & $-20$&--&60 &deg,$^\circ$C\\
+                       \cline{2-8}
+                       & Battery (19V)                & voltage & 0.01 & 0&--&40 & V\\
+                       \cline{2-8}
+                       & Constant voltage (5V)        & voltage & 0.01 & 0&--&40 & V\\
 \hline
-\multirow{5}{*}{10 min} & \multirow{3}{*}{PMT status} & first dinode voltage &&& V\\
-                                                      \cline{3-6}
-                       &                              & PMT temperature &&& deg, C\\
-                                                      \cline{3-6}
-                       &                              & supply voltage &&& V\\
-                       \cline{2-6}
-                       & Trigger                      & counting rate &&& Hz\\
-                       \cline{2-6}
-                       & FADC boards                  & voltage &&& V\\
+\multirow{5}{*}{10 min} & \multirow{3}{*}{PMT status} & first dinode voltage & 0.06 & 0&--&250 & V\\
+                                                      \cline{3-8}
+                       &                              & PMT temperature &&&&& deg,$^\circ$C\\
+                                                      \cline{3-8}
+                       &                              & supply voltage & 0.006 & 0&--&25 & V\\
+                       \cline{2-8}
+                       & Trigger                      & counting rate &1&0&--&4& Hz\\
+                       \cline{2-8}
+                       & FADC boards                  & voltage (1.2, 2.5, 2.8) & 0.001 & 0&--&4 & V\\
 \hline
 \end{tabular}
 \end{table*}
@@ -369,9 +370,9 @@ model pair  & mean &  variation   & relative variation \\
 \hline 
  3/4 &  1.015    &  0.0490     &   0.0483   \\
 \hline
-3/11 &  1.020    &  0.0523     &   0.0513    \\
+11/3 &  0.9834    &  0.0511     &   0.0520    \\
 \hline
-4/11 &  1.006    &  0.0449     &   0.0446    \\
+11/4 &  0.9963    &  0.0443     &   0.0445    \\
 \hline
 \end{tabular}
 \end{table}
@@ -381,10 +382,10 @@ model pair  & mean &  variation   & relative variation \\
 \begin{figure*}[tb]
  \begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[width=19pc]{figs/3d11.eps}%
+\includegraphics[width=19pc]{figs/11d3.eps}%
 \vspace{-1.0pc}
 \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-pair 3/11. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
+pair 11/3. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
 \label{fig:3d4}
 %\end{figure}
 \end{minipage}
@@ -392,10 +393,10 @@ pair 3/11. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 
     \begin{minipage}[t]{0.48\textwidth}
 %\begin{figure}[tb]
 \centering
-\includegraphics[width=19pc]{figs/4d11.eps}%
+\includegraphics[width=19pc]{figs/11d4.eps}%
 \vspace{-1.0pc}
 \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-pair 4/11. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
+pair 11/4. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
 \label{fig:4d11}
 \end{minipage}
 \end{figure*}
@@ -409,7 +410,7 @@ conclusions on the atmosphere model effect on primary energy and mass estimates 
 We produced such artificial events initiated by 10 PeV protons for a number of models,  passing close to the experimental $T$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
 The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tyled with 2.5m $\times$ 2.5m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50m squares approximately imitating the sensitivity spots of telescope pixels.
 Sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows mean values and variations of Cherenkov photon number ratios for three pairs of CORSIKA atmosphere models (3/4, 3/11 and 4/11). The ratios of sample mean lateral distributions for 3/11 and 4/11 pairs are shown in Fig.~\ref{fig:3d11} and Fig.~\ref{fig:4d11}, respectively. Pair 3/4 reflects maximum effect of atmosphere model choice from the viewpoint of experimental $T$ and $\rho$ measurements. Pairs 3/11 and 4/11 compare the model 11 used in simulations to the models approximating the experimental data.
-Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about -12 to -6\% (-17 to -10\%) near the shower core, closer than 80 m, and about -6 to +3\% (-10 to +3\%) in 80-150m circle for 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
+Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about 6 to 12\% (12 to 20\%) near the shower core, closer than 80 m, and about -2 to +6\% (0 to +12\%) in 80-150m circle for 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
 
 
 %%%% === Retina picture ===
@@ -463,7 +464,7 @@ The same calculations was made for the detector position with different detector
 %описываем весь рабочий процесс сбора, передачи, хранения и расшифровки непосредственно данных ШАЛ, т.е. данных с мозаики и служебной информации
 \subsection{Electronics}
 % логика работы элементов детектора (возможно переименовать раздел)
-The electronics part includes a data acquisition system (DAQ), trigger system, calibration system etc. The DAQ contains a 10-bit flash analog-to-digital converters (FADC) with 40~MHz sampling frequency and provided 12.5~ns discretization using two \mbox{FADCs} per one optical channel. DAQ worked in a continuous mode first forking the signal from each PMT to trigger system and to a 6~$\mu$s delay line. The details on the \mbox{SPHERE-2} apparatus construction and DAQ system operation see in~\cite{Ant15a}. 
+The electronics part includes a data acquisition system (DAQ), trigger system, calibration system etc. The DAQ contains a 10-bit flash analog-to-digital converters (FADC) with 40~MHz sampling frequency and provided 12.5~ns discretization using two \mbox{FADCs} per one optical channel. DAQ worked in a continuous mode forking the signal from each PMT to trigger system and to a 6~$\mu$s delay line. The details on the \mbox{SPHERE-2} apparatus construction and DAQ system operation see in~\cite{Ant15a}. 
 
 %% FADC summation figure
 \begin{figure}[tb]
@@ -474,7 +475,7 @@ The electronics part includes a data acquisition system (DAQ), trigger system, c
 \end{figure}
 
 {\Russian
-На рисунке~\ref{fig:int_discr} показана схема интегрирующего дискриминатора измерительного канала для формирования запроса триггера. Данная схема реализована внутри микросхем FPGA на всех измерительных каналах. В составе каждого канала имеются по два FADC включенных в режиме чередования. Для обеспечения стабильности работы интегрирующего дискриминатора используется только один FADC. Данные с этого FADC поступают на регистр RG1. Данные записываются в регистр по переднему фронту сигнала Clock FADC. Аналогичным образом сигнал Clock фиксирует входные (слева) данные на выходах (справа) всех регистров RG0-RG4. Так как регистры RG1--RG4 включены последовательно, то на входах сумматора (обозначены на схеме тремя трапециями) всегда представлены данные о четырех последних измерениях FADC. Длительность измерительно такта Clock составляет 25нс, что достаточно для получения результата суммирования на входе RG0. Таким образом требуется 5 тактов Clock (соответствует 125нс) для формирования истинного результата на выходе RG0. После суммирования четырех 10-ти разрядных слов результат представляется в виде одного 12-ти разрядного слова. Результат сравнивается с программно заданным значением порога дискриминации с помощью цифрового компаратора. В случае превышения порога компаратор выдаёт сигнал на запрос триггера. Если сигналы запроса триггера от каналов выполняют условия срабатывания триггера, то выполняется процедура сохранения данных.    
+На рисунке~\ref{fig:int_discr} показана схема интегрирующего дискриминатора измерительного канала для формирования запроса триггера. Данная схема реализована внутри микросхем FPGA (расшифровать!) на всех измерительных каналах. В составе каждого канала имеются по два FADC включенных в режиме чередования. Для обеспечения стабильности работы интегрирующего дискриминатора используется только один из этих двух FADC. Данные с этого FADC поступают на регистр RG1. Данные записываются в регистр по переднему фронту сигнала Clock FADC. Аналогичным образом сигнал Clock фиксирует входные (слева) данные на выходах (справа) всех регистров RG0-RG4. Так как регистры RG1--RG4 включены последовательно, то на входах сумматора (обозначены на схеме тремя трапециями) всегда представлены данные о четырех последних измерениях FADC. Длительность измерительно такта Clock составляет 25нс, что достаточно для получения результата суммирования на входе RG0. Таким образом требуется 5 тактов Clock (соответствует 125нс) для формирования истинного результата на выходе RG0. После суммирования четырех 10-ти разрядных слов результат представляется в виде одного 12-ти разрядного слова. Результат сравнивается с программно заданным значением порога дискриминации с помощью цифрового компаратора. В случае превышения порога компаратор выдаёт сигнал на плату триггера на запрос триггера. Если сигналы запроса триггера от каналов выполняют условия срабатывания триггера, то выполняется процедура сохранения данных в буфер.    
 }
 
 
