@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %\hyphenpenalty=10000
 
-\setlength{\marginparwidth}{2cm}
+%\setlength{\marginparwidth}{2cm}
 %\usepackage{todonotes}
 %http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/easy-todo/easy-todo.pdf
 \usepackage[enable]{easy-todo}
@@ -125,7 +125,7 @@ The GPS sensor Garmin 16xHVS, located on the control unit was used to measure co
 \href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
 \vspace{1pc}
-\begin{tabular}{|c|l|l|c|rcl|c|}
+\begin{tabular}{|c|l|l|c|r p{2mm} l|c|}
 \hline
 \multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 %\hline
@@ -229,9 +229,9 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
     \caption{The altitude of the SPHERE-2 detector carried by the BAPA tethered balloon during 2013 experiment run according to the GPS module data.}
     \label{fig:height}
     \end{minipage}
-
-  \vspace{1.5pc}
-
+    
+    \vspace{\baselineskip}
+    
     \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figs/T1.pdf}
