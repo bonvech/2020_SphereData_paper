@@ -285,6 +285,10 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 
 Background light effects the PMT current. Current of the central PMT is shown on the Fig.~\ref{fig:current}. And the night sky background light flux can be evaluated.
 
+The background light flux was calculated as the sum of the few time-dependent fluxes from different sources, each with its own time dependence. Moreover each source of background light has its own spectrum that can change over time due to atmosphere absorption.
+
+The first contributor to the total light flux was a direct starlight. Each star gives a known light flux in the visual range that is a 
+Each star has its own spectrum that in the visual range can be approximated by the black body spectrum with specific temperature. 
 .. Dima will write this subsection ...
 .. Dima will write this subsection ...
 .. Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ..... Dima will write this subsection ...
@@ -300,7 +304,7 @@ The position and inclination of the SPHERE-2 detector are the important values t
 
 The detector observation area depends on the detector altitude $H$ as a square function. To provide the altitude values the GPS module, onboard barometer and barometer at the start point on the Baikal ice surface level with minute-by-minute measurements are used. One can expect the GPS altitude $h$ and the difference between surface level and the balloon level pressures $\Delta p = (p_{surf} - p_{air})$ to behave consistently because of a pressure dependence on the altitude. Other major parameters that affect pressure, such as temperature and humidity, affect both $p_{surf}$ and $p_{air}$ and their effects at least partially cancel each other out in $\Delta p$.
 
-This expected consistent behavior is observed when balloon altitude is generally stable. On Fig. \ref{fig:dp-h-good} such region is shown in the flight 3 data. $h$ and $\Delta p$ are normalized and filtered with high-pass digital Butterworth filter with cutoff frequency $0.83$ mHz ($T=20$ min). It's clear that short-term fluctuations of GPS altitude and pressure difference are in good correlation. Correlation coefficient is $0.96$ for this data and not less than $0.9$ for all other flights' stable altitude regions filtered the same way. From this we conclude that the GPS altitude data are reliable when the detector altitude is relatively stable and the surface--air pressure difference directly indicates rapid fluctuations in the altitude.
+This expected consistent behavior is observed when balloon altitude is generally stable. On Fig.~\ref{fig:dp-h-good} such region is shown in the flight 3 data. $h$ and $\Delta p$ are normalized and filtered with high-pass digital Butterworth filter with cutoff frequency $0.83$ mHz ($T=20$ min). It's clear that short-term fluctuations of GPS altitude and pressure difference are in good correlation. Correlation coefficient is $0.96$ for this data and not less than $0.9$ for all other flights' stable altitude regions filtered the same way. From this we conclude that the GPS altitude data are reliable when the detector altitude is relatively stable and the surface--air pressure difference directly indicates rapid fluctuations in the altitude.
 
 However, there are regions in data in which $h$ and $\Delta p$ behave rather inconsistently. On Fig.~\ref{fig:dp-h-bad} such region in the flight 4 data is shown (these data are scaled without any filtering). When barometer data change rapidly indicating sudden lift of balloon GPS data starts to change with significant delay and in unnatural smoothed fashion. Such regions in GPS data are observed during almost every abrupt changes in balloon altitude. We believe that this is due to some internal algorithm of the GPS module. Module was designed to be used on ships so it probably handles rapid change in altitude as an error and tries to smooth it.
 
@@ -386,7 +390,7 @@ model pair  & mean &  variation   & relative variation \\
 \vspace{-1.0pc}
 \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
 pair 11/3. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
-\label{fig:3d4}
+\label{fig:3d11}
 %\end{figure}
 \end{minipage}
     \hfill
@@ -576,7 +580,7 @@ Fig.~\ref{fig:pulses} shows signal pulses in channels with the largest signal ma
 \centering
 %\includegraphics[width=\textwidth]{figs/frames.eps}%
 %ebb -v figs/frames_col.pdf -- to know boundaries bb
-\includegraphics[width=0.92\textwidth, bb=0 0 776 386]{figs/frames_bw.pdf}
+\includegraphics[width=0.92\textwidth]{figs/frames_bw.pdf}
 \caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a --- is an `event' frame, b --- calibration frame, c --- direct CL, d --- direct CL, e --- longtime events}
 \label{fig:frames}
 
