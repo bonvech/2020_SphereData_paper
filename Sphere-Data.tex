@@ -92,33 +92,33 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 %\href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
 \vspace{1pc}
-\begin{tabular}{|c|l|l|c|r p{2mm} l|c|}
+\begin{tabular}{|c|l|l|c|r@{\hspace{1mm}}c@{\hspace{1mm}}l|c|}
 \hline
 \multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 %\hline
 \hline
 \multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (?) &  -1500&--&18000  & m a.s.l.\\
                                                       \cline{3-8}
-                       &                              & GPS coordinates & 3-5(?) & &&& m\\
+                       &                              & GPS coordinates & 3--5(?) & &&& m\\
                                                       \cline{3-8}
-                       &                              & GPS time (PPS)& $\pm$1 & &&& $\mu$s \\
+                       &                              & GPS time (PPS)& 1 & &&& $\mu$s \\
                        \cline{2-8}
                        & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg\\
                                                       \cline{3-8}
                        &                              & compass azimuth (resolution) Z &2.5 (0.5)&0&--&360&deg\\
                        \cline{2-8}
-                       &Control block                 & inner temperature& $\pm$1.5 & $-40$&--&70 &deg,$^\circ$C\\
+                       &Control block                 & inner temperature& 1.5 & $-40$&--&70 &deg,$^\circ$C\\
 \hline
 \multirow{7}{*}{1 min} & \multirow{2}{*}{PMT status} & anode current & 0.03 & 0&--&125 & $\mu$A\\
                                                       \cline{3-8}
-                       &                              & retina temperature & $\pm$1.5 & $-40$&--&70 & deg,$^\circ$C\\
+                       &                              & mosaic temperature & 1.5 & $-40$&--&70 & deg,$^\circ$C\\
                        \cline{2-8}
                        & Power source                 & high voltage (HV1) & 0.1 & 0&--&250 & V\\
                        \cline{2-8}
-                       & \multirow{2}{*}{Barometer}   & pressure & $\pm$5 & 750&--&1100
+                       & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100
  & hpa\\
                                                       \cline{3-8}
-                       &                              & temperature& $\pm$2 & $-20$&--&60 &deg,$^\circ$C\\
+                       &                              & temperature& 2 & $-20$&--&60 &deg,$^\circ$C\\
                        \cline{2-8}
                        & Battery (19V)                & voltage & 0.01 & 0&--&40 & V\\
                        \cline{2-8}
@@ -145,9 +145,9 @@ The SPHERE is a cosmic ray experiment based on the registration of Vavilov-Chere
 
 The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cherenkov light from the balloon elevated to altitudes up to 1~km above the Earth snow covered surface. Special tethered balloon BAPA developed and created by Russian Augur agency for this experiment was used.
 
-The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) retina. 
+The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic. 
 
-The PMT retina is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:retina}. The central PMT of the retina is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the retina and the detector orientation.
+The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
 
@@ -158,11 +158,11 @@ The PMT retina is located near the mirror focal surface and records the Cherenko
 \subsection{Orientation control system}
 % описание датчиков (Чернов)
 
-The detector axis at the rest state is oriented vertically and detector observes the snow covered lake surface just under the detector. During the measurements, the detector hanging under the balloon, swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determined the overall geometry of the experiment. To control the position and rotation of the detector an inclinometer and a magnetometer compass are installed on the PMT retina control board. 
+The detector axis at the rest state is oriented vertically and detector observes the snow covered lake surface just under the detector. During the measurements, the detector hanging under the balloon, swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determined the overall geometry of the experiment. To control the position and rotation of the detector an inclinometer and a magnetometer compass are installed on the PMT mosaic control board. 
 
 The magnetometer compass measures the angle of the detector's orientation relative to the Earth's magnetic field with 0.1~degree precision.
 
-The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector retina axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.1^\circ$ and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
+The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector mosaic axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.1^\circ$ and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
 
 The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
 
@@ -178,9 +178,9 @@ During every experimental flight a lot of information about the detector status 
 
 Every second the detector position and orientation was recorded. The GPS data of altitude, latitude and longitude, universal global time UTC, the angles of detector inclination by the inclinometer sensor, magnetometer compass data and the control block inner temperature was monitored. The additional GPS and barometer were deployed on the Baikal Lake ice surface level.
 
-Every minute the PMT and the power status was monitored. Anode currents of all PMTs, the PMT retina temperature and the temperature of the PMTs high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors were polled every minute also.
+Every minute the PMT and the power status was monitored. Anode currents of all PMTs, the PMT mosaic temperature and the temperature of the PMTs high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors were polled every minute also.
 
-Every ten minutes the PMT supply voltage, voltage at the first and tenth dynodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
+Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -200,7 +200,7 @@ Unless otherwise specified, all illustrations in the paper are given for the \mb
 
 Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the altitude of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
 
-Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a device sensitive to light intensity in the optical band (`luxmeter'). The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
+Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a luxmeter -- device sensitive to light intensity in the optical band. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
 
 
 \subsection{Detector orientation and telemetry data\label{sect:telemetrydata}}
@@ -209,8 +209,8 @@ The \mbox{SPHERE-2} detector position and wind conditions near the detector are 
 
 %% detector drift figure %% fig:gps-compass
 \begin{figure}[tb]
-\includegraphics[width=0.45\textwidth]{figs/GPS+quiver.pdf}\hspace{2pc}%
-\caption{The SPHERE-2 detector drift during 2013 flight. The arrows indicate the detector magnetometer orientation. The start point is located at zero coordinates.}
+    \includegraphics[width=0.45\textwidth]{figs/GPS+quiver.pdf}\hspace{2pc}%
+    \caption{The SPHERE-2 detector drift in 2013. The arrows indicate the detector magnetometer orientation. The start point is located at zero coordinates.}
 \label{fig:gps_compass}
 \end{figure}
 
@@ -252,47 +252,47 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 \end{figure*}
 %%%%%%%%%%%%%%
 
-%% The central PMT current
-\begin{figure}[tb]
-\includegraphics[width=0.48\textwidth]{figs/cur2013_PMT1.eps}
-\caption{The central PMT current.}
-\label{fig:current}
-\end{figure}
 
 %% radius-inclination
 \begin{figure}[tb]
-%\includegraphics[width=0.48\textwidth]{figs/radius-inclination.pdf}
-\includegraphics[width=0.48\textwidth]{figs/2013_tg-inclination.pdf}
-\caption{Detector inclination vs the detector drift from the start point to the detector altitude ratio which roughly translates into the tether inclination angle.}
+    %\includegraphics[width=0.48\textwidth]{figs/radius-inclination.pdf}
+    \includegraphics[width=0.48\textwidth]{figs/2013_tg-inclination.pdf}
+    \caption{Detector inclination vs the detector drift from the start point to the detector altitude ratio which roughly translates into the tether inclination angle.}
 \label{fig:drift-inclination}
 \end{figure}
 
-%% gps vs barometer altitudes
-\begin{figure}[t]
-    \includegraphics[width=0.48\textwidth]{figs/good_corr.eps}
-    \caption{Balloon altitude is generally stable. Flight 3-2013 data.}
-    \label{fig:dp-h-good}
-    \vspace{1pc}
-
-    \includegraphics[width=0.48\textwidth]{figs/bad_corr.eps}
-    \caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
-    \label{fig:dp-h-bad}
-\end{figure}
-%\begin{figure}[tb]
-%\includegraphics[width=0.48\textwidth]{figs/gps_barometer.eps} 
-%\caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
-%\label{fig:h_gps-hpa}
-%\end{figure}
-
-
 \subsection{PMT currents and Background light}
 
-Background light effects the PMT current. Current of the central PMT is shown on the Fig.~\ref{fig:current}. And the night sky background light flux can be evaluated.
+%% The central PMT current
+\begin{figure}[tb]
+    \includegraphics[width=0.48\textwidth]{figs/cur2013_PMT1.eps}
+    \caption{The central PMT current.}
+\label{fig:current}
+\end{figure}
 
-The background light flux was calculated as the sum of the few time-dependent fluxes from different sources, each with its own time dependence. Moreover each source of background light has its own spectrum that can change over time due to atmosphere absorption.
+The PMT currents (the average anode current) were monitored constantly during flights as a part of detector state control. Since some of the PMTs used in the detector exhibited strong gain dependence on background illumination (up to a factor of 2) during initial selection and testing prior to the detector assembly the in-flight currents were expected to vary with time.
 
-The first contributor to the total light flux was a direct starlight. Each star gives a known light flux in the visual range that is a 
-Each star has its own spectrum that in the visual range can be approximated by the black body spectrum with specific temperature. 
+In principle, the PMT anode current contain the current from photoelectrons and from thermoelectrons. However, in total dark conditions (in the laboratory during testing and at launch site in dark box) the registered currents were small, below currents measurement precision. Therefore in-flight currents were considered as caused only by photoelectrons from snow background illumination.
+
+The background light flux was calculated as the sum of the few time-dependent fluxes from different sources, each with its own time dependence. Moreover each source of background light has its own spectrum that in theory can change over time due to atmosphere absorption.
+
+The main contributors to the total flux in 180--1000~nm wavelength range are:
+\begin{enumerate}
+    \item airglow --- the emission of light by variety of recombination and photochemical processes in the upper layers of atmosphere caused by its partial ionisation by Sun ultraviolet light and CR;
+    \item zodiacal light --- the sunlight back-scattered by the interplanetary dust cloud originating (mostly) from the Jypiter-family comets~\cite{Nesvorn__2010};
+    \item planets --- being the brightest sky objects during the 2011--2013 seasons the give noticeable addition the the total light flux;
+    \item stars and deep sky objects --- the fluxes from these two contributors cannot be easily separated since the limited resolution of the telescopes and optical overlapping of the relatively nearby dust and gas clouds and unresolved faint stars.
+    \item light pollution --- the combined scattered light from artificial sources;
+\end{enumerate}
+
+The airglow has a complex spatial wave structure due to its mechanism of origin. But on average the sky has an almost constant airglow brightness of 22$^m$ per square second of arc in V band (relatively close to the visual). Alternatively the airglow brightness can be taken from~\cite{KRASSOVSKY1962883} with its spectrum.
+
+The zodiacal light brightness model was taken from~\cite{BUFFINGTON201688}. The zodiacal light being a scattered light has a sunlight spectrum and was approximated by a black body spectrum with 6000~K temperature.
+
+
+
+Current of the central PMT is shown on the Fig.~\ref{fig:current}. 
+
 .. Dima will write this subsection ...
 .. Dima will write this subsection ...
 .. Dima will write this subsection ...
@@ -309,26 +309,31 @@ Each star has its own spectrum that in the visual range can be approximated by t
 .. Dima will write this subsection ...
 
 %%%%%%%%%%%%%%%%%%%%%
-%% 2012-3 currents
-\begin{figure}[t]
-    \includegraphics[width=0.48\textwidth]{figs/2012-3_currents_H_dN.pdf}
-    \caption{Balloon altitude is generally stable. Flight 3-2013 data.}
-    \label{fig:2012-3_currents}
-\end{figure}
-
-\begin{figure}[t]
-    \includegraphics[width=0.48\textwidth]{figs/2012_drift.pdf}
-    \caption{Balloon altitude is generally stable. Flight 3-2013 data.}
-    \label{fig:2012-drift}
-\end{figure}
 
 
 \subsection{Fairy tale about PMTs and dark forest}
 
+%% 2012-3 currents
+\begin{figure}[t]
+    \includegraphics[width=0.48\textwidth]{figs/2012-3_currents_H_dN.pdf}
+    \caption{Currents, drift to the North and detector altitude during flight 2012-3.}
+    \label{fig:2012-3_currents}
+\end{figure}
+
+\begin{figure}[tb]
+    \includegraphics[width=0.48\textwidth]{figs/2012_drift.pdf}
+    \caption{The SPHERE-2 detector drift in 2012.}
+    \label{fig:2012-drift}
+\end{figure}
+\begin{figure}[tb]
+    \includegraphics[width=0.45\textwidth]{figs/newplot2.pdf}
+    \caption{The SPHERE-2 detector drift in 2012.}
+\end{figure}
+
 {\Russian
 Общий ход токов ФЭУ в течение каждого сеанса измерения обуславливается фоновой засветкой и состоянием атмосферы. Также величина тока зависит от поверхности, которую осматривает ФЭУ.
 
-В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:retina}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока коррелирует по времени с изменением сноса на север. 
+В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока коррелирует по времени с изменением сноса на север. 
 
 Зная очертания береговой линии озера Байкал и исходя из данных телеметрии, мы делаем вывод, что такое уменьшение токов обусловлено тем, что под действием ветра на высоте более 700~м аэростат с детектором сносился к северу рис.~\ref{fig:2012-drift}, детектор наклонялся в сторону севера, в поле зрения ФЭУ попали участки суши, покрытые темными деревьями. Установка частично смотрит на тёмный берег, а не на снег озера, поэтому токи уменьшились. Чем дальше на север сдвигалась установка, тем более дальний от края ФЭУ видел уменьшение тока.  
 
@@ -348,6 +353,25 @@ The position and inclination of the SPHERE-2 detector are the important values t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{GPS altitude correction by the barometer data}
 
+
+%% gps vs barometer altitudes
+\begin{figure}[t]
+    \includegraphics[width=0.48\textwidth]{figs/good_corr.eps}
+    \caption{Balloon altitude is generally stable. Flight 3-2013 data.}
+    \label{fig:dp-h-good}
+    \vspace{1pc}
+
+    \includegraphics[width=0.48\textwidth]{figs/bad_corr.eps}
+    \caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
+    \label{fig:dp-h-bad}
+\end{figure}
+%\begin{figure}[tb]
+    %\includegraphics[width=0.48\textwidth]{figs/gps_barometer.eps} 
+    %\caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
+%\label{fig:h_gps-hpa}
+%\end{figure}
+
+
 The detector observation area depends on the detector altitude $H$ as a square function. To provide the altitude values the GPS module, onboard barometer and barometer at the start point on the Baikal ice surface level with minute-by-minute measurements are used. One can expect the GPS altitude $h$ and the difference between surface level and the balloon level pressures $\Delta p = (p_{surf} - p_{air})$ to behave consistently because of a pressure dependence on the altitude. Other major parameters that affect pressure, such as temperature and humidity, affect both $p_{surf}$ and $p_{air}$ and their effects at least partially cancel each other out in $\Delta p$.
 
 This expected consistent behavior is observed when balloon altitude is generally stable. On Fig.~\ref{fig:dp-h-good} such region is shown in the flight 3 data. $h$ and $\Delta p$ are normalized and filtered with high-pass digital Butterworth filter with cutoff frequency $0.83$ mHz ($T=20$ min). It's clear that short-term fluctuations of GPS altitude and pressure difference are in good correlation. Correlation coefficient is $0.96$ for this data and not less than $0.9$ for all other flights' stable altitude regions filtered the same way. From this we conclude that the GPS altitude data are reliable when the detector altitude is relatively stable and the surface--air pressure difference directly indicates rapid fluctuations in the altitude.
@@ -363,17 +387,17 @@ After the corrections to GPS altitude data had been made we estimated the atmosp
 \begin{figure}[bt]
 \centering
 \begin{minipage}[t]{0.48\textwidth}
-\includegraphics[width=\textwidth]{figs/atmosphere_T.pdf}
-\vspace{-1.0pc}
-\caption{Mass overburden versus altitude points in each flight and CORSIKA profiles. Solid black line represents profile adopted in the preliminary modelling}
+    \includegraphics[width=\textwidth]{figs/atmosphere_T.pdf}
+    \vspace{-1.0pc}
+    \caption{Mass overburden versus altitude points in each flight and CORSIKA profiles. Solid black line represents profile adopted in the preliminary modelling}
 \label{fig:massoverburden}
 \end{minipage}
 \vfill
 \vspace{1pc}
 \begin{minipage}[t]{0.48\textwidth}
-\includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
-\vspace{-1.0pc}
-\caption{Density versus altitude points in each flight and CORSIKA density profiles (negative derivatives of the curves in Fig. \ref{fig:massoverburden}). Solid black line represents profile adopted in the preliminary modelling}
+    \includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
+    \vspace{-1.0pc}
+    \caption{Density versus altitude points in each flight and CORSIKA density profiles (negative derivatives of the curves in Fig. \ref{fig:massoverburden}). Solid black line represents profile adopted in the preliminary modelling}
 \label{fig:density}
 \end{minipage}
 \end{figure}
@@ -431,22 +455,20 @@ model pair  & mean &  variation   & relative variation \\
 %%% === LDF Calculation
 \begin{figure*}[tb]
  \begin{minipage}[t]{0.48\textwidth}
-\centering
-\includegraphics[width=19pc]{figs/11d3.eps}%
-\vspace{-1.0pc}
-\caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-pair 11/3. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
+    \centering
+    \includegraphics[width=19pc]{figs/11d3.eps}%
+    \vspace{-1.0pc}
+    \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
+    pair 11/3. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
 \label{fig:3d11}
-%\end{figure}
 \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\textwidth}
-%\begin{figure}[tb]
-\centering
-\includegraphics[width=19pc]{figs/11d4.eps}%
-\vspace{-1.0pc}
-\caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-pair 11/4. Bin size 50~m $\times$ 50~m. 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=19pc]{figs/11d4.eps}%
+    \vspace{-1.0pc}
+    \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
+    pair 11/4. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
 \label{fig:4d11}
 \end{minipage}
 \end{figure*}
@@ -457,27 +479,27 @@ The use of the experimental points in $T$ or $\rho$ cannot provide a reasonable 
 include data on vertical profile of atmosphere layer up to altitudes at least 20 km above the lake Baikal level because the Cherenkov light mostly comes from this layer. Still we can make some
 conclusions on the atmosphere model effect on primary energy and mass estimates by comparing the artificial showers simulated for different models.
 
-We produced such artificial events initiated by 10 PeV protons for a number of models,  passing close to the experimental $T$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
-The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tyled with 2.5m $\times$ 2.5m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50m squares approximately imitating the sensitivity spots of telescope pixels.
+We produced such artificial events initiated by 10~PeV protons for a number of models,  passing close to the experimental $T$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
+The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tyled with 2.5~m $\times$ 2.5~m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50~m squares approximately imitating the sensitivity spots of telescope pixels.
 Sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows mean values and variations of Cherenkov photon number ratios for three pairs of CORSIKA atmosphere models (3/4, 3/11 and 4/11). The ratios of sample mean lateral distributions for 3/11 and 4/11 pairs are shown in Fig.~\ref{fig:3d11} and Fig.~\ref{fig:4d11}, respectively. Pair 3/4 reflects maximum effect of atmosphere model choice from the viewpoint of experimental $T$ and $\rho$ measurements. Pairs 3/11 and 4/11 compare the model 11 used in simulations to the models approximating the experimental data.
 Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about 6 to 12\% (12 to 20\%) near the shower core, closer than 80 m, and about -2 to +6\% (0 to +12\%) in 80-150m circle for 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
 
 
-%%%% === Retina picture ===
+%%%% === mosaic picture ===
 \begin{figure}[tb]
 %\begin{minipage}[t]{0.47\textwidth}
-%\centering
-%\includegraphics[width=17pc]{figs/optics_side}\hspace{2pc}%
-%\caption{Optical scheme of the \mbox{SPHERE-2} detector.}
+    %\centering
+    %\includegraphics[width=17pc]{figs/optics_side}\hspace{2pc}%
+    %\caption{Optical scheme of the \mbox{SPHERE-2} detector.}
 %\label{fig:optics}
 %\end{minipage}
 %\hfill
 %\begin{minipage}[t]{0.47\textwidth}
 \centering
-\includegraphics[width=19pc]{figs/retina.pdf}%
-\vspace{-1.0pc}
-\caption{The PMT retina of the SPHERE-2 detector with PMTs numbers indicated.}
-\label{fig:retina}
+    \includegraphics[width=19pc]{figs/mosaic.pdf}%
+    \vspace{-1.0pc}
+    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.}
+\label{fig:mosaic}
 %\end{minipage}
 \end{figure}
 
@@ -485,12 +507,11 @@ Table data clearly states that substantial changes of atmosphere model affect th
 %%% === PMT FOV picture %%%
 \begin{figure*}[bth]
 \centering
-%\includegraphics[width=0.44\textwidth, bb= 100 100 900 900,clip]{figs/fov.eps}\hspace{2pc}%
-\includegraphics[width=0.9\textwidth]{figs/fov.pdf}
-%\vspace{10pt}
-%\includegraphics[width=0.49\textwidth]{figs/fov_log.eps}%
-
-\caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:retina} in assuption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformely.}
+    %\includegraphics[width=0.44\textwidth, bb= 100 100 900 900,clip]{figs/fov.eps}\hspace{2pc}%
+    \includegraphics[width=0.9\textwidth]{figs/fov.pdf}
+    %\vspace{10pt}
+    %\includegraphics[width=0.49\textwidth]{figs/fov_log.eps}%
+    \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:mosaic} in assumption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformly.}
 \label{fig:pmt_fov}
 \end{figure*}
 
@@ -506,7 +527,7 @@ The detector was set at 1000~m altitude with zero inclination above flat horizon
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflectivity coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
 
 Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector).
-Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:retina}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT retina center on Fig.~\ref{fig:retina}. The PMT1 is the Hamamatsu photodetector that has the larger sensitive photocathode area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
+Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:mosaic}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT mosaic center on Fig.~\ref{fig:mosaic}. The PMT1 is the Hamamatsu R3886 PMT that has the larger sensitive photocathode area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
 
 The same calculations was made for the detector position with different detector axis inclination angles. From the known PMT FOV the coordinates for FOV center were obtained and later used in shower arrival direction reconstruction and shower axis location.
 
@@ -518,9 +539,9 @@ The electronics part includes a data acquisition system (DAQ), trigger system, c
 
 %% FADC summation figure
 \begin{figure}[tb]
-\centering
-\includegraphics[width=0.4\textwidth]{figs/int_discr.eps}
-\caption{Functional diagram of the summation of the FADC pulses for channel's discriminator.}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/int_discr.eps}
+    \caption{Functional diagram of the summation of the FADC pulses for channel's discriminator.}
 \label{fig:int_discr}
 \end{figure}
 
@@ -540,9 +561,9 @@ The trigger system (TS) of the SPHERE-2 detector produces an `event' signal when
 %% блок-схема работа считывания данных (Бонвеч)
 %% get_event_algorithm
 \begin{figure}[t]
-\centering
-\includegraphics[width=0.43\textwidth]{figs/get_event_algorithm.pdf}\hspace{2pc}%
-\caption{The scheme of the procedure to read event data from the buffer.}
+    \centering
+    \includegraphics[width=0.43\textwidth]{figs/get_event_algorithm.pdf}\hspace{2pc}%
+    \caption{The scheme of the procedure to read event data from the buffer.}
 \label{fig:get_event_algorithm}
 \end{figure}
 % На схеме видна возможная причина большого количества плохих кадров. Если в буфере есть несколько событий и при чтении первого события произошла ошибка чтения FIFO, то следующие события все равно читаются и сохраняются, хотя было бы лучше их выбрасывать, сразу очищая буфер.
@@ -554,8 +575,6 @@ When the TS produced a start signal the DAQ started recording 12.8~$\mu$s of sig
 
 The scheme of the reading data from the buffer procedure is shown on the figure~\ref{fig:get_event_algorithm}. 
 The telemetry data written to binary file is: event number, local computer time, two detector inclination angles, GPS coordinates, altitude, UTC time, trigger time, magnetometer angle, average anode currents for all 109~PMT. 
-
-
 
 One `event' frame information takes 220~kBytes. All the data is saved to a binary file on the detector on-board computer SSD drive. From primary binary files the work frames files were created during data preprocessing. Preprocessing included baselines estimation and substraction, time drift detection and correction, for detail see~\ref{sect:preprocessing}.
 
@@ -612,7 +631,7 @@ The all the absolute calibration data and procedure was rechecked. Small was cor
 The SPHERE-2 detector registered more than 30 thousands trigger event frames but not all of them was caused by signals of the EAS Cherenkov light. 
 Examples of `event' frames detected by the SPHERE-2 detector are presented on the figs.~\ref{fig:frames}, \ref{fig:pulses} and \ref{fig:mosaic_sum}. They are of different types of  dataframes. 
 
-The Fig.~\ref{fig:frames} present events as a full map of signal intensities in all PMT channels during the frame time. The x-axis on the Fig.~\ref{fig:frames} is the detector PMT number $N$ according to Fig.~\ref{fig:retina} and the y-axis is the 12.5~ns time bin number $T$. The color intensity of every point on the Fig.~\ref{fig:frames} is proportional to the logarithm of the signal of the  photomultiplier $N$ in the time bin $T$. Few measuring channels sometimes failed or worked incorrectly. The data of such channels were not processed and are visible in the figures as zeros.
+The Fig.~\ref{fig:frames} present events as a full map of signal intensities in all PMT channels during the frame time. The x-axis on the Fig.~\ref{fig:frames} is the detector PMT number $N$ according to Fig.~\ref{fig:mosaic} and the y-axis is the 12.5~ns time bin number $T$. The color intensity of every point on the Fig.~\ref{fig:frames} is proportional to the logarithm of the signal of the  photomultiplier $N$ in the time bin $T$. Few measuring channels sometimes failed or worked incorrectly. The data of such channels were not processed and are visible in the figures as zeros.
 
 Fig.~\ref{fig:pulses} shows signal pulses in channels with the largest signal magnitudes in the event frame. And the Fig.~\ref{fig:mosaic_sum} demonstrates an integral signal for every optic channel. The integration was made as a sum of signals in time limits indicated on the Fig.~\ref{fig:pulses} for every frame respectively. 
 
@@ -623,30 +642,31 @@ Fig.~\ref{fig:pulses} shows signal pulses in channels with the largest signal ma
 %%%%   2012-3559!!!!!!!!!!!!!!!!!!!!!!
 
 \begin{figure*}[btp]
-\centering
-%\includegraphics[width=\textwidth]{figs/frames.eps}%
-%ebb -v figs/frames_col.pdf -- to know boundaries bb
-\includegraphics[width=0.92\textwidth]{figs/frames_bw.pdf}
-\caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a --- is an `event' frame, b --- calibration frame, c --- direct CL, d --- direct CL, e --- longtime events}
+    \centering
+    %\includegraphics[width=\textwidth]{figs/frames.eps}%
+    %ebb -v figs/frames_col.pdf -- to know boundaries bb
+    \includegraphics[width=0.92\textwidth]{figs/frames_bw.pdf}
+    \caption{Frames recorded by the SPHERE-2 detector. The baselines are subtracted, time drift is not corrected, calibration coefficients are not applied. a --- is an `event' frame, b --- calibration frame, c --- direct CL, d --- direct CL, e --- longtime events}
 \label{fig:frames}
 
 %%% Data frame Pulses and Sums
-\includegraphics[width=0.9\textwidth]{figs/pulses.eps}%
-%\includegraphics[width=0.5\textwidth]{figs/event_channels.eps}%
-\caption{Pulses in channels with maximal signal in the same frames as on Fig.~\ref{fig:frames}. The baselines are subtracted, time drift is corrected, calibration coefficients are applied.}
+    \includegraphics[width=0.9\textwidth]{figs/pulses.eps}%
+    %\includegraphics[width=0.5\textwidth]{figs/event_channels.eps}%
+    \caption{Pulses in channels with maximal signal in the same frames as on Fig.~\ref{fig:frames}. The baselines are subtracted, time drift is corrected, calibration coefficients are applied.}
 \label{fig:pulses}
 \vspace{1.2pc}
-\includegraphics[width=0.9\textwidth]{figs/mosaic_sums_lin.eps}%
-\vspace{-1.0pc}
-\caption{The sum signal for the events on Fig.~\ref{fig:frames} integrated in time limits indicated on the Fig.~\ref{fig:pulses} x-axis. PMTs are arranged according to the scheme on the Fig.~\ref{fig:retina}. Color intensity of points is proportional to the logarithm of the PMT signal sum.}
+    \includegraphics[width=0.9\textwidth]{figs/mosaic_sums_lin.eps}%
+    \vspace{-1.0pc}
+    \caption{The sum signal for the events on Fig.~\ref{fig:frames} integrated in time limits indicated on the Fig.~\ref{fig:pulses} x-axis. PMTs are arranged according to the scheme on the Fig.~\ref{fig:mosaic}. Color intensity of points is proportional to the logarithm of the PMT signal sum.}
 \label{fig:mosaic_sum}
 \end{figure*}
+
 
 \subsection{Trigger event zoo}
 
 The `event' frame 11588 on the Fig.~\ref{fig:frames}a, \ref{fig:pulses}a and \ref{fig:mosaic_sum}a is an EAS-caused event, it is an image of reflected from the snow surface EAS Cherenkov light. The event structure is typical for Cherenkov light frames as it was described in our paper dedicated to simulation of the SPHERE-2 detector experiment~\cite{Ant19}. The event was detected from altitude 702~m above show surface. The inclination of the detector was $1.5^{\circ}$
 
-On the Fig.~\ref{fig:retina_eas} this event is represented step by step as a sequience of images with 12.5~ns interval. It is clearly seen how the signal of reflected from the snow Cherenkov light goes through the PMT retina.
+On the Fig.~\ref{fig:mosaic_eas} this event is represented step by step as a sequience of images with 12.5~ns interval. It is clearly seen how the signal of reflected from the snow Cherenkov light goes through the PMT mosaic.
 
 The frame 11589 on the Fig.~\ref{fig:frames}b, \ref{fig:pulses}b and \ref{fig:mosaic_sum}b is the `calibration' event following the event 11588. It has the special time signal structure and big magnitudes in all channels caused by LEDs flushes. Calibration frames are separated to calculate the every measuring channel calibration coefficients as desctibed in~\cite{Ant16}.
 
@@ -696,12 +716,12 @@ All the data frames are pre-processed, including baselines estimation and substr
 
 
 Calibration frames have not special tags and are separated by the large signal sum and the large pulse duration. The detector was configured to make calibration frame after every trigger event frame. But sometimes during experiment the counting rate of the detector exceeded reception capacity of the detector buffer and it caused the buffer overflow and a failure in its operation so the calibration frame was not recorded. Therefore not exact half of recorded events are calibration ones.
-From all 3813 frames recordered in 2013 run near the half of them (1901) was calibration ones. 
+From all 3813 frames recorded in 2013 run near the half of them (1901) was calibration ones. 
 
 The failure of the buffer is seen also as a trigger bit location outside of [220, 300] time interval in the dataframe. So frames with trigger time bin less than 220 and more than 300 time bin was deleted from further consideration. There was 130 frames with this trigger failure.
 
-From the further consideration was rejected frames with small time diration like event 11308 on the Fig.~\ref{fig:frames}c. Due to the experiment geometry the signal from the Cherenkov light cannot has duration less than 6~time bins or 75~ns. This condition cuts 1200 (or 1284) frames. 
-The rest number of event was iqual to 491 (or 575 in case of criteria Dt $>$ 5). But not all this events was EAS-caused ones. To separate EAS-caused frames the search for the Cherenkov light flashes were performed with special pattern analysis procedure. % and some methods of ML were used. 
+From the further consideration was rejected frames with small time duration like event 11308 on the Fig.~\ref{fig:frames}c. Due to the experiment geometry the signal from the Cherenkov light cannot has duration less than 6~time bins or 75~ns. This condition cuts 1200 (or 1284) frames. 
+The rest number of event was equal to 491 (or 575 in case of criteria Dt $>$ 5). But not all this events was EAS-caused ones. To separate EAS-caused frames the search for the Cherenkov light flashes were performed with special pattern analysis procedure. % and some methods of ML were used. 
 
 
 %\subsection{Search for the Cherenkov light flashes with pattern analysis procedure}
@@ -817,9 +837,10 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 
 \subsection{Baseline handling}
 
-The \mbox{SPHERE-2} DAQ system had two data channels per one PMT working with half phaze shift effectively doubling sampling frequency. Due to some technical reasons (see detailed description of \mbox{SPHERE-2} electronics in \cite{Ant15a}) in the DAQ system the current was added to the PMT output before it got to the FADC. This additional baseline current, individual in each channel, resulted in on average about 40--60 additional `code' units (arbitrary unit on the FADC output, see~\cite{Ant16} for details) and not necessarily integer in those units. The exact value of added current was unknown and changed slowly over time with the change of temperature and conditions within the control block (this was observed on-site during days temprature change). The changes of the baseline current were small and slow enough to consider the baseline constant during each recorded frame (during the flight the current changed on about 1--2 units per 4 hours). 
+The \mbox{SPHERE-2} DAQ system had two data channels per one PMT working with half phase shift effectively doubling sampling frequency. Due to some technical reasons (see detailed description of \mbox{SPHERE-2} electronics in \cite{Ant15a}) in the DAQ system the current was added to the PMT output before it got to the FADC. This additional baseline current, individual in each channel, resulted in on average about 40--60 additional `code' units (arbitrary unit on the FADC output, see~\cite{Ant16} for details) and not necessarily integer in those units. The exact value of added current was unknown and changed slowly over time with the change of temperature and conditions within the control block (this was observed on-site during days temperature change). The changes of the baseline current were small and slow enough to consider the baseline constant during each recorded frame (during the flight the current changed on about 1--2 units per 4 hours). 
 
-During data preprocessing the baselines in each channel were estimated as an average value from the first 400 time bins recorded, see for example Fig.~\ref{fig:pied}. The better estimation could be achieved by fitting the distribution of all values recorded in the frame (thus rendering procedure less sensitive to extreme fluctuations or random particle signals) with Gaussian distribution function. However during the later signal reconstruction procedure small baseline uncertainties were automatically accounted for, thus simpler and faster procedure was used. After a baseline in a channel was estimated its value was substracted from signals in this channel to have a near-zero signal baseline further. figs.~\ref{fig:frames}, \ref{fig:pulses} and \ref{fig:mosaic_sum} show events signals with substracted baselines.
+During data preprocessing the baselines in each channel were estimated as an average value from the first 400 time bins recorded, see for example Fig.~\ref{fig:pied}. The better estimation could be achieved by fitting the distribution of all values recorded in the frame (thus rendering procedure less sensitive to extreme fluctuations or random particle signals) with Gaussian distribution function. However during the later signal reconstruction procedure small baseline uncertainties were automatically accounted for, thus simpler and faster procedure was used. After a baseline in a channel was estimated its value was subtracted from signals in this channel to have a near-zero signal baseline further. figs.~\ref{fig:frames}, \ref{fig:pulses} and \ref{fig:mosaic_sum} show events signals with 
+subtracted baselines.
 
 Along with average value for each channel the standard deviations of signals in each channel $\sigma_i$ were estimated and found to be from 0.5 to 2.5 arb.~unit, see  Fig.~\ref{fig:piedfluct}. The fluctuation of the baseline in each data channel came from constant starlight background that was present during the measurements. With the clear moonless night sky starlight background is (1--2)$\cdot10^{12}$~photon~sr$^{-1}$~s$^{-1}$~m$^{-2}$~\cite{starlightbackground}. Thus for 12.5~ns about 50--70 photons from starlight background should had been falling on each PMT on average producing about 4--7 photoelectrons, which translates in 3--5 arb. units. The characteristic amplitude of these fluctuations were individual for each channel and came from differences in amplification and quantum efficiency of each PMT. More sensitive PMTs showed higher fluctuations. The estimated fluctuations are consistent with the expected ones. The electronics and PMTs themselves produced very low noise (less than 1 arb. unit) as was checked in dark room in the laboratory and on-site. The average fluctuation values later were used as thresholds during EAS events identification to filter-out noise. 
 
@@ -833,7 +854,7 @@ Along with average value for each channel the standard deviations of signals in 
 %\end{figure} 
 
 
-%Each data recording channel has independent FADC and independent buffer to store data. All FADCs has equal parameters and sampling frequency. So in ideal conditions that would've sufficed to have all channels synchronized via the trigger signal. In real design a flaw was found that sometimes caused the high amplitude signal from PMT to induce the fake `stop-go' signal in buffer control lines thus creating a time drift between channels. In order detect, estimate and compensate this drift the calibration system produced a short all-LED synchronization pulse in 5.8~$\mu$s after the trigger signal. This pulse appeared in the end of the `event' frame and is clearly seen on the Fig.~\ref{fig:frames} at time near bin 900. The calibration LEDs illuminated the PMT mosaic via equal-length optical fibers that were located near the PMT retina. Hence the light pulse falling on the mosaic was physically synchronous in every PMT. 
+%Each data recording channel has independent FADC and independent buffer to store data. All FADCs has equal parameters and sampling frequency. So in ideal conditions that would've sufficed to have all channels synchronized via the trigger signal. In real design a flaw was found that sometimes caused the high amplitude signal from PMT to induce the fake `stop-go' signal in buffer control lines thus creating a time drift between channels. In order detect, estimate and compensate this drift the calibration system produced a short all-LED synchronization pulse in 5.8~$\mu$s after the trigger signal. This pulse appeared in the end of the `event' frame and is clearly seen on the Fig.~\ref{fig:frames} at time near bin 900. The calibration LEDs illuminated the PMT mosaic via equal-length optical fibers that were located near the PMT mosaic. Hence the light pulse falling on the mosaic was physically synchronous in every PMT. 
 
 %This pulse with approximate duration of 100~ns was strong (about 400 arb.\ code units) and was easily detectable in each data channel. The center-of-mass approach was uses to find the exact position of the synchronization pulse. The Monte Carlo simulation of synchronization pulse digitalization and automatic center-of-mass estimation was done to determine the procedures precision. 
 %On the Fig.~\ref{fig:synchro} the results of this simulation are shown. 
@@ -864,18 +885,18 @@ Along with average value for each channel the standard deviations of signals in 
 % в приложения и на всю страницу, дописать параметры события
 \begin{figure*}[pt]
     \centering
-    \includegraphics[width=0.7\textwidth]{figs/retina_11588_lin.eps}%
-    \caption{The signals of the PMT retina with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
+    \includegraphics[width=0.7\textwidth]{figs/mosaic_11588_lin.eps}%
+    \caption{The signals of the PMT mosaic with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
     }
-    \label{fig:retina_eas}
+    \label{fig:mosaic_eas}
 \end{figure*}
 
 \begin{figure*}[pt]
     \centering
-    \includegraphics[width=0.9\textwidth]{figs/retina_11588_log1.pdf}%
-    \caption{The signals of the PMT retina with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
+    \includegraphics[width=0.9\textwidth]{figs/mosaic_11588_log1.pdf}%
+    \caption{The signals of the PMT mosaic with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
     }
-    \label{fig:retina_eas2}
+    \label{fig:mosaic_eas2}
 \end{figure*}
 
 \end{document}
