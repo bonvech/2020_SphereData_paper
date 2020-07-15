@@ -331,14 +331,15 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 \end{figure}
 
 {\Russian
-Общий ход токов ФЭУ в течение каждого сеанса измерения обуславливается фоновой засветкой и состоянием атмосферы. Также величина тока зависит от поверхности, которую осматривает ФЭУ.
+Общий ход токов ФЭУ в течение каждого сеанса измерения обуславливается фоновой засветкой и состоянием атмосферы. Также величина тока зависит от поверхности, которую осматривает ФЭУ. В стандартном режиме все ФЭУ осматривают снежную поверхность озера Байкал. Но в одном полете установка частично наблюдала берег.
 
-В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока коррелирует по времени с изменением сноса на север. 
+В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока ФЭУ коррелирует по времени с изменением сноса на север. 
 
 Зная очертания береговой линии озера Байкал и исходя из данных телеметрии, мы делаем вывод, что такое уменьшение токов обусловлено тем, что под действием ветра на высоте более 700~м аэростат с детектором сносился к северу рис.~\ref{fig:2012-drift}, детектор наклонялся в сторону севера, в поле зрения ФЭУ попали участки суши, покрытые темными деревьями. Установка частично смотрит на тёмный берег, а не на снег озера, поэтому токи уменьшились. Чем дальше на север сдвигалась установка, тем более дальний от края ФЭУ видел уменьшение тока.  
 
 Потом аэростат спустили пониже, снос стал меньше и в поле зрения всех ФЭУ остался только снег. 
 При этом есть ФЭУ, например, PMT2 на рис.~\ref{fig:2012-3_currents}, которые все время смотрят только на снег и видят отраженный от него звездный свет. Временной ход тока в таких ФЭУ можно объяснить общим изменением засветки атмосферы, ну или еще чем-нибудь и Дима это обязательно сделает. 
+
 
 }
 
@@ -474,10 +475,7 @@ model pair  & mean &  variation   & relative variation \\
 \end{figure*}
 
 
-CORSIKA atmosphere model 11 was used all through the modeling runs. Modeling lasted for about 2 years and at that time it was not possible to choose an atmospheric model close to reality.
-The use of the experimental points in $T$ or $\rho$ cannot provide a reasonable  choice of the model, it can only give us some clue as to what the model should be. Full-fledged choice must
-include data on vertical profile of atmosphere layer up to altitudes at least 20 km above the lake Baikal level because the Cherenkov light mostly comes from this layer. Still we can make some
-conclusions on the atmosphere model effect on primary energy and mass estimates by comparing the artificial showers simulated for different models.
+CORSIKA atmosphere model 11 was used all through the modeling runs. Modeling lasted for about 2 years and at that time it was not possible to choose an atmospheric model close to reality. The use of the experimental points in $T$ or $\rho$ cannot provide a reasonable  choice of the model, it can only give us some clue as to what the model should be. Full-fledged choice must include data on vertical profile of atmosphere layer up to altitudes at least 20 km above the lake Baikal level because the Cherenkov light mostly comes from this layer. Still we can make some conclusions on the atmosphere model effect on primary energy and mass estimates by comparing the artificial showers simulated for different models.
 
 We produced such artificial events initiated by 10~PeV protons for a number of models,  passing close to the experimental $T$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
 The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tyled with 2.5~m $\times$ 2.5~m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50~m squares approximately imitating the sensitivity spots of telescope pixels.
