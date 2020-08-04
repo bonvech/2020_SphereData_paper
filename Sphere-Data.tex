@@ -352,37 +352,26 @@ The position and inclination of the SPHERE-2 detector are the important values t
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{GPS altitude correction by the barometer data}
+\subsection{GPS altitude correction with barometer data}
 
 
-%% gps vs barometer altitudes
-\begin{figure}[t]
-    \includegraphics[width=0.48\textwidth]{figs/good_corr.eps}
-    \caption{Balloon altitude is generally stable. Flight 3-2013 data.}
-    \label{fig:dp-h-good}
-    \vspace{1pc}
-
-    \includegraphics[width=0.48\textwidth]{figs/bad_corr.eps}
-    \caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
-    \label{fig:dp-h-bad}
+\begin{figure}[tb]
+    \includegraphics[width=0.48\textwidth]{figs/height_correction.pdf} 
+    \caption{Example of anomalous GPS altitude, compared with barometric height; red band shows interval with GPS data glitch (top panel). Same data with digital high-pass Butterworth filter applied, showing distinguished regions of good and bad correlation of GPS and barometric data (middle panel). Smoothed delta of data on the middle panel with threshold, above which correction is applied to GPS data.}
+\label{fig:h_corr}
 \end{figure}
-%\begin{figure}[tb]
-    %\includegraphics[width=0.48\textwidth]{figs/gps_barometer.eps} 
-    %\caption{The detector altitude by GPS module and reconstructed with pressure sensor data. Flight 4-2013, the elevation phase.}
-%\label{fig:h_gps-hpa}
-%\end{figure}
 
+Thorough telemetry data analysis reveals that at some periods of time recorded GPS data for altitude is inadequate. Namely, after sudden changes in altitude due to balloon ascent or descent, GPS height lags behind corresponding pressure change and varies in a smoothed fashion. The example of such behavior is shown in Fig. \ref{fig:h_corr}, top panel. We were unable to find out the exact source of this distortion, but our best guess is that it's a result of GPS module's internal error correction algorithm. Module's primary application is naval navigation \cite{GPS-module-specs} and it may interpret sudden change in altitude as an error.
 
-The detector observation area depends on the detector altitude $H$ as a square function. To provide the altitude values the GPS module, onboard barometer and barometer at the start point on the Baikal ice surface level with minute-by-minute measurements are used. One can expect the GPS altitude $h$ and the difference between surface level and the balloon level pressures $\Delta p = (p_{surf} - p_{air})$ to behave consistently because of a pressure dependence on the altitude. Other major parameters that affect pressure, such as temperature and humidity, affect both $p_{surf}$ and $p_{air}$ and their effects at least partially cancel each other out in $\Delta p$.
+Affected time intervals are relatively short for most flights, but during them some (сколько?) events were recorded. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude.
 
-This expected consistent behavior is observed when balloon altitude is generally stable. On Fig.~\ref{fig:dp-h-good} such region is shown in the flight 3 data. $h$ and $\Delta p$ are normalized and filtered with high-pass digital Butterworth filter with cutoff frequency $0.83$ mHz ($T=20$ min). It's clear that short-term fluctuations of GPS altitude and pressure difference are in good correlation. Correlation coefficient is $0.96$ for this data and not less than $0.9$ for all other flights' stable altitude regions filtered the same way. From this we conclude that the GPS altitude data are reliable when the detector altitude is relatively stable and the surface--air pressure difference directly indicates rapid fluctuations in the altitude.
+First of all, to identify affected time intervals we calculated approximate <<barometric height>> from pressure data using inverted barometric formula $H_{bar} = H_0 - a \log \frac{P}{P_0}$ with parameters $H_0 = 456~\textrm{м}$ (Baikal surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = \frac{RT}{Mg} \approx 8400~\textrm{m}$ (standard value for barometric formula). Next, we have applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only fast variations of both values. Cutoff frequency for filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope was set to around $12~\textrm{db per octave}$. Resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
 
-However, there are regions in data in which $h$ and $\Delta p$ behave rather inconsistently. On Fig.~\ref{fig:dp-h-bad} such region in the flight 4 data is shown (these data are scaled without any filtering). When barometer data change rapidly indicating sudden lift of balloon GPS data starts to change with significant delay and in unnatural smoothed fashion. Such regions in GPS data are observed during almost every abrupt changes in balloon altitude. We believe that this is due to some internal algorithm of the GPS module. Module was designed to be used on ships so it probably handles rapid change in altitude as an error and tries to smooth it.
+It is clear that for stable altitude and valid GPS measurements GPS and barometric height are subjected to fast, somewhat correlated fluctuations (they are not completely correlated probably due to GPS error of the order of several meters). In contrast, intervals of smoothed GPS data show divergence of these two values. We calculate delta between filtered GPS and barometric altitudes and apply moving average with $6~\textrm{min}$ window. We then define intervals subject to correction as those that feature the smoothed delta above a threshold of $5~\textrm{m}$ in absolute value. The threshold is chosen so that in regular conditions the smoothed delta is doesn't exceed it, as it has normal-like distribution with standard deviation of around $3~\textrm{m}$. Smoothed delta with the threshold are shown in Fig \ref{fig:h_corr}, bottom panel; correction interval is shown on top panel with red band.
 
-Internal algorithm of the GPS module is not available so we've made an attempt to reconstruct the correct detector altitude data based on pressure measurements which are found to be directly linked to the altitude. After we manually identified smoothed regions such as that shown on Fig.~\ref{fig:dp-h-bad} we picked two adjacent regions of relatively stable altitude before and after it (example of these regions is shown on Fig.~\ref{fig:dp-h-bad} with red bands). In these regions pressure and GPS altitude data behave consistently (in terms of filtered short-term fluctuations) so we assumed that both measurements are valid. Between these regions the GPS altitude data are invalid and to be replaced with `barometric' altitude logarithmic interpolation in the form of $h-h_0 = - a \, \ln(p/p_0)$. Obtained coefficient $a$ describes local atmosphere and is close to widely adopted value of $8$~km.
+After intervals are picked, for each of them we find two adjacent intervals $2~\textrm{min}$ each with correct GPS data and once again use barometric formula to estimate actual altitude inside the interval. In this case it is used to describe local behavior of $H(P)$. We fit $(P, H)$ data points from adjacent regions with the same barometric function and replace smoothed GPS data with the new <<local barometric height>>.
 
-After the corrections to GPS altitude data had been made we estimated the atmosphere density profile. 
-
+After the corrections to GPS altitude data had been made we estimated the atmosphere density profile.
 
 %%% Atmosphere profiles figures %%%%
 \begin{figure}[bt]
@@ -605,14 +594,14 @@ year &         & number & hours & detected \\
 
 \subsection{Calibration}
 % Проверка, правка (Подгрудков)
-The PMT sensitivity in general depends on the temperature, background light, power supply voltage and etc. The online calibration system was used to correctly account for PMT gain factors.
+The PMT sensitivity in general depends on the temperature, background illumination, power supply voltage and etc. The online calibration system was used to correctly account for PMT gain factors.
 
 Each trigger `event' frame is paired by a follow-up `calibration event' that was saved in the same format as the main `event' data. The `calibration event' is caused by the illumination of the PMT mosaic by the LEDs from the mirror surface level via optical fibers. The individual LED flashes duration was set according to the calibration algorithm. Each LED produced two flashes with known light distribution over the PMT mosaic. 
 
 The `calibration' frame was used to estimate PMTs relative sensitivity and check PMTs for possible non-linearity. The procedure for obtaining calibration and linearity corrections data was described in detail in the dedicated paper~\cite{Ant16}. 
 
 %\subsection update to the procedure
-The procedure described in~\cite{Ant16} since had some updates. First one was a described below in section~\ref{sect:noiseremoval} procedure of identification and specific noise removal from every frame. This made the data more reliable and finer details became accessible. More precise data allowed a better estimation of the calibration LEDs optical fibers orientation. This in turn allowed to account for the PMTs entry window reflectivity. The PMT entry window surface being a flat air-glass border reflects some light depending on the the light incidence angle. The reflected light is then reflected back by the mirror to the mosaic. The amount of additional light in some PMTs was comparable to or exceeded the direct light.
+The procedure described in~\cite{Ant16} since had some updates. First one was a described below in section~\ref{sect:noiseremoval} procedure of identification and specific noise removal from every frame. This made the data more reliable and finer details became accessible. More precise data allowed a better estimation of the calibration LEDs optical fibers orientation. This in turn allowed to account for the PMTs entry window reflectivity. The PMT entry window surface being a flat air-glass border reflects some light depending on the the light incidence angle. The reflected light is then re-reflected back by the mirror to the mosaic. The amount of additional light in some PMTs was comparable to or exceeded the direct light.
 
 Additionally, the small voltage variations on the Hamamtsu R3886 PMT around the initially set value was taken into account lowering the overall uncertainty. This was done by switching from the use of the initial `set' voltage (available in DAC codes) to the values of constantly measured voltage on the PMT (provided with independent ADC).
 
