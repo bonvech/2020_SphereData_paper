@@ -194,13 +194,19 @@ The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitude
 
 Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
 
+%% Baikal snow photo %% fig:baikal_snow
+\begin{figure}[tb]
+    \includegraphics[width=0.45\textwidth]{figs/DSC_4049.jpg}\hspace{2pc}%
+    \caption{Baikal snow around the SPHERE start point.}
+\label{fig:baikal_snow}
+\end{figure}
 
 \subsection{Weather and snow}
 % внести результаты собственного измерения условий на снегу
 
 Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to~\href{https://rp5.ru/}{'Raspisaniye Pogodi'} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the altitude of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
 
-Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. The snow reflection properties were controlled by using a luxmeter -- device sensitive to light intensity in the optical band. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
+Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. All the lake ice was covered by snow as seen in the Fig.~\ref{fig:baikal_snow}.  The snow reflection properties were controlled by using a luxmeter -- device sensitive to light intensity in the optical band. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
 
 
 \subsection{Detector orientation and telemetry data\label{sect:telemetrydata}}
@@ -265,48 +271,35 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 
 %% The central PMT current
 \begin{figure}[tb]
-    \includegraphics[width=0.48\textwidth]{figs/cur2013_PMT1.eps}
+    \includegraphics[width=0.48\textwidth]{figs/cur2013_PMT1}
     \caption{The central PMT current.}
 \label{fig:current}
 \end{figure}
 
 The PMT currents (the average anode current) were monitored constantly during flights as a part of detector state control. Since some of the PMTs used in the detector exhibited strong gain dependence on background illumination (up to a factor of 2) during initial selection and testing prior to the detector assembly the in-flight currents were expected to vary with time.
 
-In principle, the PMT anode current contain the current from photoelectrons and from thermoelectrons. However, in total dark conditions (in the laboratory during testing and at launch site in dark box) the registered currents were small, below currents measurement precision. Therefore in-flight currents were considered as caused only by photoelectrons from snow background illumination.
+In principle, the PMT anode current contain the current from photoelectrons and from thermoelectrons. However, in total dark conditions (in the laboratory during testing and at a launch site in the light protected storage container) the registered currents were small, below currents measurement precision. Therefore in-flight currents were considered as being caused only by photoelectrons from snow background illumination.
 
 The background light flux was calculated as the sum of the few time-dependent fluxes from different sources, each with its own time dependence. Moreover each source of background light has its own spectrum that in theory can change over time due to atmosphere absorption.
 
 The main contributors to the total flux in 180--1000~nm wavelength range are:
 \begin{enumerate}
     \item airglow --- the emission of light by variety of recombination and photochemical processes in the upper layers of atmosphere caused by its partial ionisation by Sun ultraviolet light and CR;
-    \item zodiacal light --- the sunlight back-scattered by the interplanetary dust cloud originating (mostly) from the Jypiter-family comets~\cite{Nesvorn__2010};
+    \item zodiacal light --- the Sun light back-scattered by the interplanetary dust cloud originating (mostly) from the Jupiter-family comets~\cite{Nesvorn__2010};
     \item planets --- being the brightest sky objects during the 2011--2013 seasons the give noticeable addition the the total light flux;
     \item stars and deep sky objects --- the fluxes from these two contributors cannot be easily separated since the limited resolution of the telescopes and optical overlapping of the relatively nearby dust and gas clouds and unresolved faint stars.
     \item light pollution --- the combined scattered light from artificial sources;
 \end{enumerate}
 
-The airglow has a complex spatial wave structure due to its mechanism of origin. But on average the sky has an almost constant airglow brightness of 22$^m$ per square second of arc in V band (relatively close to the visual). Alternatively the airglow brightness can be taken from~\cite{KRASSOVSKY1962883} with its spectrum.
+The airglow has a complex spatial wave structure due to its mechanism of origin. But on average the sky has an almost constant airglow brightness of 21.9$^m$ per square second of arc in V band (see, for example,~\cite{BENN1998503}). For these calculations the airglow spectrum was taken as a set of [OI] and [NaI] lines (558, 589, 630 and 636~nm) that lay within the SPHERE PMTs sensitivity region~\cite{Ant16}. The [O2] presudo-continuum was not included into calculations since it has a very low total flux even near the maximum of PMTs sensitivity. The relative brightness of each line was taken from~\cite{KRASSOVSKY1962883}. The average airglow brightness variation dependence on the solar activity was taken from~\cite{BENN1998503}. The solar 10.7-cm radio flux was taken from National Research Council Canada archive of daily observations. The dimming of certain lines at the end of astronomical twilight was not simulated since all the measurements with the SPHERE detector were performed well after the end of the astronomical twilight. For the whole night the brightness of the airglow was considered to be constant.
 
-The zodiacal light brightness model was taken from~\cite{BUFFINGTON201688}. The zodiacal light being a scattered light has a sunlight spectrum and was approximated by a black body spectrum with 6000~K temperature.
+The zodiacal light brightness model was taken from~\cite{BUFFINGTON201688}. The model was somewhat simplified: non-analytical residuals (parts $E$ and $F$) were not included in the calculations due to them being unavailable. Plus, we had to change the equation for $h$ to simple $(180-\gamma')$ to get correctly looking results (e.g. same distribution as in Fig.~C1 of the original publication). Was that due to the misprint in the original publication or our own deep code error was never found. The zodiacal light being a scattered light has a Sun spectrum and was approximated by a black body spectrum with 6000~K temperature. The general night variation of the total zodiacal light flux was estimated relative to the UTC time. The calculations were performed in the ecliptic coordinates  to simplify calculations by skipping the coordinates transformation since the trajectory of the zenith point in these coordinates is easy to find for any given date relative to that years equinox. 
 
+The planets are among the brightest objects on the night sky, therefore they should be included in calculations. For calculations only Venus, Mars, Jupiter and Saturn
 
+The light pollution from all sorts of artificial sources was estimated using data from ``The new world atlas of artificial night sky brightness''~\cite{Falchie1600377} as being around 10~\% of the natural background. The spectrum of artificial sources in the area was of the two major types: incandescent light sources (households illumination) and high pressure sodium-vapor lamps (city street lights). However, in the area of the Baikal lake the first type does give a negligible flux compared to the second type. The second source type has a set of bright wide lines. For these calculations we took high pressure sodium-vapor lamps emission spectrum from~\cite{Elvige2010}. The spectrum of the back-scattered and partially absorbed light that actually lit the snow surface far from the areas of its origin was modified proportionally to the Rayleigh scattering crossection and absorption by 3 full atmospheres (since the launch site was located about 30--55~km away for relatively large urban areas of Irkutsk, Baikalsk and Slyudyanka).
 
 Current of the central PMT is shown on the Fig.~\ref{fig:current}. 
-
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
-.. Dima will write this subsection ...
 
 %%%%%%%%%%%%%%%%%%%%%
 
@@ -357,7 +350,7 @@ The position and inclination of the SPHERE-2 detector are the important values t
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/height_correction.pdf} 
-    \caption{Example of anomalous GPS altitude, compared with barometric height; red band shows interval with GPS data glitch (top panel). Same data with digital high-pass Butterworth filter applied, showing distinguished regions of good and bad correlation of GPS and barometric data (middle panel). Smoothed delta of data on the middle panel with threshold, above which correction is applied to GPS data.}
+    \caption{Example of anomalous GPS altitude behavior, compared with `barometric' altitude (top panel). Same data with high-pass digital Butterworth filter applied (middle panel). Smoothed absolute delta of high-passed altitudes from middle panel, used as gate with threshold set at red line; intervals above this line correspond to red bands on other panels, which are the intervals subjected to GPS data correction.}
 \label{fig:h_corr}
 \end{figure}
 
