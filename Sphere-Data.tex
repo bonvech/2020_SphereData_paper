@@ -42,7 +42,7 @@
 \linenumbers
 
 \begin{frontmatter}
-\title{Data acquisition and events selection in the SPHERE-2 experiment}
+\title{EAS observation in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.}
 
 \author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
 \cortext[correspondingauthor1]{Corresponding author}
@@ -57,7 +57,7 @@
 \address[address2]{Federal State Budget Educational Institution of Higher Education, M.V. Lomonosov Moscow State University, Department of Physics, 1(2), Leninskie gory, GSP-1, 119991 Moscow, Russia}
 
 \begin{abstract}
-The SPHERE-2 detector designed for the extensive air showers registration performed measurements in 2008--2013. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
+The SPHERE-2 detector designed for the extensive air showers registration performed measurements in 2008--2013\todoi{Уточнить годы измерений, или перефразировать.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
 \end{abstract}
 
 \begin{keyword}
@@ -72,9 +72,9 @@ The SPHERE-2 detector was designed for the primary cosmic ray (PCR) studies in t
 
 This method, first proposed by E.~Chudakov~\cite{chu74}, allows, on one hand, to register EAS on the relatively large area and later reconstruct the Cherenkov photons lateral distribution function, and on the other hand, to utilize a small size compact detector with all the advantages of such setup. The mentioned advantages include (but are not limited to) the opportunity to implement: a complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs etc.
 
-Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{} or the Tunka-133~\cite{} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
+Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{}\todoi{Ссылка на Якутск} or the Tunka-133~\cite{}\todoi{Ссылка на Тунку} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
 
-On the other hand common imaging air Cherenkov telescopes (IACT, like HESS~\cite{} or MAGIC~\cite{}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
+On the other hand common imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{Ссылка на HESS} or MAGIC~\cite{}\todoi{Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
 
 Since the Cherenkov light from EAS has a very sharp directional pattern it can not be observed by detectors more than about 0.5--1~km far from the shower axis. Therefore the IACTs have relatively low upper energy threshold.
 
@@ -87,7 +87,7 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 %%% === Telemetry table === %%%
 \begin{table*}[bth]
 \centering
-\caption{Telemetry sensors parameters}
+\caption{Telemetry sensors parameters}\todoi{Нужно уточнить точность GPS}
 \label{tab:telemetry_sensors}
 %\href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
@@ -99,9 +99,9 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 \hline
 \multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (?) &  -1500&--&18000  & m a.s.l.\\
                                                       \cline{3-8}
-                       &                              & GPS coordinates & 3--5(?) & &&& m\\
+                       &                              & GPS coordinates & 3--5(?) & &---&& m\\
                                                       \cline{3-8}
-                       &                              & GPS time (PPS)& 1 & &&& $\mu$s \\
+                       &                              & GPS time (PPS)& 1 & &---&& $\mu$s \\
                        \cline{2-8}
                        & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg\\
                                                       \cline{3-8}
@@ -154,6 +154,7 @@ The PMT mosaic is located near the mirror focal surface and records the Cherenko
 \subsection{Control block telemetry}
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
+\todoi{Написать раздел про то, что есть из датчиков в блоке аппаратуры и на мозаике}
 
 \subsection{Orientation control system}
 % описание датчиков (Чернов)
@@ -173,7 +174,6 @@ The GPS sensor Garmin 16xHVS, located on the control unit was used to measure co
 %%%% Какая есть телеметрия %%%%%
 \subsection{Telemetry monitoring\label{sect:telemetry}}
 
-
 During every experimental flight a lot of information about the detector status and the environmental parameters is recorded. The different telemetry data is received and checked every second, every minute and every 10 minutes. 
 
 Every second the detector position and orientation was recorded. The GPS data of altitude, latitude and longitude, universal global time UTC, the angles of detector inclination by the inclinometer sensor, magnetometer compass data and the control block inner temperature was monitored. The additional GPS and barometer were deployed on the Baikal Lake ice surface level.
@@ -188,7 +188,34 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes
  
 The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$\,47'\,48.923''~N, 104$^\circ$\,23'\,19.187''~E. 
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
-The balloon attracted the attention of a large number of Baikal tourists. 
+%The balloon attracted the attention of a large number of Baikal tourists. 
+
+
+\begin{table}[b]
+\centering
+\caption{The annual statistics of the SPHERE experiment on Baikal Lake}
+\label{tab:statistics}
+\vspace{1pc}
+\begin{tabular}{|c||c|r|c|r|r|}
+\hline
+run  & flights & PMT    & time, & triggers \\ 
+year &         & number & hours & detected \\ 
+\hline \hline
+\multicolumn{5}{|c|}{test runs} \\
+\hline
+2008 & 1 &  20 &  1 &     1 \\ 
+2009 & 5 &  96 &  1 &     1 \\ 
+2010 & 6 &  96 & 30 &  1343 \\
+\hline
+\multicolumn{5}{|c|}{experiment runs} \\
+\hline
+2011 & 4 &  96 & 30 & 20571 \\
+2012 & 5 & 109 & 31 &  7716 \\
+2013 & 5 & 109 & 33 &  3813 \\
+\hline
+\end{tabular}
+\end{table}
+
 
 The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Table~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from~25 ns to 12.5~ns.
 
@@ -501,7 +528,7 @@ Table data clearly states that substantial changes of atmosphere model affect th
 In flight during measurements whenever the detector become inclined, the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
 
 In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. % здесь надо другую схему, нежели ту, что была. 
-\todoi{Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему рассчёта.}
+\todo{Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему расчёта.}
 The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflectivity coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambertian scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2.
 
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflectivity coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
@@ -531,108 +558,7 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
 }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{Sphere-Data.bib}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%   Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-
-
-
-\section{Data preprocessing\label{sect:preprocessing}}
-
-\begin{figure}[t]
-\centering
-\begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width=19pc]{figs/pied_PMT1.eps}
-\vspace{-1.0pc}
-\caption{The PMT baseline for central PMT.}
-\label{fig:pied}
-\end{minipage}
-\vfill
-\vspace{1pc}
-\begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width=19pc]{figs/piedfluct_PMT1.eps}
-\vspace{-1.0pc}
-\caption{The PMT baseline fluctuations for central PMT.}
-\label{fig:piedfluct}
-\end{minipage}
-\end{figure}
-
-
-%\begin{figure}[bht]
-%\centering
-%\includegraphics[width=0.40\textwidth]{figs/time_correction_quality_noise_low}
-%\caption{The histogram of modeled differences between true and reconstructed synchronization pulse positions.}
-%\label{fig:synchro}
-%\end{figure} 
-
-
-\subsection{Baseline handling}
-
-The \mbox{SPHERE-2} DAQ system had two data channels per one PMT working with half phase shift effectively doubling sampling frequency. Due to some technical reasons (see detailed description of \mbox{SPHERE-2} electronics in \cite{Ant15a}) in the DAQ system the current was added to the PMT output before it got to the FADC. This additional baseline current, individual in each channel, resulted in on average about 40--60 additional `code' units (arbitrary unit on the FADC output, see~\cite{Ant16} for details) and not necessarily integer in those units. The exact value of added current was unknown and changed slowly over time with the change of temperature and conditions within the control block (this was observed on-site during days temperature change). The changes of the baseline current were small and slow enough to consider the baseline constant during each recorded frame (during the flight the current changed on about 1--2 units per 4 hours). 
-
-During data preprocessing the baselines in each channel were estimated as an average value from the first 400 time bins recorded, see for example Fig.~\ref{fig:pied}. The better estimation could be achieved by fitting the distribution of all values recorded in the frame (thus rendering procedure less sensitive to extreme fluctuations or random particle signals) with Gaussian distribution function. However during the later signal reconstruction procedure small baseline uncertainties were automatically accounted for, thus simpler and faster procedure was used. After a baseline in a channel was estimated its value was subtracted from signals in this channel to have a near-zero signal baseline further. figs.~\ref{fig:frames}, \ref{fig:pulses} and \ref{fig:mosaic_sum} show events signals with 
-subtracted baselines.
-
-Along with average value for each channel the standard deviations of signals in each channel $\sigma_i$ were estimated and found to be from 0.5 to 2.5 arb.~unit, see  Fig.~\ref{fig:piedfluct}. The fluctuation of the baseline in each data channel came from constant starlight background that was present during the measurements. With the clear moonless night sky starlight background is (1--2)$\cdot10^{12}$~photon~sr$^{-1}$~s$^{-1}$~m$^{-2}$~\cite{starlightbackground}. Thus for 12.5~ns about 50--70 photons from starlight background should had been falling on each PMT on average producing about 4--7 photoelectrons, which translates in 3--5 arb. units. The characteristic amplitude of these fluctuations were individual for each channel and came from differences in amplification and quantum efficiency of each PMT. More sensitive PMTs showed higher fluctuations. The estimated fluctuations are consistent with the expected ones. The electronics and PMTs themselves produced very low noise (less than 1 arb. unit) as was checked in dark room in the laboratory and on-site. The average fluctuation values later were used as thresholds during EAS events identification to filter-out noise. 
-
-%\subsection{Channel synchronization}
-
-%\begin{figure}[t]
-%\center
-%\includegraphics[width=0.35\textwidth]{figs/time_correction_quality_noise_low.eps}
-%\caption{The histogram of modeled differences between true and reconstructed synchronization pulse positions.}
-%\label{fig:synchro}
-%\end{figure} 
-
-
-%Each data recording channel has independent FADC and independent buffer to store data. All FADCs has equal parameters and sampling frequency. So in ideal conditions that would've sufficed to have all channels synchronized via the trigger signal. In real design a flaw was found that sometimes caused the high amplitude signal from PMT to induce the fake `stop-go' signal in buffer control lines thus creating a time drift between channels. In order detect, estimate and compensate this drift the calibration system produced a short all-LED synchronization pulse in 5.8~$\mu$s after the trigger signal. This pulse appeared in the end of the `event' frame and is clearly seen on the Fig.~\ref{fig:frames} at time near bin 900. The calibration LEDs illuminated the PMT mosaic via equal-length optical fibers that were located near the PMT mosaic. Hence the light pulse falling on the mosaic was physically synchronous in every PMT. 
-
-%This pulse with approximate duration of 100~ns was strong (about 400 arb.\ code units) and was easily detectable in each data channel. The center-of-mass approach was uses to find the exact position of the synchronization pulse. The Monte Carlo simulation of synchronization pulse digitalization and automatic center-of-mass estimation was done to determine the procedures precision. 
-%On the Fig.~\ref{fig:synchro} the results of this simulation are shown. 
-%The $\Delta{}t$ is the difference between the random initial synchronization pulse position and the reconstructed one. In the best case scenario (high sensitivity PMT) the precision of the pulse location is better that 0.05~time bin, e.g. better than 0.5~ns. In worst case it's more like 2--3~ns. On average the channels synchronization precision was about 1~ns.
-
-%In order to simplify `event' frames classification later all channels were shifted (time drift values were rounded to the nearest integer for this purpose) so that the synchronization pulse appeared at predefined time bin. Empty bins at the beginning or the end of the data channel record were padded with zeros. The exact values of time drift after correction (each less than 1 time bin) were stored for later use during shower arrival direction estimation. 
-
-%The `calibration' frame (Fig.~\ref{fig:frames}b) paired to each `event' frame did not contain the synchronization pulse. As the `calibration' frame was not used for any kind of time measurements the exact position of calibration pattern in each channel was irrelevant. But for simplification of further procedures all the channel were shifted to put the edge of first all-LED pulse to the predefined time bin.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure*}[bt]
-%    \centering
-%    \includegraphics[width=0.48\textwidth]{figs/2013_r_div_H.eps}%
-%    \caption{The distance of axis from the center of detector FOV. }
-%    \label{fig:r_div_H}
-%\end{figure*}
-%\begin{figure*}[bt]
-% \hfill
-%    \begin{minipage}[t]{0.47\textwidth}
-%    \centering
-%    \includegraphics[width=19pc]{figs/theta.eps}%
-%    %\vspace{-1.0pc}
-%    \caption{The zenith angle $\theta$ distribution of detected EAS events in 2013.}
-%    \label{fig:theta_eas}
-%    \end{minipage}
-%\end{figure*}
-
-% в приложения и на всю страницу, дописать параметры события
-\begin{figure*}[pt]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figs/mosaic_11588_lin.eps}%
-    \caption{The signals of the PMT mosaic with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
-    }
-    \label{fig:mosaic_eas}
-\end{figure*}
-
-\begin{figure*}[pt]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figs/mosaic_11588_log1.pdf}%
-    \caption{The signals of the PMT mosaic with time step 12.5~ns for the EAS classified event with number 11588 the same as on Fig.~\ref{fig:frames}a, Fig.~\ref{fig:pulses}a, Fig.~\ref{fig:mosaic_sum}a. Zenith angle of the EAS initial particle is estimated as $\theta = 23^{\circ}$. Altitude of the detector $H$ = 702~m above snow level.
-    }
-    \label{fig:mosaic_eas2}
-\end{figure*}
 
 \end{document}
