@@ -53,8 +53,8 @@
 \author[address2,address1]{D.A.~Podgrudkov}
 \author[address1]{T.M.~Roganova}
 \author[address2]{I.A.~Vaiman}
-\address[address1]{Federal State Budget Educational Institution of Higher Education, M.V. Lomonosov Moscow State University, Skobeltsyn Institute of Nuclear Physics (SINP MSU), 1(2), Leninskie gory, GSP-1, 119991 Moscow, Russia}
-\address[address2]{Federal State Budget Educational Institution of Higher Education, M.V. Lomonosov Moscow State University, Department of Physics, 1(2), Leninskie gory, GSP-1, 119991 Moscow, Russia}
+\address[address1]{M.V. Lomonosov Moscow State University, Skobeltsyn Institute of Nuclear Physics (SINP MSU), Moscow, Russia}
+\address[address2]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
 
 \begin{abstract}
 The SPHERE-2 detector designed for the extensive air showers registration performed measurements in 2008--2013\todoi{Уточнить годы измерений, или перефразировать.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
@@ -147,13 +147,14 @@ The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cher
 
 The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic. 
 
-The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
+The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}\todo{убрать отсюда, текст переписать}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
 
 \subsection{Control block telemetry}
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
+
 \todoi{Написать раздел про то, что есть из датчиков в блоке аппаратуры и на мозаике}
 
 \subsection{Orientation control system}
@@ -181,6 +182,8 @@ Every second the detector position and orientation was recorded. The GPS data of
 Every minute the PMT and the power status was monitored. Anode currents of all PMTs, the PMT mosaic temperature and the temperature of the PMTs high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors were polled every minute also.
 
 Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
+
+\todoi{Описать в два словыа, зачем оно тут в таком количестве регистрировалось}
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -294,7 +297,7 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 \label{fig:drift-inclination}
 \end{figure}
 
-\subsection{PMT currents and Background light}
+\subsection{PMT currents and background light}
 
 %% The central PMT current
 \begin{figure}[tb]
@@ -331,7 +334,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 %%%%%%%%%%%%%%%%%%%%%
 
 
-\subsection{Fairy tale about PMTs and dark forest}
+\subsection{PMT currents variations}
 
 %% 2012-3 currents
 \begin{figure}[t]
@@ -350,9 +353,12 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
     \caption{The SPHERE-2 detector drift in 2012.}
 \end{figure}
 
-{\Russian
-Общий ход токов ФЭУ в течение каждого сеанса измерения обуславливается фоновой засветкой и состоянием атмосферы. Также величина тока зависит от поверхности, которую осматривает ФЭУ. В стандартном режиме все ФЭУ осматривают снежную поверхность озера Байкал. Но в одном полете установка частично наблюдала берег.
 
+The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs\todoi{Нужна картинка, где закрашены эти ФЭУ, нужным цветом каждый} the abnormal drop of currents was observed.
+
+In the first half of the flight the currents in 
+
+{\Russian
 В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока ФЭУ коррелирует по времени с изменением сноса на север. 
 
 Зная очертания береговой линии озера Байкал и исходя из данных телеметрии, мы делаем вывод, что такое уменьшение токов обусловлено тем, что под действием ветра на высоте более 700~м аэростат с детектором сносился к северу рис.~\ref{fig:2012-drift}, детектор наклонялся в сторону севера, в поле зрения ФЭУ попали участки суши, покрытые темными деревьями. Установка частично смотрит на тёмный берег, а не на снег озера, поэтому токи уменьшились. Чем дальше на север сдвигалась установка, тем более дальний от края ФЭУ видел уменьшение тока.  
@@ -557,6 +563,8 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 \Russian
 Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
 }
+
+\todoi{Не забыть Шаулова, Домогацкого и кто там ещё}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{Sphere-Data.bib}
