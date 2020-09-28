@@ -49,12 +49,16 @@
 \ead{bonvech@yandex.ru}
 \author[address1]{D.V.~Chernov}
 \author[address1]{T.A.~Dzhatdoev}
-\author[address2]{V.I.~Galkin}
-\author[address2,address1]{D.A.~Podgrudkov}
+\author[address2,address3]{M.~Finger Jr.}
+\author[address2,address3]{M.~Finger}
+\author[address4]{V.I.~Galkin}
+\author[address4,address1]{D.A.~Podgrudkov}
 \author[address1]{T.M.~Roganova}
-\author[address2]{I.A.~Vaiman}
+\author[address4,address1]{I.A.~Vaiman}
 \address[address1]{M.V. Lomonosov Moscow State University, Skobeltsyn Institute of Nuclear Physics (SINP MSU), Moscow, Russia}
-\address[address2]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
+\address[address2]{Charles University, Faculty of Mathematics and Physics, Prague, Czech Republic}
+\address[address3]{Joint Institute for Nuclear Research, Dubna, Russian Federation}
+\address[address4]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
 
 \begin{abstract}
 The SPHERE-2 detector designed for the extensive air showers registration performed measurements in 2008--2013\todoi{Уточнить годы измерений, или перефразировать.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
@@ -183,7 +187,7 @@ Every minute the PMT and the power status was monitored. Anode currents of all P
 
 Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
 
-\todoi{Описать в два словыа, зачем оно тут в таком количестве регистрировалось}
+\todo{Описать в два словыа, зачем оно тут в таком количестве регистрировалось}
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -342,6 +346,13 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
     \caption{PMT currents, detector drift to the North, altitude and  inclination during flight 2012-3.}
     \label{fig:2012-3_currents}
 \end{figure}
+\begin{figure}[tb]
+\centering
+    \includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
+    \includegraphics[width=0.2\textwidth]{figs/2012-3_retina_all.pdf}
+    \caption{The SPHERE-2 retina 2012 for figure~\ref{fig:2012-3_currents}. Выберите одну из двух.}
+    \label{fig:2012-3_retina}
+\end{figure}
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/2012_drift.pdf}
@@ -354,7 +365,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 \end{figure}
 
 
-The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs\todoi{Нужна картинка, где закрашены эти ФЭУ, нужным цветом каждый} the abnormal drop of currents was observed.
+The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs\todoi{Нужна картинка, где закрашены эти ФЭУ, нужным цветом каждый}~\ref{fig:2012-3_retina} the abnormal drop of currents was observed.
 
 The anomaly was observed in the the first half of the flight during the observations at 850~m altitude. At that time according to GPS the balloon was drifting north from starting point. Due to the wind becoming stronger on that altitude the balloon was subsequently lowered to 480 altitude.
 
@@ -564,9 +575,16 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
 }
 
-\todoi{Не забыть Шаулова, Домогацкого и кто там ещё}
+\section{Acknowledgments}
+We are grateful to the Lebedev Physical Institute of Russian Academy of
+Sciences group (leader S.B.~Shaulov) for assistance in assembling and
+testing the electronic equipment and in preparation of expeditions. We
+also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute
+for Nuclear Research, Russian Academy of Sciences) for the support of
+the SPHERE experiment at the Baikal Lake scientific station.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{References}
 \bibliography{Sphere-Data.bib}
 
 \end{document}
