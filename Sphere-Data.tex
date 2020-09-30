@@ -101,9 +101,9 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 \multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 %\hline
 \hline
-\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (?) &  -1500&--&18000  & m a.s.l.\\
+\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & 2 &  -1500&--&18000  & m a.s.l.\\
                                                       \cline{3-8}
-                       &                              & GPS coordinates & 3--5(?) & &---&& m\\
+                       &                              & GPS coordinates & 1 & &---&& m\\
                                                       \cline{3-8}
                        &                              & GPS time (PPS)& 1 & &---&& $\mu$s \\
                        \cline{2-8}
@@ -158,6 +158,10 @@ The PMT mosaic is located near the mirror focal surface and records the Cherenko
 \subsection{Control block telemetry}
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
+\todo{Сделать ссылку на таблицу~\ref{tab:telemetry_sensors}} 
+{\Russian 
+Точность определения координат датчиком GPS была определена по данным GPS в то время, когда установка находилась неподвижно на льду озера. Были построены посуточные распределения значений координат и высоты за 20 дней в 2012 и 2013 годах. Средняя сигма (а на самом деле медианная) этих распределений принята за точность определения координат и высоты датчиком GPS.
+}
 
 \todoi{Написать раздел про то, что есть из датчиков в блоке аппаратуры и на мозаике}
 
@@ -348,9 +352,10 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 \end{figure}
 \begin{figure}[tb]
 \centering
-    \includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
-    \includegraphics[width=0.2\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 retina 2012 for figure~\ref{fig:2012-3_currents}. Выберите одну из двух.}
+    %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
+    \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
+    \caption{The SPHERE-2 retina 2012 for figure~\ref{fig:2012-3_currents}.}
+    %\todo{Выберите одну из двух.}
     \label{fig:2012-3_retina}
 \end{figure}
 
