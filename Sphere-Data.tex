@@ -61,7 +61,7 @@
 \address[address4]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
 
 \begin{abstract}
-The SPHERE-2 detector designed for the extensive air showers registration performed measurements in 2008--2013\todoi{Уточнить годы измерений, или перефразировать.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
+The SPHERE-2 detector designed for the extensive air showers detection performed measurements in 2008--2013\todoi{\Russian Уточнить годы измерений, или перефразировать.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
 \end{abstract}
 
 \begin{keyword}
@@ -72,13 +72,13 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 
 
 \section{Introduction}
-The SPHERE-2 detector was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS registration method --- registration of the reflected Cherenkov light using an aerial-based detector. 
+The SPHERE-2 detector was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS detection method --- detection of the reflected Cherenkov light using an aerial-based detector. 
 
 This method, first proposed by E.~Chudakov~\cite{chu74}, allows, on one hand, to register EAS on the relatively large area and later reconstruct the Cherenkov photons lateral distribution function, and on the other hand, to utilize a small size compact detector with all the advantages of such setup. The mentioned advantages include (but are not limited to) the opportunity to implement: a complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs etc.
 
-Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{}\todoi{Ссылка на Якутск} or the Tunka-133~\cite{}\todoi{Ссылка на Тунку} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
+Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{}\todo{\Russian Ссылка на Якутск} or the Tunka-133~\cite{}\todo{\Russian Ссылка на Тунку} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
 
-On the other hand common imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{Ссылка на HESS} or MAGIC~\cite{}\todoi{Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
+On the other hand common imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{\Russian Ссылка на HESS} or MAGIC~\cite{}\todo{\Russian Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
 
 Since the Cherenkov light from EAS has a very sharp directional pattern it can not be observed by detectors more than about 0.5--1~km far from the shower axis. Therefore the IACTs have relatively low upper energy threshold.
 
@@ -91,7 +91,8 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 %%% === Telemetry table === %%%
 \begin{table*}[bth]
 \centering
-\caption{Telemetry sensors parameters}\todoi{Нужно уточнить точность GPS}
+\caption{Telemetry sensors parameters}
+%\todoi{Нужно уточнить точность GPS}
 \label{tab:telemetry_sensors}
 %\href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
@@ -145,25 +146,30 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 \section{The SPHERE-2 detector \label{sect:detector}}
 %% общее описание детектора и набора всех датчиков телеметрии (Чернов)
 %% что есть, что отслеживаем (барометры, термометры, напряжёметры и пр), с какой точностью, таблица параметров.
-The SPHERE is a cosmic ray experiment based on the registration of Vavilov-Cherenkov radiation generated by extensive air showers (EAS) in the atmosphere and reflected from the snow covered ground surface. The experiment was aimed at accurate registration and reconstruction of every event allowing the event-by-event approach to the EAS primary particle identification and primary spectra study. The present paper is dedicated to the SPHERE experiment stage performed with the compact detector SPHERE-2 in Baikal Lake region during \textcolor{red}{2010--2013} winter seasons. The previous stages of the SPHERE experiment are described in~\cite{Ant15a}. %%это повтор введения
+The SPHERE is a cosmic ray experiment based on the detection of Vavilov-Cherenkov radiation generated by extensive air showers (EAS) in the atmosphere and reflected from the snow covered ground surface. The experiment was aimed at accurate detection and reconstruction of every event allowing the event-by-event approach to the EAS primary particle identification and primary spectra study. The present paper is dedicated to the SPHERE experiment stage performed with the compact detector SPHERE-2 in Baikal Lake region during \textcolor{red}{2010--2013} winter seasons. The previous stages of the SPHERE experiment are described in~\cite{Ant15a}. %%это повтор введения
 
 The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cherenkov light from the balloon elevated to altitudes up to 1~km above the Earth snow covered surface. Special tethered balloon BAPA developed and created by Russian Augur agency for this experiment was used.
 
 The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic. 
 
-The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}\todo{убрать отсюда, текст переписать}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
+The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}\todo{\Russian убрать отсюда, текст переписать}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
 
 \subsection{Control block telemetry}
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
-\todo{Сделать ссылку на таблицу~\ref{tab:telemetry_sensors}} 
+
+\todo{\Russian Написать раздел про то, что есть из датчиков в блоке аппаратуры и на мозаике}
+
 {\Russian 
-Точность определения координат датчиком GPS была определена по данным GPS в то время, когда установка находилась неподвижно на льду озера. Были построены посуточные распределения значений координат и высоты за 20 дней в 2012 и 2013 годах. Средняя сигма (а на самом деле медианная) этих распределений принята за точность определения координат и высоты датчиком GPS.
+
+Помимо основной системы регистрации с детектором черенковского света на установке СФЕРА2 установлено большое количество вспомогательных датчиков для обеспечения её работы. Вспомогательные датчики устанавливаются внутри блока с электроникой, снаружи и на мозаике ФЭУ. Перечень датчиков с диапазоном, точностью и периодом измерения приведен в таблице~\ref{tab:telemetry_sensors}. Внутри блока электроники измеряется температура плат FADC для управления вентиляторами охлаждения, напряжения вторичных источников питания и питающего аккумулятора, а так же ток потребления с аккумулятора, дифференциальный датчик давления в аэростате. К внешним датчикам относятся GPS-приёмник, датчики температуры и атмосферного давления. На мозаике ФЭУ установлен инклинометр и магнитометр для определения положения установки в вертикальных плоскостях и горизонтальной. Кроме того, на каждом источнике питания измеряются напряжения питания ФЭУ, анодный ток и температура оптического модуля.
 }
 
-\todoi{Написать раздел про то, что есть из датчиков в блоке аппаратуры и на мозаике}
+\todo{\Russian В таблицу необходимо добавить датчик давления в аэростате CPCL04DFC с диапазоном 0-1кПа и точностью ~3Па.}
+
+
 
 \subsection{Orientation control system}
 % описание датчиков (Чернов)
@@ -178,6 +184,12 @@ The type of inclinometer used allows fast angles measurements with low power con
 
 The GPS sensor Garmin 16xHVS, located on the control unit was used to measure coordinates and elevation above sea level.
 
+{\Russian
+
+%Точность определения координат датчиком GPS была определена по данным GPS в то время, когда 
+%%% ошибка начинается здесь
+%установка находилась неподвижно на льду озера. Были построены посуточные распределения значений координат и высоты за 20 дней в 2012 и 2013 годах. Средняя сигма (а на самом деле медианная) этих распределений принята за точность определения координат и высоты датчиком GPS.
+}
 
 
 %%%% Какая есть телеметрия %%%%%
@@ -191,7 +203,7 @@ Every minute the PMT and the power status was monitored. Anode currents of all P
 
 Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
 
-\todo{Описать в два словыа, зачем оно тут в таком количестве регистрировалось}
+\todo{\Russian  Описать в два слова, зачем оно тут в таком количестве регистрировалось}
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -370,11 +382,14 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 \end{figure}
 
 
-The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs\todoi{Нужна картинка, где закрашены эти ФЭУ, нужным цветом каждый}~\ref{fig:2012-3_retina} the abnormal drop of currents was observed.
+The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs
+%\todoi{Нужна картинка, где закрашены эти ФЭУ, нужным цветом каждый} 
+the abnormal drop of currents was observed, see Fig.~\ref{fig:2012-3_retina}.
 
 The anomaly was observed in the the first half of the flight during the observations at 850~m altitude. At that time according to GPS the balloon was drifting north from starting point. Due to the wind becoming stronger on that altitude the balloon was subsequently lowered to 480 altitude.
 
 {\Russian
+
 В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока ФЭУ коррелирует по времени с изменением сноса на север. 
 
 Зная очертания береговой линии озера Байкал и исходя из данных телеметрии, мы делаем вывод, что такое уменьшение токов обусловлено тем, что под действием ветра на высоте более 700~м аэростат с детектором сносился к северу рис.~\ref{fig:2012-drift}, детектор наклонялся в сторону севера, в поле зрения ФЭУ попали участки суши, покрытые темными деревьями. Установка частично смотрит на тёмный берег, а не на снег озера, поэтому токи уменьшились. Чем дальше на север сдвигалась установка, тем более дальний от края ФЭУ видел уменьшение тока.  
@@ -550,7 +565,7 @@ Table data clearly states that substantial changes of atmosphere model affect th
 In flight during measurements whenever the detector become inclined, the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
 
 In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. % здесь надо другую схему, нежели ту, что была. 
-\todo{Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему расчёта.}
+\todo{\Russian Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему расчёта.}
 The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflectivity coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambertian scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2.
 
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflectivity coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
@@ -581,12 +596,7 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 }
 
 \section{Acknowledgments}
-We are grateful to the Lebedev Physical Institute of Russian Academy of
-Sciences group (leader S.B.~Shaulov) for assistance in assembling and
-testing the electronic equipment and in preparation of expeditions. We
-also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute
-for Nuclear Research, Russian Academy of Sciences) for the support of
-the SPHERE experiment at the Baikal Lake scientific station.
+We are grateful to the Lebedev Physical Institute of Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{References}
