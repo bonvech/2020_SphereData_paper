@@ -119,10 +119,11 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
                        \cline{2-8}
                        & Power source                 & high voltage (HV1) & 0.1 & 0&--&250 & V\\
                        \cline{2-8}
-                       & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100
- & hpa\\
+                       & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100 & hpa\\
                                                       \cline{3-8}
                        &                              & temperature& 2 & $-20$&--&60 &deg,$^\circ$C\\
+                       \cline{2-8}
+                       & Balloon barometer            & pressure   & 3 & 0&--&1000 & pa\\
                        \cline{2-8}
                        & Battery (19V)                & voltage & 0.01 & 0&--&40 & V\\
                        \cline{2-8}
@@ -143,13 +144,13 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
 \vspace{1mm}
 
 \footnotesize \raggedright 
-\hspace{6.5 mm}* 2 m accuracy according to the manufacturer provided data, 1 m accuracy according to our own analysis (see. below in section )
+\hspace{6.5 mm}* 2 m accuracy according to the manufacturer provided data, 1 m accuracy according to our own analysis (see. in section~\ref{sect:orientation} )
 
-\hspace{5 mm}** 4 m accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see. below in section )
+\hspace{5 mm}** 4 m accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see. in section~\ref{sect:orientation} )
 \normalsize
 \end{table*}
 
-\todo{\Russian В таблицу необходимо добавить датчик давления в аэростате CPCL04DFC с диапазоном 0-1кПа и точностью ~3Па.}
+%\todo{\Russian В таблицу необходимо добавить датчик давления в аэростате CPCL04DFC с диапазоном 0-1кПа и точностью ~3Па.}
 
 
 \section{The SPHERE-2 detector \label{sect:detector}}
@@ -175,8 +176,8 @@ The PMT mosaic is located near the mirror focal surface and records the Cherenko
 
 
 
-
 \subsection{Orientation control system}
+\label{sect:orientation}
 % описание датчиков (Чернов)
 
 The detector axis at the rest state is oriented vertically and detector observes the snow covered lake surface just under the detector. During the measurements, the detector hanging under the balloon, swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determined the overall geometry of the experiment. To control the position and rotation of the detector an inclinometer and a magnetometer compass are installed on the PMT mosaic control board. 
@@ -187,12 +188,13 @@ The inclinometer measures two angles between it's internal orthogonal axes and t
 
 The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
 
-The GPS sensor Garmin 16xHVS, located on the control unit was used to measure coordinates and elevation above sea level.
+The GPS sensor Garmin 16xHVS, located on the control unit was used to measure geographical coordinates and an elevation above sea level. 
 
-{\Russian
-Точность определения координат датчиком GPS была определена по данным GPS в то время, когда установка находилась неподвижно на льду озера. Были построены посуточные распределения значений координат и высоты за 20 дней в 2012 и 2013 годах. Средняя сигма (а на самом деле медианная) этих распределений принята за точность определения координат и высоты датчиком GPS.
-}
+The GPS manufacturer declared the absolute accuracy of determining the coordinates of 4~m, and the altitude of 2~m. Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary objects. 
 
+The accuracy position determination of the GPS sensor in rest state was calculated from GPS data at a time when the detector was stationary on the lake ice. Daily distributions of the detector coordinates and altitude were plotted for 20 days in 2012 and 2013. The average Sigma (actually the median) of these distributions is taken as the accuracy of the GPS sensor's determination: 2~m for coordinates and 1~m for altitude.
+
+The accuracy of altitude determination by GPS will be considered in Sec.~\ref{sect:gps_correction}.
 
 %%%% Какая есть телеметрия %%%%%
 \subsection{Telemetry monitoring\label{sect:telemetry}}
@@ -319,6 +321,7 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 \label{fig:drift-inclination}
 \end{figure}
 
+
 \subsection{PMT currents and background light}
 
 %% The central PMT current
@@ -412,7 +415,7 @@ The position and inclination of the SPHERE-2 detector are the important values t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{GPS altitude correction with barometer data}
-
+\label{sect:gps_correction}
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/height_correction.pdf} 
