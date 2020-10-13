@@ -164,11 +164,25 @@ The \mbox{SPHERE-2} detector optics consists of a 1.5~m diameter spherical mirro
 The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}\todo{\Russian убрать отсюда, текст переписать}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
-
 \subsection{Control block telemetry}
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
 
+The control block of the SPHERE-2 detector contained along with the main registration electronics (and power system) a large array of different sensors. These sensors located both inside and outside of the control block were used to monitor detector state and performance, collect supplementary data for the EAS measurements. The list of the sensors used, their measuring range, precision and data collection frequency is given in table~\ref{tab:telemetry_sensors}. 
+
+The sensors inside the control block were measured:
+\begin{itemize}
+\item the temperature of the FADC boards (two sensors per boadrd) for \item cooling system operation;
+\item the voltage on the secondary power supply units for PMT mosaic power stabilization;
+\item the voltage and current on the main power supply unit;
+\item the overpressure and temperature inside the balloon.
+\end{itemize}
+The sensors outside the control block measured:
+\begin{itemize}
+\item detector position (GPS-module);
+\item air pressure and temperature;
+\end{itemize}
+Additional sensors were installed on the mosaic and controlled:
 %{\Russian 
 %
 %Помимо основной системы регистрации с детектором черенковского света на установке СФЕРА2 установлено большое количество вспомогательных датчиков для обеспечения её работы. Вспомогательные датчики устанавливаются внутри блока с электроникой, снаружи и на мозаике ФЭУ. Перечень датчиков с диапазоном, точностью и периодом измерения приведен в таблице~\ref{tab:telemetry_sensors}. Внутри блока электроники измеряется температура плат FADC для управления вентиляторами охлаждения, напряжения вторичных источников питания и питающего аккумулятора, а так же ток потребления с аккумулятора, дифференциальный датчик давления в аэростате. К внешним датчикам относятся GPS-приёмник, датчики температуры и атмосферного давления. На мозаике ФЭУ установлен инклинометр и магнитометр для определения положения установки в вертикальных плоскостях и горизонтальной. Кроме того, на каждом источнике питания измеряются напряжения питания ФЭУ, анодный ток и температура оптического модуля.
@@ -371,7 +385,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 \centering
     %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
     \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 retina 2012 for figure~\ref{fig:2012-3_currents}.}
+    \caption{The SPHERE-2 PMT mosaic 2012 for figure~\ref{fig:2012-3_currents}.}
     %\todo{Выберите одну из двух.}
     \label{fig:2012-3_retina}
 \end{figure}
@@ -583,25 +597,25 @@ The same calculations was made for the detector position with different detector
 
 \section{Conclusions \label{sect:conclusions}}
 
-{
-\Russian
+%{
+%\Russian
 
-В статье мы описали как в эксперименте мы измеряем параметры установки  СФЕРА-2, важные для восстановления черенковских событий.  В частности, высота установки над уровнем земли измеряется двумя способами, что позволяет определить истинное значение высоты. Мы видим, что установка стабильна в воздушном потоке.
-} 
+%В статье мы описали как в эксперименте мы измеряем параметры установки  СФЕРА-2, важные для восстановления черенковских событий.  В частности, высота установки над уровнем земли измеряется двумя способами, что позволяет определить истинное значение высоты. Мы видим, что установка стабильна в воздушном потоке.
+%} 
 In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works. 
 
-{
-\Russian
-Зарегистрированный установкой сигнал очищается от аппаратных эффектов. Мы выявили и учли импульсный шум аппаратуры каналов, влияние звездного фона. 
+%{
+%\Russian
+%Зарегистрированный установкой сигнал очищается от аппаратных эффектов. Мы выявили и учли импульсный шум аппаратуры каналов, влияние звездного фона. 
 
-Зарегистрированные события подверглись классификации. Из них выделены события от черенковского света ШАЛ. 
-}
+%Зарегистрированные события подверглись классификации. Из них выделены события от черенковского света ШАЛ. 
+%}
 The EAS event selection procedure is described.
 
-{
-\Russian
-Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
-}
+%{
+%\Russian
+%Процедура восстановления параметров ШАЛ будет описана в последующих публикациях.
+%}
 
 \section{Acknowledgments}
 We are grateful to the Lebedev Physical Institute of Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
