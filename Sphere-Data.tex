@@ -194,10 +194,6 @@ Additional sensors were installed on the PMTs in the mosaic and controlled
 Some data provided by these sensors was used to monitor the flight conditions and detector status in real time. Also, all the data was stored and later was used in EAS parameters reconstruction and in detector performance evaluation.
 
 
-%Помимо основной системы регистрации с детектором черенковского света на установке СФЕРА2 установлено большое количество вспомогательных датчиков для обеспечения её работы. Вспомогательные датчики устанавливаются внутри блока с электроникой, снаружи и на мозаике ФЭУ. Перечень датчиков с диапазоном, точностью и периодом измерения приведен в таблице~\ref{tab:telemetry_sensors}. Внутри блока электроники измеряется температура плат FADC для управления вентиляторами охлаждения, напряжения вторичных источников питания и питающего аккумулятора, а так же ток потребления с аккумулятора, дифференциальный датчик давления в аэростате. К внешним датчикам относятся GPS-приёмник, датчики температуры и атмосферного давления. На мозаике ФЭУ установлен инклинометр и магнитометр для определения положения установки в вертикальных плоскостях и горизонтальной. Кроме того, на каждом источнике питания измеряются напряжения питания ФЭУ, анодный ток и температура оптического модуля.
-
-
-
 \subsection{Orientation control system}
 \label{sect:orientation}
 % описание датчиков (Чернов)
@@ -235,7 +231,7 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes
 %\section{Site and weather}
 \label{sect:data}
  
-The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 800~m far from the shore in the point with coordinates near 51$^\circ$\,47'\,48.923''~N, 104$^\circ$\,23'\,19.187''~E. 
+The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 700~m far from the shore in the point with coordinates near 51$^\circ$\,47'\,48''~N, 104$^\circ$\,23'\,19''~E. 
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
 %The balloon attracted the attention of a large number of Baikal tourists. 
 
@@ -349,7 +345,7 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 %% The central PMT current
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/cur2013_PMT1.pdf}
-    \caption{The central PMT current.}
+    \caption{The central PMT currents in flights of 2013.}
 \label{fig:current}
 \end{figure}
 
@@ -389,14 +385,6 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
     \caption{PMT currents, detector drift to the North, altitude and  inclination during flight 2012-3.}
     \label{fig:2012-3_currents}
 \end{figure}
-\begin{figure}[tb]
-\centering
-    %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
-    \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 PMT mosaic 2012 for figure~\ref{fig:2012-3_currents}.}
-    %\todo[inline]{Выберите одну из двух.}
-    \label{fig:2012-3_retina}
-\end{figure}
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/2012_drift.pdf}
@@ -408,10 +396,22 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
     \caption{The SPHERE-2 detector drift in 2012.}
 \end{figure}
 
-The PMTs currents variations during the observations generally followed the variation of the background illumination of the snowed lake surface. However in one flight (namely, third flight of the 2012 season) in part of the PMTs the abnormal drop of currents was observed, see Fig.~\ref{fig:2012-3_retina}.
+The PMTs currents variations during the observations generally followed the variation of the background illumination of the snow. However, in third flight of the 2012 season in part of the PMTs the abnormal drop of currents was observed (see Fig.~\ref{fig:2012-3_retina}).
 
-The anomaly was observed in the the first half of the flight during the observations at 850~m altitude. At that time according to GPS the balloon was drifting north from starting point. Due to the wind becoming stronger on that altitude the balloon was subsequently lowered to 480 altitude. However, for some time while the balloon was at altitude above 800~m the currents in part of the PMTs were lower. The registered currents from PMTs in one row are shown in Fig.~\ref{fig:2012-3_currents} (top panel). 
+\begin{figure}[tb]
+\centering
+    %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
+    \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
+    \caption{The SPHERE-2 PMT mosaic 2012 for figure~\ref{fig:2012-3_currents}.}
+    \todoi{Выберите одну из двух.}
+    \label{fig:2012-3_shore_image}
+\end{figure}
 
+The registered currents in some PMTs (numbers 5, 14, 29, 50 and 77) are shown in Fig.~\ref{fig:2012-3_currents}~(top panel). These PMTs form a straight line on the PMT mosaic and the currents dropped and restored in them in the same order they are positioned in the mosaic. There were more PMTs with current drop occurring at the same time. In Fig.~\ref{fig:2013-3_shore_image} the PMTs are colored according to similar current drop and restore times.
+
+This anomaly was observed in the the first half of the flight during the observations at 850~m altitude. At that time according to GPS the balloon was drifting north from starting point. Due to the wind becoming stronger on that altitude the balloon was subsequently lowered to 480 altitude and the currents had returned to their normal behaviour. 
+
+the analysis of the position and tilt of the detector showed that 
 
 %В первой половине третьего полета в 2012 наблюдалось необычное снижение токов в некоторых измерительных каналах. Оно наблюдается при высоте аэростата свыше 700 м над озером и сносе аэростата до 400~м на север. На рис~\ref{fig:2012-3_currents} в одних временных координатах представлены: токи, снос на север и высота детектора над поверхностью озера, надо еще добавить угол наклона установки. На верхнем рисунке~\ref{fig:2012-3_currents} приведены токи для фотоумножителей из центрального ряда мозаики ФЭУ: с 77 по 2 согласно нумерации фотоумножителей на рис.~\ref{fig:mosaic}. Согласно данным компаса мозаика была ориентирована таким образом, что ФЭУ 77 осматривало наиболее северную часть поверхности поля зрения всей установки. ФЭУ в легенде на рис.~\ref{fig:2012-3_currents} перечислены в порядке расположения полей зрения с севера на юг. Чем более южную часть обозревает ФЭУ, тем эффект ослабления тока меньше как по длительности, так и по абсолютной величине. Изменение тока ФЭУ коррелирует по времени с изменением сноса на север. 
 
