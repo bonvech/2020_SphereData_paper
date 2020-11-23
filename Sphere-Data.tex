@@ -46,7 +46,9 @@
 \linenumbers
 
 \begin{frontmatter}
-\title{EAS observation in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.}
+\title{EAS observation from the air in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.
+\todoi{Уточнить название статьи}
+}
 
 \author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
 \cortext[correspondingauthor1]{Corresponding author}
@@ -391,7 +393,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/2012_drift-mod.pdf}
-    \caption{The SPHERE-2 detector drift in 2012. \todoi{Покрасить пятна как на картинке 11. Пдписать берег, указать момент времени.}}
+    \caption{The SPHERE-2 detector drift in 2012-3 flight. Retina projection to the show surface is given for the time 15:47 UTC. Detector GPS position at that moment is indicated by the cross.  \todoi{Покрасить пятна как на картинке 11. Подписать берег, указать момент времени.}}
     \label{fig:2012-drift}
 \end{figure}
 
@@ -402,7 +404,7 @@ The PMTs currents variations during the observations generally followed the vari
 \centering
     %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
     \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 PMT mosaic 2012-3 for figure~\ref{fig:2012-3_currents}.\todoi{Расписать подробнее что это вообще такое.}}
+    \caption{The SPHERE-2 PMT retina scheme. PMT numbers are indicated. PMTs are colored according to it current curve type in 2012-3 flight with colors as in Fig. figure~\ref{fig:2012-3_currents}. \todoi{Расписать подробнее что это вообще такое.}}
     %\todoi{Выберите одну из двух.}
     \label{fig:2012-3_shore_image}
 \end{figure}
@@ -554,22 +556,14 @@ Table data clearly states that substantial changes of atmosphere model affect th
 
 
 %%%% === mosaic picture ===
-\begin{figure}[tb]
-%\begin{minipage}[t]{0.47\textwidth}
-    %\centering
-    %\includegraphics[width=17pc]{figs/optics_side}\hspace{2pc}%
-    %\caption{Optical scheme of the \mbox{SPHERE-2} detector.}
-%\label{fig:optics}
-%\end{minipage}
-%\hfill
-%\begin{minipage}[t]{0.47\textwidth}
-\centering
-    \includegraphics[width=19pc]{figs/mosaic.pdf}%
-    \vspace{-1.0pc}
-    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.\todoi{Грохнуть!}}
-\label{fig:mosaic}
-%\end{minipage}
-\end{figure}
+%\begin{figure}[tb]
+%\centering
+%    \includegraphics[width=19pc]{figs/mosaic.pdf}%
+%    \vspace{-1.0pc}
+%    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.\todoi{Грохнуть!}}
+%\label{fig:mosaic}
+%%\end{minipage}
+%\end{figure}
 
 
 %%% === PMT FOV picture %%%
@@ -579,7 +573,7 @@ Table data clearly states that substantial changes of atmosphere model affect th
     \includegraphics[width=0.9\textwidth]{figs/fov.pdf}
     %\vspace{10pt}
     %\includegraphics[width=0.49\textwidth]{figs/fov_log.eps}%
-    \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:mosaic} in assumption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformly.}
+    \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:2012-3_shore_image} in assumption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformly.}
 \label{fig:pmt_fov}
 \end{figure*}
 
@@ -595,7 +589,7 @@ The detector was set at 1000~m altitude with zero inclination above flat horizon
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflection coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
 
 Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector).
-Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:mosaic}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT mosaic center on Fig.~\ref{fig:mosaic}. The PMT1 is the Hamamatsu R3886 PMT that has the larger photocathode sensitive area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
+Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:mosaic}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT mosaic center on Fig.~\ref{fig:2012-3_shore_image}. The PMT1 is the Hamamatsu R3886 PMT that has the larger photocathode sensitive area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
 
 The same calculations was made for the detector position with different detector axis inclination angles. From the known PMT FOV the coordinates for FOV center were obtained and later used in shower arrival direction reconstruction and shower axis location.
 
