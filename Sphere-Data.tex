@@ -65,7 +65,7 @@
 \address[address4]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
 
 \begin{abstract}
-The SPHERE-2 detector designed for the extensive air showers detection was developed and performed measurements in 2008--2013\todoi{ Уточнить годы измерений, или перефразировать. Лучше целиком переписать абстракт.}. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.
+The SPHERE-2 detector designed for the extensive air showers detection was developed and performed measurements in 2011--2013. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including background lighting, temperature conditions and its effects, atmosphere studies.\todoi{переписать под фактическое содержание статьи.}
 \end{abstract}
 
 \begin{keyword}
@@ -82,7 +82,7 @@ This method, first proposed by E.~Chudakov~\cite{chu74}, allows, on one hand, to
 
 Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{}\todoi{Ссылка на Якутск} or the Tunka-133~\cite{}\todoi{ Ссылка на Тунку} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
 
-On the other hand common imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{ Ссылка на HESS} or MAGIC~\cite{}\todoi{ Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
+On the other hand conventional imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{ Ссылка на HESS} or MAGIC~\cite{}\todoi{ Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
 
 Since the Cherenkov light from EAS has a very sharp directional pattern it can not be observed by detectors more than about 0.5--1~km far from the shower axis. Therefore the IACTs have relatively low upper energy threshold.
 
@@ -124,11 +124,11 @@ The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, a
                        \cline{2-8}
                        & Power source                 & high voltage (HV1) & 0.1 & 0&--&250 & V\\
                        \cline{2-8}
-                       & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100 & hpa\\
+                       & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100 & hPa\\
                                                       \cline{3-8}
                        &                              & temperature& 2 & $-20$&--&60 &deg,$^\circ$C\\
                        \cline{2-8}
-                       & Balloon barometer            & pressure   & 3 & 0&--&1000 & pa\\
+                       & Balloon barometer            & pressure   & 3 & 0&--&1000 & Pa\\
                        \cline{2-8}
                        & Battery (19V)                & voltage & 0.01 & 0&--&40 & V\\
                        \cline{2-8}
@@ -162,7 +162,7 @@ The \mbox{SPHERE-2} detector is a compact optical device to measure the EAS Cher
 
 The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic. 
 
-The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface as shown on Fig.~\ref{fig:mosaic}\todoi{ убрать отсюда, текст переписать}. The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
+The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface (see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}). The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
 \subsection{Control block telemetry}
@@ -210,7 +210,7 @@ The GPS sensor Garmin 16xHVS~\cite{GPS-module-specs}, located on the control uni
 
 The GPS manufacturer declared the absolute accuracy of determining the coordinates of 4~m, and the altitude of 2~m. Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary objects. 
 
-The accuracy position determination of the GPS sensor in rest state was calculated from GPS data at a time when the detector was stationary on the lake ice. Daily distributions of the detector coordinates and altitude were plotted for 20 days in 2012 and 2013. The average Sigma (actually the median) of these distributions is taken as the accuracy of the GPS sensor's determination: 2~m for coordinates and 1~m for altitude.
+The accuracy position determination of the GPS sensor in rest state was calculated from GPS data at a time when the detector was stationary on the lake ice. Daily distributions of the detector coordinates and altitude were plotted for 20 days in 2012 and 2013. The average sigma (actually the median) of these distributions is taken as the accuracy of the GPS sensor's determination: 2~m for coordinates and 1~m for altitude.
 
 The accuracy of altitude determination by moving GPS will be considered in Sec.~\ref{sect:gps_correction}.
 
@@ -227,6 +227,8 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes
 
 \todoi{  Описать в два слова, зачем оно тут в таком количестве регистрировалось}
 
+\Russian{Данные с источники питания ФЭУ необходимы для оценки стабильности характеристик оптических модулей. Частота срабатывания дискриминаторов каналв используется для установки порогов. Отклонения значений питающих напряжения FADC от стандартных позволяют оперативно выявить неисправность измерительной электроники.}
+
 \section{Experimental conditions}
 %\section{Site and weather}
 \label{sect:data}
@@ -238,7 +240,7 @@ The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 
 
 \begin{table}[b]
 \centering
-\caption{The annual statistics of the SPHERE experiment on Baikal Lake}
+\caption{The annual statistics of the SPHERE experiment on Baikal Lake\todoi{Исправить количество триггеров 2008-2009}}
 \label{tab:statistics}
 \vspace{1pc}
 \begin{tabular}{|c||c|r|c|r|r|}
@@ -248,8 +250,8 @@ year &         & number & hours & detected \\
 \hline \hline
 \multicolumn{5}{|c|}{test runs} \\
 \hline
-2008 & 1 &  20 &  1 &     1 \\ 
-2009 & 5 &  96 &  1 &     1 \\ 
+2008 & 1 &  20 & 1.5 &    1 \\ 
+2009 & 5 &  64 & 11 &     1 \\ 
 2010 & 6 &  96 & 30 &  1343 \\
 \hline
 \multicolumn{5}{|c|}{experiment runs} \\
@@ -351,7 +353,7 @@ Fig.~\ref{fig:height} shows the detector altitude above lake ice surface accordi
 
 The PMT currents (the average anode current) were monitored constantly during flights as a part of detector state control. Since some of the PMTs used in the detector exhibited strong gain dependence on background illumination (up to a factor of 2) during initial selection and testing prior to the detector assembly the in-flight currents were expected to vary with time.
 
-In principle, the PMT anode current contain the current from photoelectrons and from thermoelectrons. However, in total dark conditions (in the laboratory during testing and at a launch site in the light protected storage container) the registered currents were small, below currents measurement precision. Therefore in-flight currents were considered as being caused only by photoelectrons from snow background illumination.
+In principle, the PMT anode current contain the current from photoelectrons and from thermoelectrons. However, in total dark conditions (in the laboratory during testing and at a launch site in the light protected storage container) the registered currents were small, below currents measurement precision. Therefore in-flight currents were considered as being caused only by photoelectrons from snow background illumination.\todoi{Прописать подробнее про токи в ящике и в лаборатории.}
 
 The background light flux was calculated as the sum of the few time-dependent fluxes from different sources, each with its own time dependence. Moreover each source of background light has its own spectrum that in theory can change over time due to atmosphere absorption.
 
@@ -374,6 +376,7 @@ The light pollution from all sorts of artificial sources was estimated using dat
 
 Current of the central PMT is shown on the Fig.~\ref{fig:current}. 
 
+\todoi{Дописать!}
 %%%%%%%%%%%%%%%%%%%%%
 
 
@@ -388,7 +391,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/2012_drift-mod.pdf}
-    \caption{The SPHERE-2 detector drift in 2012.}
+    \caption{The SPHERE-2 detector drift in 2012. \todoi{Покрасить пятна как на картинке 11. Пдписать берег, указать момент времени.}}
     \label{fig:2012-drift}
 \end{figure}
 
@@ -399,7 +402,7 @@ The PMTs currents variations during the observations generally followed the vari
 \centering
     %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
     \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 PMT retina 2012-3 for figure~\ref{fig:2012-3_currents}.}
+    \caption{The SPHERE-2 PMT mosaic 2012-3 for figure~\ref{fig:2012-3_currents}.\todoi{Расписать подробнее что это вообще такое.}}
     %\todoi{Выберите одну из двух.}
     \label{fig:2012-3_shore_image}
 \end{figure}
@@ -426,7 +429,6 @@ the analysis of the position and tilt of the detector showed that
 %%% Переименовать и пересортировать
 
 The position and inclination of the SPHERE-2 detector are the important values to correct calculations of detected EAS Cherenkov light characteristics. In contrast to ground-based Cherenkov light installations, the detector SPHERE-2 has a variable recording area depending on both the altitude and the inclination angle of the detector.
-https://www.overleaf.com/project/5d8cb8a9fc15870001260bd8
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{GPS altitude correction with barometer data}
@@ -564,7 +566,7 @@ Table data clearly states that substantial changes of atmosphere model affect th
 \centering
     \includegraphics[width=19pc]{figs/mosaic.pdf}%
     \vspace{-1.0pc}
-    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.}
+    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.\todoi{Грохнуть!}}
 \label{fig:mosaic}
 %\end{minipage}
 \end{figure}
