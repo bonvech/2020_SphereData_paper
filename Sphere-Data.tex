@@ -46,9 +46,9 @@
 \linenumbers
 
 \begin{frontmatter}
-\title{EAS observation from the air in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.
-\todoi{Уточнить название статьи}
-}
+\title{SPHERE-2 balloon experiment results.\\ Part I: EAS observations conditions
+\todoi{Уточнить название статьи}}
+%\title{EAS observation from the air in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.
 
 \author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
 \cortext[correspondingauthor1]{Corresponding author}
@@ -78,13 +78,16 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 
 
 \section{Introduction}
+\todoi{Сделать акцент на глобальной цели эксперимента - максимально надёжном и аккуратном измерении потока КЛ без цели тщательного прописывания деталей спектра. Упомянуть Антонова как автора первой успешной реализации метода.}
 The SPHERE-2 detector was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS detection method --- detection of the reflected Cherenkov light using an aerial-based detector. 
 
 This method, first proposed by E.~Chudakov~\cite{chu74}, allows, on one hand, to register EAS on the relatively large area and later reconstruct the Cherenkov photons lateral distribution function, and on the other hand, to utilize a small size compact detector with all the advantages of such setup. The mentioned advantages include (but are not limited to) the opportunity to implement: a complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs etc.
 
-Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{}\todoi{Ссылка на Якутск} or the Tunka-133~\cite{}\todoi{ Ссылка на Тунку} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
+Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20}\todoi{Ссылка на Тaйгу сделана. Нужно увеличивать цитируемость своих же статей.} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
 
-On the other hand conventional imaging air Cherenkov telescopes (IACT, like HESS~\cite{}\todoi{ Ссылка на HESS} or MAGIC~\cite{}\todoi{ Ссылка на MAGIC}) are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
+On the other hand conventional imaging air Cherenkov telescopes (IACT, like HESS~\cite{HESS03a, HESS03b} or MAGIC~\cite{MAGIC16-1, MAGIC16-2}
+%\todoi{ Ссылка на MAGIC 10.1016/j.astropartphys.2015.04.004 10.1016/j.astropartphys.2015.02.005}) 
+are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on.
 
 Since the Cherenkov light from EAS has a very sharp directional pattern it can not be observed by detectors more than about 0.5--1~km far from the shower axis. Therefore the IACTs have relatively low upper energy threshold.
 
@@ -229,7 +232,8 @@ Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes
 
 \todoi{  Описать в два слова, зачем оно тут в таком количестве регистрировалось}
 
-\Russian{Данные с источники питания ФЭУ необходимы для оценки стабильности характеристик оптических модулей. Частота срабатывания дискриминаторов каналв используется для установки порогов. Отклонения значений питающих напряжения FADC от стандартных позволяют оперативно выявить неисправность измерительной электроники.}
+
+\Russian{Данные с источников питания ФЭУ необходимы для оценки стабильности характеристик оптических модулей. Частота срабатывания дискриминаторов каналв используется для установки порогов. Отклонения значений питающих напряжения FADC от стандартных позволяют оперативно выявить неисправность измерительной электроники. Температура - для ...}
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -393,7 +397,7 @@ Current of the central PMT is shown on the Fig.~\ref{fig:current}.
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/2012_drift-mod.pdf}
-    \caption{The SPHERE-2 detector drift in 2012-3 flight. Retina projection to the show surface is given for the time 15:47 UTC. Detector GPS position at that moment is indicated by the cross.  \todoi{Покрасить пятна как на картинке 11. Подписать берег, указать момент времени.}}
+    \caption{The SPHERE-2 detector drift in 2012-3 flight. Retina projection to the show surface is given for the time 15:47 UTC. Detector GPS position at that moment is indicated by the cross.}
     \label{fig:2012-drift}
 \end{figure}
 
@@ -404,7 +408,7 @@ The PMTs currents variations during the observations generally followed the vari
 \centering
     %\includegraphics[width=0.2\textwidth]{figs/2012-3_retina.pdf}
     \includegraphics[width=0.35\textwidth]{figs/2012-3_retina_all.pdf}
-    \caption{The SPHERE-2 PMT retina scheme. PMT numbers are indicated. PMTs are colored according to it current curve type in 2012-3 flight with colors as in Fig. figure~\ref{fig:2012-3_currents}. \todoi{Расписать подробнее что это вообще такое.}}
+    \caption{The SPHERE-2 PMT mosaic scheme. PMT numbers are indicated. PMTs are colored according to it current curve type in 2012-3 flight with colors as in Fig.~\ref{fig:2012-3_currents}.}
     %\todoi{Выберите одну из двух.}
     \label{fig:2012-3_shore_image}
 \end{figure}
@@ -440,7 +444,7 @@ Thorough telemetry data analysis reveals that at some periods of time recorded G
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{figs/height_correction.pdf} 
-    \caption{Example of anomalous GPS altitude behavior, compared with `barometric' altitude (top panel). Same data with high-pass digital Butterworth filter applied (middle panel). Smoothed absolute delta of high-passed altitudes from middle panel, used as gate with threshold set at red line; intervals above this line correspond to red bands on other panels, which are the intervals subjected to GPS data correction.\todoi{Перерисовать в едином стиле.}}
+    \caption{Example of anomalous GPS altitude behavior, compared with `barometric' altitude (top panel). Same data with high-pass digital Butterworth filter applied (middle panel). Smoothed absolute delta of high-passed altitudes from middle panel, used as gate with threshold set at red line; intervals above this line correspond to red bands on other panels, which are the intervals subjected to GPS data correction.}
 \label{fig:h_corr}
 \end{figure}
 
@@ -471,6 +475,7 @@ After the corrections to GPS altitude data had been made we estimated the atmosp
     \includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
     \vspace{-1.0pc}
     \caption{Density versus altitude points in each flight and CORSIKA density profiles (negative derivatives of the curves in Fig. \ref{fig:massoverburden}). Solid black line represents profile adopted in the preliminary modelling}
+    \todoi{Добавить данные на рисунки}
 \label{fig:density}
 \end{minipage}
 \end{figure}
@@ -582,14 +587,14 @@ Table data clearly states that substantial changes of atmosphere model affect th
 
 In flight during measurements whenever the detector become inclined, the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
 
-In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. % здесь надо другую схему, нежели ту, что была. 
+In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. %The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. % здесь надо другую схему, нежели ту, что была. 
 \todoi{ Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему расчёта.}
 The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflection coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambert scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2.
 
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflection coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
 
 Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector).
-Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:mosaic}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT mosaic center on Fig.~\ref{fig:2012-3_shore_image}. The PMT1 is the Hamamatsu R3886 PMT that has the larger photocathode sensitive area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
+Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation angles  from the detector optical axis in an assumption of vertical detector optical axis position. There are presented calculated FOV for PMTs with numbers 1, 5, 14, 29, 50, 77 as they are indicated on the Fig.~\ref{fig:2012-3_shore_image}. The declination angles of presented PMTs change from 0 to 26 degrees in dependence of the PMT's distance from PMT mosaic center on Fig.~\ref{fig:2012-3_shore_image}. The PMT1 is the Hamamatsu R3886 PMT that has the larger photocathode sensitive area than others FEU-84-3 PMTs, it is seen clearly on the Fig.~\ref{fig:pmt_fov}. 
 
 The same calculations was made for the detector position with different detector axis inclination angles. From the known PMT FOV the coordinates for FOV center were obtained and later used in shower arrival direction reconstruction and shower axis location.
 
