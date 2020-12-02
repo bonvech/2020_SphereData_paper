@@ -8,7 +8,7 @@
 
 \usepackage[utf8]{inputenc} % Включаем поддержку UTF8
 \usepackage[T2A]{fontenc}
-\usepackage[russian,english]{babel}   % убрать русский перед отправкой статьи
+\usepackage[english,russian]{babel}   % убрать русский перед отправкой статьи
 \usepackage{lineno}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -83,7 +83,7 @@ The SPHERE-2 detector was designed for the primary cosmic ray (PCR) studies in t
 
 This method, first proposed by E.~Chudakov~\cite{chu74}, allows, on one hand, to register EAS on the relatively large area and later reconstruct the Cherenkov photons lateral distribution function, and on the other hand, to utilize a small size compact detector with all the advantages of such setup. The mentioned advantages include (but are not limited to) the opportunity to implement: a complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs etc.
 
-Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20}\todoi{Ссылка на Тaйгу сделана. Нужно увеличивать цитируемость своих же статей.} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
+Common EAS ground-based arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep them network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and atmosphere parameter control over vast area. 
 
 On the other hand conventional imaging air Cherenkov telescopes (IACT, like HESS~\cite{HESS03a, HESS03b} or MAGIC~\cite{MAGIC16-1, MAGIC16-2}
 %\todoi{ Ссылка на MAGIC 10.1016/j.astropartphys.2015.04.004 10.1016/j.astropartphys.2015.02.005}) 
@@ -230,10 +230,9 @@ Every minute the PMT and the power status was monitored. Anode currents of all P
 
 Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
 
-\todoi{  Описать в два слова, зачем оно тут в таком количестве регистрировалось}
+\todoi{Описать в два слова, зачем оно тут в таком количестве регистрировалось}
 
-
-\Russian{Данные с источников питания ФЭУ необходимы для оценки стабильности характеристик оптических модулей. Частота срабатывания дискриминаторов каналв используется для установки порогов. Отклонения значений питающих напряжения FADC от стандартных позволяют оперативно выявить неисправность измерительной электроники. Температура - для ...}
+\Russian{Данные с источников питания ФЭУ необходимы для оценки стабильности характеристик оптических модулей. Частота срабатывания дискриминаторов каналов используется для установки порогов. Отклонения значений питающих напряжения FADC от стандартных позволяют оперативно выявить неисправность измерительной электроники. Данные с датчиков температуры позволяют не только стабилизировать температуру внутри бокса с электроникой при помощи вентиляторов охлаждения, но и выравнивать температуру при включении внутреннего вентилятора.}
 
 \section{Experimental conditions}
 %\section{Site and weather}
@@ -288,6 +287,7 @@ Measurements were carried out during clear moonless cloudless nights with low wi
 
 Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. All the lake ice was covered by snow as seen in the Fig.~\ref{fig:baikal_snow}.  The snow reflection properties were controlled by using a luxmeter -- device sensitive to light intensity in the optical band. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
 
+\todoi{Наприсать про изменение погоды в/после 2013-5 со ссылкой на график плотности атмосферы.}
 
 \subsection{Detector orientation and telemetry data\label{sect:telemetrydata}}
 
@@ -448,6 +448,14 @@ Thorough telemetry data analysis reveals that at some periods of time recorded G
 \label{fig:h_corr}
 \end{figure}
 
+
+\begin{figure}[t]
+    \includegraphics[width=19pc]{figs/time_on_altitude.pdf}%
+    \caption{The altitude distribution of experiment time.}
+    \label{fig:time_on_altitude}
+    \todoi{Описать картинку в тексте. Обновить картинку по исправленным высотам.}
+\end{figure}
+
 Affected time intervals are relatively short for most flights, but during them some (сколько?) events were recorded. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude.
 
 First of all, to identify affected time intervals we calculated approximate <<barometric height>> from pressure data using inverted barometric formula $H_{bar} = H_0 - a \log \frac{P}{P_0}$ with parameters $H_0 = 456~\textrm{м}$ (Baikal surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = \frac{RT}{Mg} \approx 8400~\textrm{m}$ (standard value for barometric formula). Next, we have applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only fast variations of both values. Cutoff frequency for filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope was set to around $12~\textrm{db per octave}$. Resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
@@ -589,6 +597,8 @@ In flight during measurements whenever the detector become inclined, the configu
 
 In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. %The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. % здесь надо другую схему, нежели ту, что была. 
 \todoi{ Нужна новая картинка оптической части детектора. Надо со снегом, изображающим поверхность, потому что рассеяние на нём входит в схему расчёта.}
+
+\todoi{Сократить}
 The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflection coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambert scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm {\color{red}plus} the normalization coefficient of 2.
 
 At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed {\color{red}tflightcated} cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflection coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
