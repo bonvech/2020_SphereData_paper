@@ -72,6 +72,7 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 \MSC[2010] 00-01\sep  99-00
 \end{keyword}
 \end{frontmatter}
+
 \section{Introduction}
 The SPHERE-2 experiment was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS detection method --- detection of the reflected Cherenkov light (CL) using an aerial-based detector --- a method first proposed by E.~Chudakov~\cite{chu74} and pioneered by R.~Antonov~\cite{ant75, ant86, ant97, Ant15a}.%\todoi{Done!! Сослаться как-то на Антонова! На 1986, на Тань-Шнаь и на СФЕРУ-1 и мб на ЭЧАЯ для истории}
 
@@ -87,7 +88,7 @@ The compact detector that observes large surface area, however, can combine some
 
 The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, and the detailed description of the detector electronics is given in~\cite{Ant20}. 
 
-Here we give an overview of data registered by various auxiliary sensors on board of the SPHERE-2 detector. This data, collected during and in some cases before and after the EAS measurements, was used in the subsequent analysis for detector state and environment conditions control, allowing to perform various cross-checks of detector calibration, positioning and performance.
+Here we present an overview of data registered by various auxiliary sensors on board of the SPHERE-2 detector. This data, collected during and in some cases before and after the EAS measurements, was used in the subsequent analysis for detector state and environment conditions control, allowing to perform various cross-checks of detector calibration, positioning and performance.
 
 \section{The SPHERE-2 detector \label{sect:detector}}
 
@@ -154,10 +155,9 @@ Here we give an overview of data registered by various auxiliary sensors on boar
 \normalsize
 \end{table*}
 
-The \mbox{SPHERE-2} detector is a compact optical device designed to measure the EAS Cherenkov light from the balloon elevated to altitudes up to 1~km above the Earth snow covered surface. Special tethered balloon BAPA was developed and used~\cite{Ant20}.% (by Russian Augur balloon systems agency~\cite{Augur}.
-%\todoi{Поставить ссылку на статью по аппаратуре.}
+The \mbox{SPHERE-2} is a compact detector designed to measure the reflected Cherenkov light fom EAS. The detector is lifted  using tethered balloon to altitudes up to 1~km above the snow covered surface. Special tethered balloon BAPA~\cite{Ant20} was developed and manufactured by Russian Augur balloon systems agency~\cite{Augur}.
 
-The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic (optical scheme of the detector is shown in Fig.~\ref{fig:optics}).
+The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror with a 109 photomultiplier tubes (PMT) mosaic (optical scheme of the detector is shown in Fig.~\ref{fig:optics}).
 
 \begin{figure}[bt]
 \centering
@@ -166,7 +166,7 @@ The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror 
 \label{fig:optics}
 \end{figure}
 
-The PMT mosaic is located near the mirror focal surface and records the Cherenkov light reflected from the snow surface below the detector. PMTs are arranged in the hexagonal structure on the spherical surface (see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}). The central PMT of the mosaic is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
+The PMT mosaic was located near the mirror focal surface and recorded the Cherenkov light reflected from the snow surface below the detector. PMTs were arranged in the hexagonal structure on the spherical surface (see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}). The FEU-84/3 PMTs were used in the mosaic. The exact number of PMTs in each season are given in Tab.~\ref{tab:statistics}. is the Hamamatsu-R3686 photomultiplier and the others are the FEU-84-3 PMTs. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 
 \subsection{Control block telemetry}
@@ -197,7 +197,6 @@ Additional sensors were installed on the PMTs in the mosaic and controlled
 
 Some data provided by these sensors was used to monitor the flight conditions and detector status in real time. Also, all the data was stored and later was used in EAS parameters reconstruction and in detector performance evaluation.
 
-
 \subsection{Orientation control system}
 \label{sect:orientation}
 % описание датчиков (Чернов)
@@ -219,6 +218,7 @@ The accuracy position determination of the GPS sensor in rest state was calculat
 The accuracy of altitude determination by moving GPS will be considered in Sec.~\ref{sect:gps_correction}.
 
 %%%% Какая есть телеметрия %%%%%
+
 \subsection{Telemetry monitoring\label{sect:telemetry}}
 
 During every experimental flight a lot of information about the detector status and the environmental parameters is recorded. The different telemetry data is received and checked every second, every minute and every 10 minutes. 
@@ -240,6 +240,7 @@ The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
 %The balloon attracted the attention of a large number of Baikal tourists. 
 
+The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Tab.~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from~25 ns to 12.5~ns.
 
 \begin{table}[b]
 \centering
@@ -262,14 +263,11 @@ year  & flights & PMT    & time, & triggers \\
 \multicolumn{5}{|c|}{experiment runs} \\
 \hline
 2011 & 4 &  96 & 30 & 20571 \\
-2012 & 5 & 109 & 31 &  7716 \\
-2013 & 5 & 109 & 33 &  3813 \\
+2012 & 5 & 108+1 & 31 &  7716 \\
+2013 & 5 & 108+1 & 33 &  3813 \\
 \hline
 \end{tabular}
 \end{table}
-
-
-The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Table~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from~25 ns to 12.5~ns.
 
 Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
 
@@ -571,7 +569,6 @@ Fig.~\ref{fig:pmt_fov} shows the field of view of PMTs with different deviation 
 
 The same calculations was made for the detector position with different detector axis inclination angles. From the known PMT FOV the coordinates for FOV center were obtained and later used in shower arrival direction reconstruction and shower axis location.
 
-
 \section{Conclusions \label{sect:conclusions}}
 {\Russian
 В статье представлена наиболее полная информация о номенклатуре и характеристиках всех датчиков  использованных в эксперименте с установкой СФЕРА-2. Описано назначение каждого датчика и частота (период) опроса (чтения) данных. Результаты измерений были использованы для учёта влияния условий окружающей среды при регистрации отражённого ЧС ШАЛ, а также при восстановлении характеристик ШАЛ от ПКЛ (не в этой статье).
@@ -589,6 +586,7 @@ In the paper we demonstrated how the monitoring of the SPHERE-2 parameters works
 We are grateful to the Lebedev Physical Institute of Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{References}
 \bibliography{Sphere-Data.bib}
 
