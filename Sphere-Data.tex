@@ -43,7 +43,7 @@
 \linenumbers
 
 \begin{frontmatter}
-\title{SPHERE-2 balloon experiment results.\\ Part I: EAS observations conditions
+\title{SPHERE-2 balloon experiment results.\\ Part I: EAS observations conditions.
 \todoi{Уточнить название статьи}}
 %\title{EAS observation from the air in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.
 
@@ -52,8 +52,8 @@
 \ead{bonvech@yandex.ru}
 \author[address1]{D.V.~Chernov}
 \author[address1]{T.A.~Dzhatdoev}
-\author[address2,address3]{M.~Finger Jr.}
 \author[address2,address3]{M.~Finger}
+\author[address2,address3]{M.~Finger Jr.}
 \author[address4]{V.I.~Galkin}
 \author[address4,address1]{D.A.~Podgrudkov}
 \author[address1]{T.M.~Roganova}
@@ -95,12 +95,10 @@ Here we present an overview of data registered by various auxiliary sensors on b
 %%% === Telemetry table === %%%
 \begin{table*}[bth]
 \centering
-\caption{Telemetry sensors parameters}
-%\todo[inline]{Нужно уточнить точность GPS}
+\caption{SPHERE-2 telemetry data readout intervals and sensors precision.}
 \label{tab:telemetry_sensors}
-%\href{https://docs.google.com/spreadsheets/d/1MEnVT2ue2mNZBabXCuhiacFWPkZbzGb2yeg4IZIXusI/edit?usp=sharing}{Table with telemetry parameters online} \\
 
-\vspace{1pc}
+%\vspace{1pc}
 \begin{tabular}{|c|l|l|c|r@{\hspace{1mm}}c@{\hspace{1mm}}l|c|}
 \hline
 \multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
@@ -112,7 +110,7 @@ Here we present an overview of data registered by various auxiliary sensors on b
                                                       \cline{3-8}
                        &                              & GPS time (PPS)& 1 & &---&& $\mu$s \\
                        \cline{2-8}
-                       & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg\\
+                       & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg (\\
                                                       \cline{3-8}
                        &                              & compass azimuth (resolution) Z &2.5 (0.5)&0&--&360&deg\\
                        \cline{2-8}
@@ -446,7 +444,7 @@ After the corrections to GPS altitude data had been made we estimated the atmosp
     \includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
     \vspace{-1.0pc}
     \caption{Density versus altitude points in each flight and CORSIKA density profiles (negative derivatives of the curves in Fig. \ref{fig:massoverburden}). Solid black line represents profile adopted in the preliminary modelling.}
-    \todoi{Done! Добавить данные на рисунки}
+    %\todoi{Done! Добавить данные на рисунки}
 \label{fig:density}
 \end{minipage}
 \end{figure}
@@ -548,10 +546,11 @@ Table data clearly states that substantial changes of atmosphere model affect th
 \begin{figure*}[bth]
 \centering
     %\includegraphics[width=0.44\textwidth, bb= 100 100 900 900,clip]{fov.eps}\hspace{2pc}%
-    \includegraphics[width=0.9\textwidth]{fov.pdf}
+    \includegraphics[width=0.95\textwidth]{figs/fov_inclined.pdf}
     %\vspace{10pt}
     %\includegraphics[width=0.49\textwidth]{fov_log.eps}%
-    \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:2012-3_shore_image} in assumption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformly.\todoi{Сделать новую картинку, как планировалось, данные есть.}}
+    \caption{The PMTs' fields of view for detector at altitude $H=$ 1000~m. There are presented calculated FOV of PMTs 1, 5, 14, 29, 50 and 77 as indicated on the Fig.~\ref{fig:2012-3_shore_image} in assumption of vertical detector optical axis position. The inclinations of the PMTs axis from the SPHERE detector optical axis change from 0 to 26 degrees uniformly.%\todoi{Done.Сделать новую картинку, как планировалось, данные есть.}
+    }
 \label{fig:pmt_fov}
 \end{figure*}
 
