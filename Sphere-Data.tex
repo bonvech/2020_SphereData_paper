@@ -153,7 +153,7 @@ Here we present an overview of data registered by various auxiliary sensors on b
 \normalsize
 \end{table*}
 
-The \mbox{SPHERE-2} is a compact detector designed to register the reflected Cherenkov light fom EAS. The detector is lifted using tethered balloon to altitudes up to 1~km above the snow covered surface. Special tethered balloon BAPA~\cite{Ant20} was developed and manufactured by Russian Augur balloon systems agency~\cite{Augur}.
+The \mbox{SPHERE-2} is a compact detector designed to register the reflected Cherenkov light from EAS. The detector is lifted using tethered balloon to altitudes up to 1~km above the snow covered surface. Special tethered balloon BAPA~\cite{Ant20} was developed and manufactured by Russian Augur balloon systems agency~\cite{Augur}.
 
 The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror with a 109 photomultiplier tubes (PMT) mosaic (optical scheme of the detector is shown in Fig.~\ref{fig:optics}).
 
@@ -197,51 +197,49 @@ Some data provided by these sensors was used to monitor the flight conditions an
 \subsection{Orientation control system}
 \label{sect:orientation}
 
-The detector axis at the rest state is oriented vertically and detector observes the snow covered surface just under the detector. During the measurements the detector hang under the balloon and swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determine the overall geometry of the experiment. To control the position and rotation of the detector an inclinometer and a digital compass were installed on the PMT mosaic control board. 
+The detector axis at the rest state is oriented vertically and detector observes the snow covered surface just under the detector. During the measurements the detector hang under the balloon and swung and rotated freely. The detector inclination is an important factor for the shower parameters reconstruction as it determine the overall geometry of the experiment. To control the position and rotation of the detector a dual-axis inclinometer and a digital compass were installed on the PMT mosaic control board. 
 
 The digital compass measures the angle of the detector's orientation relative to the Earth's magnetic field with 2.5~degree precision.
 
-The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector mosaic axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.3^\circ$\todoi{Уточнить по фактическому состоянию!} and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
+The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector mosaic axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.3^\circ$\todoi{Уточнить по фактическому состоянию! Чернов Д.В.} and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
 
-The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there were no recorded strong wind gusts and the balloon position was stable. So we assumed that  registered by inclinometer angles were unaffected by swinging.
+The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there was recorded only a signle instance of strong wind gusts at the end of the 2013-3 flight, and the balloon position was relatively stable in all other times. So we assumed that the registered inclination angles were unaffected by swinging.
 
 The GPS sensor Garmin 16xHVS~\cite{GPS-module-specs}, located on the control unit was used to measure geographical coordinates and an elevation above sea level. 
 
-The GPS manufacturer declared the absolute accuracy of determining the coordinates of 4~m, and the altitude of 2~m. Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary objects. 
+The GPS manufacturer declared the absolute accuracy of 4~m in position measurements, and 2~m accuracy in the altitude determination. Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary situations. 
 
-The accuracy position determination of the GPS sensor in rest state was calculated from GPS data at a time when the detector was stationary on the lake ice. Daily distributions of the detector coordinates and altitude were plotted for 20 days in 2012 and 2013. The average sigma (actually the median) of these distributions is taken as the accuracy of the GPS sensor's determination: 2~m for coordinates and 1~m for altitude. \todoi{Подумать про график.}
+The accuracy position determination of the GPS sensor in stationary state was calculated from GPS data at a time when the detector was stationary on the ice. Daily distributions of the detector position and altitude were plotted for 20 days in 2012 and 2013. The median sigma of these distributions is taken as the accuracy of the position and altitude measurements: 2~m and 1~m respectively.
 
-The accuracy of altitude determination by moving GPS will be considered in Sec.~\ref{sect:gps_correction}.
+However, the detector showed significant lag in altitude measurements during initial balloon climb and subsequent flight altitude changes. More details on the lag, its correction and influence on detector altitude determination are discussed in Sec.~\ref{sect:gps_correction}.
 
 %%%% Какая есть телеметрия %%%%%
 
 \subsection{Telemetry monitoring\label{sect:telemetry}}
 
-During every experimental flight a lot of information about the detector status and the environmental parameters is recorded. The different telemetry data is received and checked every second, every minute and every 10 minutes. 
+During every experimental flight a lot of information about the detector status and the environmental parameters was recorded. The different telemetry data was received and checked every second, every minute and every 10 minutes. 
 
-Every second the detector position and orientation was recorded. The GPS data of altitude, latitude and longitude, universal global time UTC, the angles of detector inclination by the inclinometer sensor, magnetometer compass data and the control block inner temperature was monitored. The additional GPS and barometer were deployed on the Baikal Lake ice surface level.
+Every second the detector position and orientation was recorded. The GPS data (altitude, latitude and longitude), universal global time UTC, the angles of detector inclination, digital compass data and the control block inner temperature was monitored. The additional GPS and barometer were deployed on the control booth at ice level.
 
-Every minute the PMT and the power status was monitored. Anode currents of all PMTs, the PMT mosaic temperature and the temperature of the PMTs high voltage power source as well as the voltage of the batteries and of constant voltage sources were recorded. Barometer sensors were polled every minute also.
+Every minute the PMT and the power status were monitored. Anode currents of each PMT, the PMT mosaic temperature and the temperature of the PMTs high voltage power source as well as the power supply voltage and DC voltage sources were recorded. Barometer sensors were polled every minute also.
 
-Every ten minutes the PMT supply voltage, voltage at the first and tenth dinodes, temperature were checked for each photomultiplier. The measuring channel counting rates and voltage on the FADC boards with the measuring channels were also recorded.
+Every ten minutes the detector logged the PMTs supply voltages, voltages at PTMS first and tenth dynodes, individual PMT temperatures. The measuring channel counting rates and voltage on the FADC boards were also recorded.
 
 % done \todoi{Описать в два слова, зачем оно тут в таком количестве регистрировалось}
-The PMTs power supply data were later used to control the optical modules operations stability. The registered discriminator triggering frequency was used for discriminator thresholds selection in experimental flights. The deviation of the power consumption in FADC boards was used to monitor malfunctions in the detector electronics. The temperature sensors data was used for in-flight detector state and cooling system control.
+The PMTs power supply data were later used to control the optical modules operational stability. The registered discriminator triggering rate was used for discriminator thresholds selection in experimental flights. The deviation of the power consumption in FADC boards was used to monitor possible malfunctions in the detector electronics. The temperature sensors data was used for in-flight detector state and cooling system control.
 
 \section{Experimental conditions}
 %\section{Site and weather}
 \label{sect:data}
  
-The SPHERE experiment was carried out on the Baikal Lake, Russia during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February. The balloon launch pad was deployed on the frozen Baikal lake ice surface 700~m far from the shore in the point with coordinates near 51$^\circ$\,47'\,48''~N, 104$^\circ$\,23'\,19''~E. 
+The SPHERE experiment was carried out on the Baikal Lake during winters 2008--2013. The Baikal lake ice thickness reaches 40--60~cm in February and can hold heavy vehicles. The balloon launch pad was deployed on the lake surface around 700~m from the shore (near 51$^\circ$\,47'\,48''~N, 104$^\circ$\,23'\,19''~E).
 %51.796923~N, 104.388663~E http://www.google.com/maps?q=51.796923,+104.388663
-%The balloon attracted the attention of a large number of Baikal tourists. 
 
-The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Tab.~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal time sampling was changed in 2012 from~25 ns to 12.5~ns.
+The \mbox{SPHERE-2} detector was lifted by the tethered balloon BAPA to altitudes up to 900~m above snow surface. The annual statistics of the experiment is given by the Tab.~\ref{tab:statistics}. The first two years were test ones. The detector configuration was improved from year to year. Thus the number of PMTs was increased from 96 to 109, the signal sampling rate was changed in 2012 from~40~MHz to 80~MHz.
 
-\begin{table}[b]
+\begin{table}[tb]
 \centering
-\caption{The annual statistics of the SPHERE experiment on Baikal Lake
-%\todoi{Done. Исправить количество триггеров 2008-2009}
+\caption{The annual statistics of the SPHERE experiment on Baikal Lake.
 }
 \label{tab:statistics}
 \vspace{1pc}
@@ -265,21 +263,31 @@ year  & flights & PMT    & time, & triggers \\
 \end{tabular}
 \end{table}
 
-Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
+%Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
 
 %% Baikal snow photo %% fig:baikal_snow
 \begin{figure}[tb]
-    \includegraphics[width=0.45\textwidth]{DSC_4049.jpg}\hspace{2pc}%
-    \caption{Baikal snow around the SPHERE start point.}
+\begin{center}
+    \includegraphics[trim=1cm 5cm 0cm 5cm,clip,width=0.45\textwidth]{DSC_4049.jpg}\hspace{2pc}%
+    \caption{The overview of the launch site on the Baikal Lake from the hill on the shore. The snow coverage around the SPHERE start point was thick and was usually renewed between flights by regular shows showers.}
 \label{fig:baikal_snow}
+\end{center}
+\end{figure}
+\begin{figure}[tb]
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{DSC_7423.jpg}\hspace{2pc}%
+    \caption{The overview of the launch site on the Baikal Lake from the shore. The background mountains are more than 50 kilometers away with indicates good atmosphere transparency on ground level.}
+\label{fig:baikal_atmo}
+\end{center}
 \end{figure}
 
 \subsection{Weather and snow}
-% внести результаты собственного измерения условий на снегу
 
-Measurements were carried out during clear moonless cloudless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once as it was in the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to the~\href{https://rp5.ru/Weather_in_the_world}{Reliable Prognosis} data archive of the nearest weather stations with numbers 30818 and 30710 the horizontal visibility was at least 10 km, and the altitude of the base of the lowest clouds was 2500~m and more or no clouds were present. The Milky Way was clearly visible all the nights.
+Measurements were carried out during clear moonless nights with low wind. The measurements were started 1.5 hour after sunset or immediately after moonset and were finished before moonrise or 1.5 hour before sunrise. If the wind condition had become unsuitable for the flight the balloon with detector was landed at once (however, this happened only with the third flight in 2013). The typical night air temperature on the lake surface was near $-15^\circ$C. According to the Reliable Prognosis data archive~\cite{rp5} for the nearest weather stations 30818 and 30710 the horizontal visibility was `at least 10 km' (the highest grade in the system), and the altitude of the base of the lowest clouds was `2500~m or more or no clouds present'. 
 
-Our experiment was carried out when the Baikal surface was covered with freshly fallen snow. All the lake ice was covered by snow as seen in the Fig.~\ref{fig:baikal_snow}.  The snow reflection properties were controlled by using a luxmeter -- device sensitive to light intensity in the optical band. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}. 
+Our own observations of the atmosphere show that during the day the visibility degraded due to high humidity (as is the case show in Fig.~\ref{fig:baikal_snow}), but in the evening recovered back. In~Fig.~\ref{fig:baikal_atmo} the background mountains snow caps are 55--56~km away therefore the horizontal visibility was good. During nights the mountains were also visible. The Milky Way was clearly visible during all measurement nights. 
+
+Our experiment was carried out when the Baikal surface was covered with snow. All the lake ice was covered by snow as seen in the Fig.~\ref{fig:baikal_snow}. The snow reflection properties were controlled using a photometer. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}.
 
 \todoi{Наприсать про изменение погоды в/после 2013-5 со ссылкой на график плотности атмосферы.}
 
