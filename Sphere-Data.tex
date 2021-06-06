@@ -38,7 +38,6 @@
 \begin{document}
 \newcommand{\todoi}[1]{\todo[inline]{ #1}}
 
-\tableofcontents  % пусть пока побудет, стереть перед подачей
 \listoftodos[Notes]
 \linenumbers
 
@@ -107,8 +106,6 @@ The \mbox{SPHERE-2} detector optics comprised a 1.5~m diameter spherical mirror 
 \end{figure}
 
 The PMT mosaic was located near the mirror focal surface and recorded light reflected from the snow surface below the detector. PMTs were arranged in the hexagonal structure on the spherical surface (see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}). The FEU-84/3 PMTs were used in the mosaic. The exact number of PMTs in each season are given in Tab.~\ref{tab:statistics}. The fields of view of PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
-
-
 
 \begin{table}[tb]
 \centering
@@ -259,7 +256,6 @@ Every minute the PMT and the power status were monitored. Anode currents of each
 
 Every ten minutes the detector logged the PMTs supply voltages, voltages at PTMS first and tenth dynodes, individual PMT temperatures. The measuring channel counting rates and voltage on the FADC boards were also recorded.
 
-% done \todoi{Описать в два слова, зачем оно тут в таком количестве регистрировалось}
 The PMTs power supply data were later used to control the optical modules operational stability. The registered discriminator triggering rate was used for discriminator thresholds selection in experimental flights. The deviation of the power consumption in FADC boards was used to monitor possible malfunctions in the detector electronics. The temperature sensors data was used for in-flight detector state and cooling system control.
 
 \section{Experimental conditions}
@@ -417,7 +413,6 @@ However, in third flight of the 2012 season in part of the PMTs the abnormal dro
     %\includegraphics[width=0.2\textwidth]{2012-3_retina.pdf}
     \includegraphics[width=0.35\textwidth]{2012-3_retina_all.pdf}
     \caption{The SPHERE-2 PMT mosaic scheme. PMT numbers are indicated. PMTs are colored according to it current curve type in 2012-3 flight with colors as in Fig.~\ref{fig:2012-3_currents}.}
-    %\todoi{Выберите одну из двух.}
     \label{fig:2012-3_shore_image}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -433,7 +428,7 @@ This in itself confirms the consistency of the detector orientation and position
 \section{Telemetry analysis}
 %%% Переименовать и пересортировать
 
-The position and inclination of the SPHERE-2 detector are the important values to correct reconstruction of the registered EAS Cherenkov light characteristics. In contrast to Cherenkov ground-based arrays, such as~\ref{}\todoi{ссылки на Якутск и Тунку}, the SPHERE-2 detector has a variable recording area depending on both the altitude and the inclination.
+The position and inclination of the SPHERE-2 detector are the important values to correct reconstruction of the registered EAS Cherenkov light characteristics. In contrast to Cherenkov ground-based arrays, such as~\cite{Yakutsk19,TUNKA133}, the SPHERE-2 detector has a variable registration area depending on both the altitude and the inclination.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{GPS altitude correction with barometer data}
@@ -451,10 +446,10 @@ Thorough telemetry data analysis revealed that at some periods of time recorded 
     \includegraphics[width=19pc]{time_on_altitude.pdf}%
     \caption{The altitude distribution of experiment time.}
     \label{fig:time_on_altitude}
-    \todoi{Обновить картинку по исправленным высотам.}
+    \todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
 \end{figure}
 
-Affected time intervals are relatively short for most flights, but during them some events were recorded\todoi{Сколько событий, надо указать точно.}. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude.
+Affected time intervals are relatively short for most flights, but during them some events were recorded\todoi{Сколько событий, надо указать точно. Бонвеч Е.А.}. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude.
 
 First of all, to identify affected time intervals we calculated approximate `barometric height' from pressure data using inverted barometric formula $H_{bar} = H_0 - a \log (P/P_0)$ with parameters $H_0 = 456~\textrm{m}$ (Baikal surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = {RT}/{Mg} \approx 8400~\textrm{m}$ (standard value for barometric formula). Next, we had applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only fast variations of both values. Cutoff frequency for filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope was set to around $12~\textrm{db per octave}$. Resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
 
@@ -606,20 +601,10 @@ The vital for reflected CL method information on detector position and orientati
 Measurements of the air pressure and temperature during flights gave information on the atmosphere state that in advance will allow to introduce different atmospheric models into analysis and to account of their impact on the results.
 
   
-%{В статье представлена наиболее полная информация о номенклатуре и характеристиках всех датчиков  использованных в эксперименте с установкой СФЕРА-2. Описано назначение каждого датчика и частота (период) опроса (чтения) данных. Результаты измерений были использованы для учёта влияния условий окружающей среды при регистрации отражённого ЧС ШАЛ, а также при восстановлении характеристик ШАЛ от ПКЛ (не в этой статье).
-%Основными факторами влияния являются высота, положение и наклон установки. Кроме того, заметное влияние оказывает уровень звездного фона оцениваемое по значению постоянного тока в каждом канале. Исследовано и учтено расхождение в данных о высоте с GPS приёмника и барометрического высотомера. Обнаружено скачкообразное изменение плотности атмосферы из-за погодных аномалий которое может приводить к заметной систематической ошибке при оценке состава ПКЛ. В работе были проанализированы и обобщены все зарегистрированные изменения условий окружающей среды и модификации аппаратуры за несколько лет измерений для уточнения и унификации результатов.
-
-%В статье мы описали как в эксперименте мы измеряем параметры установки  СФЕРА-2, важные для восстановления черенковских событий.  В частности, высота установки над уровнем земли измеряется двумя способами, что позволяет определить истинное значение высоты. Мы видим, что установка стабильна в воздушном потоке.}
-
-%\todoi{ВЫВОДЫ!!!!!!!! Их нет!!!!!} % сделано 2021/01/20
-
 \section{Acknowledgments}
 %done
 We are grateful to the Lebedev Physical Institute of Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\section{References}
 \bibliography{Sphere-Data.bib}
 
 \end{document}
