@@ -6,9 +6,9 @@
 \documentclass[final,5p,times,twocolumn]{elsarticle}
 %\documentclass[final,5p,twocolumn]{elsarticle}
 
-\usepackage[utf8]{inputenc} % Включаем поддержку UTF8
+\usepackage[utf8]{inputenc} 
 \usepackage[T2A]{fontenc}
-\usepackage[russian,english]{babel}   % убрать русский перед отправкой статьи
+\usepackage[english]{babel}   
 \usepackage{lineno}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -28,23 +28,19 @@
 %% `Elsevier LaTeX' style
 \bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
-%\hyphenpenalty=10000
-%\setlength{\marginparwidth}{2cm}
-\usepackage{todonotes}
 
-%http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/easy-todo/easy-todo.pdf
-%\usepackage[enable]{easy-todo}
+%\usepackage{todonotes}
+
 
 \begin{document}
-\newcommand{\todoi}[1]{\todo[inline]{ #1}}
+%\newcommand{\todoi}[1]{\todo[inline]{ #1}}
 
-\listoftodos[Notes]
+%\listoftodos[Notes]
 \linenumbers
 
 \begin{frontmatter}
 \title{SPHERE-2 balloon experiment results.\\ Part I: EAS observations conditions.}
-%\todoi{Уточнить название статьи}
-%\title{EAS observation from the air in the SPHERE-2 experiment. \\ Part 1. Atmosphere monitoring.
+
 
 \author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
 \cortext[correspondingauthor1]{Corresponding author}
@@ -63,7 +59,7 @@
 \address[address4]{M.V. Lomonosov Moscow State University, Department of Physics, Moscow, Russia}
 
 \begin{abstract}
-The SPHERE-2 detector designed for the extensive air showers detection was developed and performed measurements in 2011--2013. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including temperature conditions and its effects, atmosphere studies.%\todoi{переписать под фактическое содержание статьи после завершения текста статьи.}
+The SPHERE-2 detector designed for the extensive air showers detection was developed and performed measurements in 2011--2013. The data the detector collected is still under analysis but here we present the analysis of the telemetry data and of the detector operation conditions including temperature conditions and its effects, atmosphere studies.
 \end{abstract}
 
 \begin{keyword}
@@ -73,9 +69,7 @@ primary cosmic rays\sep extensive air showers\sep Vavilov--Cherenkov radiation\s
 \end{frontmatter}
 
 \section{Introduction}
-The SPHERE-2 experiment was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS detection method --- detection of the reflected Cherenkov light (CL) using an aerial-based detector --- a method first proposed by E.~Chudakov~\cite{chu74:VKKL74} and pioneered by R.~Antonov~\cite{ant75, ant86, ant97, Ant15a}.
-
-%The optical methods of EAS registration cannot compete with charged particles detectors (like KASCADE~\cite{}\todoi{Ссылка на KASCADE} or HAWC~\cite{}\todoi{Ссылка на HAWC}) in statistics due to very limited duty cycle. However, total CL flux from EAS has a very low dependence on the primary particle mass and hadron interactions model allowing for accurate energy estimation of every registered event with low systematic error. So the main goal of the SPHERE experiment is to measure as accurately and reliably as possible the PCR flux in given range. The small scale structure and features of the PCR energy spectrum are better studied with particle detectors albeit with not so good energy calibration.
+The SPHERE-2 experiment was designed for the primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. The PCR particles induce the secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that are registered by different methods by the ground-based detectors. However the SPHERE-2 experiment is a first successful implementation of a new EAS detection method --- detection of the reflected Cherenkov light (CL) using an aerial-based detector --- a method first proposed by A.~Chudakov~\cite{chu74:VKKL74} and pioneered by R.~Antonov~\cite{ant75, ant86, ant97, Ant15a}.
 
 Common EAS arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20} detector are the ground-based structures that are spread over up to hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such a vast arrays and to keep their network connected, power-supplied and time-synchronized. More effort is needed for the regular calibration of detector stations and for atmosphere parameter control over the detector area. 
 
@@ -453,7 +447,7 @@ Thorough telemetry data analysis revealed that at some periods of time recorded 
     %\todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
 \end{figure}
 
-Affected time intervals are relatively short for most flights, but during them some events were recorded. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude. The correction was made for 220 events where difference between two altitudes was more than 10~m. \todoi{Сколько событий, надо указать точно. Бонвеч Е.А.}
+Affected time intervals are relatively short for most flights, but during them some events were recorded. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude. The correction was made for 220 events where difference between two altitudes was more than 10~m.
 
 First of all, to identify affected time intervals we calculated approximate `barometric height' from pressure data using inverted barometric formula $H_{bar} = H_0 - a \log (P/P_0)$ with parameters $H_0 = 456~\textrm{m}$ (Baikal surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = {RT}/{Mg} \approx 8400~\textrm{m}$ (standard value for barometric formula). Next, we had applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only fast variations of both values. Cutoff frequency for filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope was set to around $12~\textrm{db per octave}$. Resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
 
@@ -554,12 +548,11 @@ CORSIKA atmosphere model 11 was used all through the modeling runs. Modeling las
 
 We produced such artificial events initiated by 10~PeV protons for a number of models, passing close to the experimental $t$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
 
-The lateral distributions were calculated within a vast (3.2km $\times$ 3.2km) carpet tiled with 2.5~m $\times$ 2.5~m squares but for the purpose of the comparison were smoothed by integrating over 50m $\times$ 50~m squares approximately imitating the sensitivity spots of telescope pixels.
+The lateral distributions were calculated within a vast (3.2~km~$\times$~3.2~km) carpet tiled with 2.5~m $\times$ 2.5~m squares but for the purpose of the comparison were smoothed by integrating over 50~m~$\times$~50~m squares approximately imitating the sensitivity spots of telescope pixels.
 
 Sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows mean values and variations of Cherenkov photon number ratios for three pairs of CORSIKA atmosphere models (3/4, 3/11 and 4/11). The ratios of sample mean lateral distributions for 3/11 and 4/11 pairs are shown in Fig.~\ref{fig:3d11} and Fig.~\ref{fig:4d11}, respectively. Pair 3/4 reflects maximum effect of atmosphere model choice from the viewpoint of experimental $t$ and $\rho$ measurements. Pairs 3/11 and 4/11 compare the model 11 used in simulations to the models approximating the experimental data.
 
 Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about 6 to 12\% (12 to 20\%) near the shower core, closer than 80 m, and about -2 to +6\% (0 to +12\%) in 80--150m circle for 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
-
 
 %%%% === mosaic picture ===
 %\begin{figure}[tb]
