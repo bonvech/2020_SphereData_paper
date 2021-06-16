@@ -152,13 +152,13 @@ The control block of the SPHERE-2 detector contained a large array of different 
 \multicolumn{1}{|c|}{interval} & \multicolumn{1}{c|}{parameter} & \multicolumn{1}{c|}{data}  & \multicolumn{1}{|c|}{accuracy} & \multicolumn{3}{c|}{range}  & \multicolumn{1}{c|}{units} \\
 %\hline
 \hline
-\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & 2 (1)* &  -1500&--&18000  & m a.s.l.\\
+\multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (1)* &  -1500&--&18000  & m a.s.l.\\
                                                       \cline{3-8}
-                         &                              & GPS position & 4 (2)** & &---&& m\\
+                         &                              & GPS position & 4 (2)* & &---&& m\\
                                                       \cline{3-8}
                        &                              & GPS time (PPS)& 1 & &---&& $\mu$s \\
                        \cline{2-8}
-                       & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg (\\
+                       & \multirow{2}{*}{Detector orientation} & inclination angles (resolution) X,Y& 0.3 (0.02)&$-$25&--&25&deg\\
                                                       \cline{3-8}
                        &                              & compass azimuth (resolution) Z &2.5 (0.5)&0&--&360&deg\\
                        \cline{2-8}
@@ -172,7 +172,7 @@ The control block of the SPHERE-2 detector contained a large array of different 
                        \cline{2-8}
                        & \multirow{2}{*}{Barometer}   & pressure & 5 & 750&--&1100 & hPa\\
                                                       \cline{3-8}
-                       &                              & temperature& 2 & $-20$&--&60 &deg,$^\circ$C\\
+                       &                              & temperature& 2 & -20&--&60 &deg,$^\circ$C\\
                        \cline{2-8}
                        & Balloon barometer            & pressure   & 3 & 0&--&1000 & Pa\\
                        \cline{2-8}
@@ -195,9 +195,11 @@ The control block of the SPHERE-2 detector contained a large array of different 
 \vspace{1mm}
 
 \footnotesize \raggedright 
-\hspace{6.5 mm}* 2 m accuracy according to the manufacturer provided data, 1 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
+\hspace{5 mm}* 
+%2 m accuracy according to the manufacturer provided data, 
+1 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
 
-\hspace{5 mm}** 4 m accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
+\hspace{5 mm}*  3–5 meters, 95\% typical accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
 \normalsize
 \end{table*}
 
@@ -232,13 +234,15 @@ The detector axis at the rest state is oriented vertically and detector observes
 
 The digital compass measures the angle of the detector's orientation relative to the Earth's magnetic field with 2.5~degree precision.
 
-The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector mosaic axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.3^\circ$\todoi{Уточнить по фактическому состоянию! Чернов Д.В.} and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
+The inclinometer measures two angles between it's internal orthogonal axes and the plane orthogonal to the gravity vector. The orientation of inclinometer axes respectively to detector mosaic axes was determined in the laboratory. After careful preparations the mosaic was set horizontally with precision better than $0.5^\circ$ and the zero level of the inclinometer was measured. All detector inclination angles were calculated considering recovered zero level.
 
 The type of inclinometer used allows fast angles measurements with low power consumption, but, contrary to the gyroscopic ones, it is affected by acceleration. As we will see in sec~\ref{sect:telemetrydata} during detector flights there was recorded only a signle instance of strong wind gusts at the end of the 2013-3 flight, and the balloon position was relatively stable in all other times. So we assumed that the registered inclination angles were unaffected by swinging.
 
 The GPS sensor Garmin 16xHVS~\cite{GPS-module-specs}, located on the control unit was used to measure geographical coordinates and an elevation above sea level. 
 
-The GPS manufacturer declared the absolute accuracy of 4~m in position measurements, and 2~m accuracy in the altitude determination. Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary situations. 
+The GPS manufacturer declared the 3–5 meters, 95\% typical accuracy in position measurements.
+%, and 2~m accuracy in the altitude determination. 
+Our observations show than an accuracy of position detection by the GPS sensor differs for moving and stationary situations. 
 
 The accuracy position determination of the GPS sensor in stationary state was calculated from GPS data at a time when the detector was stationary on the ice. Daily distributions of the detector position and altitude were plotted for 20 days in 2012 and 2013. The median sigma of these distributions is taken as the accuracy of the position and altitude measurements: 2~m and 1~m respectively.
 
@@ -443,13 +447,13 @@ Thorough telemetry data analysis revealed that at some periods of time recorded 
 \end{figure}
 
 \begin{figure}[t]
-    \includegraphics[width=19pc]{time_on_altitude.pdf}%
+    \includegraphics[width=19pc]{figs/time_on_altitude_c.pdf}%
     \caption{The altitude distribution of experiment time.}
     \label{fig:time_on_altitude}
-    \todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
+    %\todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
 \end{figure}
 
-Affected time intervals are relatively short for most flights, but during them some events were recorded\todoi{Сколько событий, надо указать точно. Бонвеч Е.А.}. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude.
+Affected time intervals are relatively short for most flights, but during them some events were recorded. In order to correctly estimate detector altitude for those events, and to maintain overall data consistency we attempted to correct these smoothed GPS altitude measurements using pressure data from barometer, which has strong and well-understood dependence on altitude. The correction was made for 220 events where difference between two altitudes was more than 10~m. \todoi{Сколько событий, надо указать точно. Бонвеч Е.А.}
 
 First of all, to identify affected time intervals we calculated approximate `barometric height' from pressure data using inverted barometric formula $H_{bar} = H_0 - a \log (P/P_0)$ with parameters $H_0 = 456~\textrm{m}$ (Baikal surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = {RT}/{Mg} \approx 8400~\textrm{m}$ (standard value for barometric formula). Next, we had applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only fast variations of both values. Cutoff frequency for filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope was set to around $12~\textrm{db per octave}$. Resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
 
@@ -488,7 +492,7 @@ In CORSIKA the atmosphere is described in terms of mass overburden $t(H)$ that i
 %Layer boundaries are selected in a manner that the overall function $T(h)$ can be differentiated continuously. 
 CORSIKA provides 26 atmosphere models corresponding to measurements taken at different seasons in different locations around the globe. For each atmosphere experimental range of altitudes was fully contained in the lowest layer.
 
-We used following equations to derive mass overburden $t$ and density $\rho$ from measured pressure $p$ and temperature $T$.
+We used following equations to derive mass overburden $t$ and density $\rho$ from measured pressure $p$ and temperature~$T$.
 
 \begin{equation}
 t     = \frac{p}{g}, \\
