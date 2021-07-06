@@ -30,6 +30,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 %\usepackage{todonotes}
+%\hypersetup{draft} % Без этого не компилируется !!!!!!!!
 
 \begin{document}
 %\newcommand{\todoi}[1]{\todo[inline]{ #1}}
@@ -146,7 +147,7 @@ The control block of the SPHERE-2 detector contained a large array of different 
 \hline
 \multirow{6}{*}{1 sec} & \multirow{3}{*}{Detector position} &GPS altitude & (1)* &  -1500&--&18000  & m a.s.l.\\
                                                       \cline{3-8}
-                         &                              & GPS position & 4 (2)* & &---&& m\\
+                         &                              & GPS position & 4 (2)** & &---&& m\\
                                                       \cline{3-8}
                        &                              & GPS time (PPS)& 1 & &---&& $\mu$s \\
                        \cline{2-8}
@@ -191,7 +192,7 @@ The control block of the SPHERE-2 detector contained a large array of different 
 %2 m accuracy according to the manufacturer provided data, 
 1 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
 
-\hspace{5 mm}*  3–5 meters, 95\% typical accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
+\hspace{5 mm}**  3–5 meters, 95\% typical accuracy according to the manufacturer provided data, 2 m accuracy according to our own analysis (see in section~\ref{sect:orientation} )
 \normalsize
 \end{table*}
 
@@ -495,7 +496,7 @@ Here $g$ is the gravitational acceleration, $M$ is the average molar mass of air
 
 Calculated experimental points for $t$ and $\rho$ in each flight are shown in Fig.~\ref{fig:massoverburden} and Fig.~\ref{fig:density} respectively. CORSIKA atmospheres are shown with solid lines. The profile that was adopted in the preliminary modeling (atmosphere model No 11) is shown by the red line.
 
-From this comparison may be seen that the previously picked atmosphere is inconsistent with our experimental data for $t$ in terms of absolute values, but their derivatives lie relatively close. Therefore either a full remodeling with a better fitting atmosphere or some corrections in the final data are required to reduce the systematic errors in energy and composition estimations.
+From this comparison it may be seen that the previously picked atmosphere is inconsistent with our experimental data for $t$ in terms of absolute values, but their derivatives lie relatively close. Therefore either a full remodeling with a better fitting atmosphere or some corrections in the final data are required to reduce the systematic errors in energy and composition estimations.
 
 %% влияние атмосферы на высоты генерации света на (Галкин)
 %%% === Table CORSIKA
@@ -526,8 +527,7 @@ model pair  & mean &  variation   & relative variation \\
     \centering
     \includegraphics[width=19pc]{11d3}%
     \vspace{-1.0pc}
-    \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-    pair 11/3. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
+    \caption{Sample mean of the Cherenkov light lateral distribution ratio for CORSIKA atmosphere model pair 11/3. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
 \label{fig:3d11}
 \end{minipage}
 \hfill
@@ -535,73 +535,36 @@ model pair  & mean &  variation   & relative variation \\
     \centering
     \includegraphics[width=19pc]{11d4}%
     \vspace{-1.0pc}
-    \caption{Sample mean Cherenkov light lateral distribution ratio for CORSIKA atmosphere model
-    pair 11/4. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
+    \caption{Sample mean of the Cherenkov light lateral distribution ratio for CORSIKA atmosphere model pair 11/4. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
 \label{fig:4d11}
 \end{minipage}
 \end{figure*}
 
 
-CORSIKA atmosphere model 11 was used all through the modeling runs. Modeling lasted for about 2 years and at that time it was not possible to choose an atmospheric model close to reality. The use of the experimental points in $t$ or $\rho$ cannot provide a reasonable  choice of the model, it can only give us some clue as to what the model should be. Full-fledged choice must include data on vertical profile of atmosphere layer up to altitudes at least 20 km above the lake Baikal level because the Cherenkov light mostly comes from this layer. Still we can make some conclusions on the atmosphere model effect on primary energy and mass estimates by comparing the artificial showers simulated for different models.
+CORSIKA atmosphere model 11 was used for all modeling runs. Modeling lasted for about 2 years and at that time it was not possible to choose an atmospheric model closer to reality. The use of  experimental points in $t$ or $\rho$ cannot provide a reasonable choice of the model, but only give a clue as to what the model should be. A full-fledged choice must include data on the vertical profile of the atmospheric layers up to altitudes of at least 20 km above the lake because Cherenkov light mostly comes from this level. Still some conclusions on the atmosphere model effect on primary energy and mass estimates can be made by comparing the artificial showers simulated for different models.
 
-We produced such artificial events initiated by 10~PeV protons for a number of models, passing close to the experimental $t$ and $\rho$ trajectories, and CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
+Such artificial events were modeled presuming to be initiated by 10~PeV protons, passing close to the experimental $t$ and $\rho$ trajectories, and using CORSIKA model 11. The results are expressed as ratios of full numbers of Cherenkov photons and lateral distribution functions.
 
-The lateral distributions were calculated within a vast (3.2~km~$\times$~3.2~km) carpet tiled with 2.5~m $\times$ 2.5~m squares but for the purpose of the comparison were smoothed by integrating over 50~m~$\times$~50~m squares approximately imitating the sensitivity spots of telescope pixels.
+The lateral distributions were calculated within a vast (3.2~km~$\times$~3.2~km) carpet tiled with 2.5~m $\times$ 2.5~m squares but for the purpose of comparison were smoothed by integrating over 50~m~$\times$~50~m squares approximately imitating the sensitivity spots of the telescope pixels.
 
-Sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows mean values and variations of Cherenkov photon number ratios for three pairs of CORSIKA atmosphere models (3/4, 3/11 and 4/11). The ratios of sample mean lateral distributions for 3/11 and 4/11 pairs are shown in Fig.~\ref{fig:3d11} and Fig.~\ref{fig:4d11}, respectively. Pair 3/4 reflects maximum effect of atmosphere model choice from the viewpoint of experimental $t$ and $\rho$ measurements. Pairs 3/11 and 4/11 compare the model 11 used in simulations to the models approximating the experimental data.
+The sample volume for each model was 30 showers. Table~\ref{tab:atmmod} shows the mean values and variations of Cherenkov photon number ratios for three pairs of CORSIKA atmosphere models (3/4, 3/11 and 4/11). The ratios of sample mean lateral distributions for pairs 3/11 and 4/11 are shown in Fig.~\ref{fig:3d11} and Fig.~\ref{fig:4d11}, respectively. Pair 3/4 reflects the maximal effect of the atmosphere model from the viewpoint of experimental $t$ and $\rho$ measurements. Pairs 3/11 and 4/11 compare model 11 used for simulations to the models approximating the experimental data.
 
-Table data clearly states that substantial changes of atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not so clear but the lateral distribution ratio plots indicate some changes in CL LDF of about 6 to 12\% (12 to 20\%) near the shower core, closer than 80 m, and about -2 to +6\% (0 to +12\%) in 80--150m circle for 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
+Table data clearly states that substantial changes of the atmosphere model affect the total number of Cherenkov photons and thus the primary energy estimates not more than by 5\% on average. Conclusions on primary mass estimates are not as clear, but the lateral distribution ratio plots indicate the changes in CL LDF to be about 6 to 12\% (12 to 20\%) near the shower core, closer than 80 m, and about -2 to +6\% (0 to +12\%) in the 80--150m circle for the 3/11 (4/11) pair, which definitely might affect our mass-sensitive criterion. More accurate evaluation of the effect will be given elsewhere.
 
-%%%% === mosaic picture ===
-%\begin{figure}[tb]
-%\centering
-%    \includegraphics[width=19pc]{mosaic.pdf}%
-%    \vspace{-1.0pc}
-%    \caption{The PMT mosaic of the SPHERE-2 detector with PMTs numbers indicated.\todoi{Грохнуть!}}
-%\label{fig:mosaic}
-%%\end{minipage}
-%\end{figure}
-
-
-%\subsection{PMTs' field-of-views correction}
-%\label{sec:PMTFOV}
-
-%In flight during measurements whenever the detector become inclined, the configuration of it's field-of-view (FOV) changed. The FOV of some PMTs shrunk and got closer to the central PMT FOV, for others got larger and moved further from the central PMT FOV. This change of PMT FOVs distorted the reconstructed Cherenkov LDF in spatial terms. Also, change in FOV orientation meant change in optical distance from which the PMT collects light (which affected time measurements). Another issue was the relevant change in average angle under which the snow surface was observed by PMT, which changed light scattering effectiveness (and this distorted the LDF in terms of signals values). In other words, the mosaic inclination if compared to the ground based experiments resulted in measuring stations repositioning with grid distortion and in gradual change in stations sensitivity.
-
-%In addition to the full Monte Carlo simulation of the SPHERE detector described in~\cite{Ant19} the calculations of detector's optics and PMTs' FOV was performed. The detectors optical scheme is presented on the Fig.~\ref{fig:optics}. 
-
-%\todoi{Сократить}
-%%%%The detector was set at 1000~m altitude with zero inclination above flat horizontal observation level. The ground level was divided by the square mesh $[X;Y]$ with 1~m step. From each ground square the weighted photons were emitted towards the detectors diaphragm. The diaphragm was divided into $[x;y]$ mesh with 5~mm step. From each ground square a total of 25600 photons were emitted towards the detector. Each photon weighted by the snow reflection coefficient $k_{snow}$ (taken as 0.95~\cite{war82}), by the $\cos^2(\theta)/2$ to account for Lambert scattering (the $\theta$ is the angle between the direction to the detector and Z-axis), by the distance factor $2\pi{}S/(H^2+(X-x)^2+(Y-y)^2)$ and additional $\cos\theta$ to account the non-normal ray incidence on the diaphragm and the the normalization coefficient of 2.
-
-%%%%At the detector diaphragm level the photons were checked whether they passed the the diaphragm successfully or not and were traced further. At the mosaic level (the mosaic geometrically is a domed truncated cone) the photons were checked that they missed back side of the mosaic and were traced further to the mirror. At the mirror the photons were reflected and additionally weighted by the mirror reflection coefficient $k_{mirr}$. During different seasons of observations this coefficient changed as the mirror degraded, so for data analysis the coefficients were selected accordingly to {\color{red} measured ones}, $k_{mirr}$ was about 0.75--0.80 during 2011--2012 seasons and $k_{mirr}$=0.95 for the new mirrors in 2013. After the photons were reflected by the mirror, they were traced back to the mosaic level and check for successfully hitting it. At this step the photons were checked whether they hit any PMT or mosaics blind material. The \mbox{FEU-84-3} PMT's photocathode has 26~mm diameter sensitive area. The spacing between photocathode centers in out mosaic was 44.5~mm, so only 30\% of the mosaic was sensitive to the light. For each photon at the PMT glass surface the glass mirroring coefficient $k_{PMT}$ was calculated, the photon's polarization was selected randomly.
-
-%For fixed altitude (1000~m) and vertical detector orientation a full ray-tracing simulation was performed using dense grid ($1\times1$~m square) across the snow surface with weighted rays that accounted for distance to the mosaic, snow reflective properties, mirror efficiency and reflections on the PMT outer surface. Tracing photons from the full ground grid allowed to find each PMT's FOV and to determine the light collection efficiency for each point on the ground (e.g. how many of the photons that reach the snow surface will be collected by the detector). The use of a dense grid allowed subsequent recalculation of PMT FOVs for any other lower altitude and tilt to a less dense grid ($5\times5$~m square) that was used in the later analysis.
-%Some of the calculated PMT FOVs are shown in~Fig.~\ref{fig:pmt_fov} in assumption of the vertical detector orientation (top row) and 15$^\circ$ (bottom row) at 1000~m altitude. The declination angles of presented PMTs change from 0$^\circ$ to $\sim24^\circ$ depending on the PMT's distance from mosaic center (position are indicated in Fig.~\ref{fig:2012-3_shore_image}). The FOVs change form and if integrated across the whole filed has lower total `collection strength'. 
-
-%%% === PMT FOV picture %%%
-%\begin{figure*}[bth]
-%\centering
-%    %\includegraphics[width=0.44\textwidth, bb= 100 100 900 900,clip]{fov.eps}\hspace{2pc}%
-%    \includegraphics[width=0.95\textwidth]{figs/fov_inclined.pdf}
-%    %\vspace{10pt}
-%    %\includegraphics[width=0.49\textwidth]{fov_log.eps}%
-%    \caption{The PMT FOVs at altitude $H=$ 1000~m. In top row presented are FOVs for PMTs No 1, 5, 14, 29, 50 and 77 that form a row across the mosaic (see Fig.~\ref{fig:2012-3_shore_image}) in assumption of vertical detector optical axis position. The bottom row shows same PMTs by for the inclined detector. The change in PMT FOVs is evident. The central PMT in the calculations is the Hamamatsu R3886 that has 35 mm photocathode and thus a larger FOV than FEU 84-3 PMTs used on other positions in the detector.}
-%\label{fig:pmt_fov}
-%\end{figure*}
 
 \section{Conclusions \label{sect:conclusions}}
-The SPHERE-2 detector operational 2008--2013 had a large array of supplementary sensor that allowed control and subsequent reconstruction of detector state and measurements conditions. 
+The SPHERE-2 detector which operated in 2008--2013 had a large array of supplementary sensors that allowed to control and later reconstruct the state of the detector and measurement conditions. 
 
-The vital for reflected CL method is the information on detector position and orientation. Their values were measured with good precision and reliability and were cross-checked using experimental data.
+For the reflected CL method the information on detector position and orientation is vital. Their values were measured with good precision and reliability and were cross-checked using experimental data.
 
-Measurements of the air pressure and temperature during flights gave information on the atmosphere state that in advance will allow to introduce different atmospheric models into analysis and to account of their impact on the results.
+Measurements of air pressure and temperature during flights gave information on the atmosphere state that will allow to introduce different atmospheric models into analysis and to account their impact on the results.
 
   
 \section{Acknowledgments}
 %done
 
-We are grateful to the Lebedev Physical Institute of Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
-M. Finger and M, Finger Jr. were supported by MEYS of Czech Republic grants LG14004 and LG18022.
+We are grateful to the Lebedev Physical Institute of the Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
+M. Finger and M. Finger Jr. were supported by MEYS of Czech Republic grants LG14004 and LG18022.
 
 
 \bibliography{Sphere-Data.bib}
