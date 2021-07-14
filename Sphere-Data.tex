@@ -1,3 +1,6 @@
+% Эпиграф: ЭТИМ ПОЛУКРЕСЛОМ МАСТЕР ГАМБС начинает новую партию мебели. 1865 г. Санкт-Петербург
+% Ильф Илья, Петров Евгений. Двенадцать стульев
+
 %\documentclass[review]{elsarticle}
 %\documentclass[preprint]{elsarticle}
 %\documentclass[1p]{elsarticle}
@@ -29,12 +32,11 @@
 \bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage{todonotes}
-%\hypersetup{draft} % Без этого не компилируется !!!!!!!!
+\usepackage{todonotes}
+\hypersetup{draft} % Без этого не компилируется !!!!!!!!
 
 \begin{document}
-%\newcommand{\todoi}[1]{\todo[inline]{ #1}}
-
+\newcommand{\todoi}[1]{\todo[inline]{ #1}}
 %\listoftodos[Notes]
 \linenumbers
 
@@ -59,37 +61,45 @@
 \address[address4]{M.V. Lomonosov Moscow State University, Faculty of Physics, Moscow, Russia}
 
 \begin{abstract}
-The SPHERE-2 detector was developed for the detection of extensive air showers and performed measurements in 2011--2013. The data collected by the detector is still under analysis but here we present the analysis of telemetry data and detector operation conditions including temperature and atmosphere conditions and their effects.
+The SPHERE project studies primary cosmic rays by detection of the Cherenkov light of extensive air showers reflected from the snowy surface of the earth. Measurements with the aerial-based detector SPHERE-2 were performed in 2011--2013. The detector was lifted by the balloon at altitudes up to 900~m above snowed surface of Lake Baikal, Russia. The results of the experiment are summarized now in a series of papers that opens with this article.
+
+%The technique of the SPHERE project differs significantly from usual ground-based Cherenkov arrays. It has a number of unique features that must be taken into account during measurements and data processing. Primarily the geometry of the experiment is determined by the detector position, namely, the altitude above the snow, the declination from the vertical and the rotation around the axis of the detector. The orientation control system is used to monitor the detector position.
+
+An overview of the SPHERE-2 detector telemetry monitoring systems is presented along with the analysis of the measurements conditions including atmosphere profile. The analysis of the detector state and environment atmosphere conditions monitoring provided various cross-checks of detector calibration, positioning and performance.
 \end{abstract}
 
 \begin{keyword}
-primary cosmic rays\sep extensive air showers\sep Vavilov-Cherenkov radiation\sep balloon
+primary cosmic rays\sep extensive air showers\sep Vavilov-Cherenkov radiation\sep balloon \sep reflected Cherenkov light
 \MSC[2010] 00-01\sep  99-00
 \end{keyword}
+% проверить, что у нас корректные ключевые слова
+
 \end{frontmatter}
 
 \section{Introduction}
-The SPHERE-2 experiment was designed for primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. PCR particles induce secondary particle cascades (extensive air showers, EAS) and secondary radiations (such as Cherenkov light, fluorescent light, radio emission) in the atmosphere that can be registered by different methods by ground-based detectors. However the SPHERE-2 experiment is the first successful implementation of a new EAS detection method --- detection of reflected Cherenkov light (CL) using an aerial-based detector --- a method first proposed by A.~Chudakov~\cite{chu74:VKKL74} and first implemented by R.~Antonov~\cite{ant75, ant86, ant97, Ant15a}.
+The SPHERE-2 experiment was designed for primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. PCR particles induce secondary particle cascades named extensive air showers (EAS) and secondary radiations such as Cherenkov light, fluorescent light, radio emission etc.\ in the atmosphere that can be registered by different methods by ground-based detectors. 
 
-Common EAS arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20} detector are ground-based structures spread over an area of up to several hundreds~\cite{abu12} square kilometers. Significant effort is needed in order to install sensitive elements of such vast arrays and to keep their network connected, power-supplied and time-synchronized. Even more effort is needed for regular calibration of detector stations and atmosphere parameter control over the whole detector area. 
+The SPHERE project is the first successful implementation of a new EAS detection method --- detection of reflected Cherenkov light (CL) using an aerial-based detector --- a method first proposed by A.~Chudakov~\cite{chu74:VKKL74} and first implemented by R.~Antonov~\cite{ant75, ant86, ant97, Ant15a}.
 
-On the other hand, conventional imaging air Cherenkov telescopes (IACT, like HESS~\cite{HESS03a, HESS03b} or MAGIC~\cite{MAGIC16-1, MAGIC16-2} are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control and so on. But since Cherenkov light from EAS has a very narrow directional pattern it cannot be observed by detectors that are more than about 0.5--1.5~km away from the shower axis. Therefore IACTs have a relatively low upper energy threshold.
+Common EAS arrays such as the Telescope Array~\cite{abu12}, Yakutsk EAS array~\cite{Yakutsk19} or the TAIGA~\cite{TAIGA20} detector are ground-based structures spread over an area of up to several hundreds~\cite{abu12} square kilometers. Significant efforts are required to install the sensitive elements of such vast arrays and to maintain their network connected, powered and time-synchronized. Even more effort is required for regular calibration of detector stations and atmosphere parameter monitoring over the entire detector area. 
 
-The reflected CL method allows, on one hand, to register EAS on a relatively large area and later reconstruct the lateral distribution function of Cherenkov photons, and, on the other hand, to utilize a small size compact detector with all the advantages of such a setup. The mentioned advantages include (but are not limited to) the opportunity to implement: complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs and etc.
+On the other hand, conventional imaging air Cherenkov telescopes (IACT), like HESS~\cite{HESS03a, HESS03b} or MAGIC~\cite{MAGIC16-1, MAGIC16-2} are relatively compact systems that have good calibration means, high integrity power supply, atmosphere transparency control, and so on. But since the Cherenkov light from EAS has a very narrow directional pattern it cannot be observed by detectors located at a distance of more than 0.5--1.5~km from the shower axis. Therefore, IACTs have a relatively low upper energy threshold.
+
+The method of detection of the reflected Cherenkov light allows, on one hand, to register EAS on a relatively large area and later reconstruct the lateral distribution function of Cherenkov photons, and, on the other hand, to utilize a small size compact detector with all the advantages of such a setup. The mentioned advantages include, but are not limited to, the opportunity to implement: complex topological trigger conditions prior to writing data to storage thus increasing the maximum operational count rate; direct on-line calibration system; high mobility with lower operational costs and etc.
 
 A compact detector that observes large surface areas, however, can combine some strong sides of an IACT with a higher upper energy threshold. The main drawback of this design, however, is that the detector is significantly limited in its weight and therefore size. This means that the detector's sensitive element should preferably operate in photon counting mode. This requires a good understanding of the detector state and measuring conditions.
 
-The general overview of the SPHERE-2 experiment can be found in~\cite{Ant15a}, and a detailed description of the electronics is given in~\cite{Ant20}. 
-
-Here we present an overview of the data registered by various auxiliary sensors on board of the SPHERE-2 detector. This data, collected during and in some cases before and after EAS measurements, was used in the subsequent analysis for detector state and environment conditions control, allowing to perform various cross-checks of detector calibration, positioning and performance.
+The general overview of the SPHERE experiment can be found in~\cite{Ant15a}, and a detailed description of the SPHERE-2 electronics is given in~\cite{Ant20}.
 
 
+Here we present an overview of the data obtained by various auxiliary sensors on board of the SPHERE-2 detector. This data, collected during and in some cases before and after EAS measurements, was used in the subsequent analysis for detector state and environment conditions monitoring, allowing to perform various cross-checks of detector calibration, positioning and performance.
 
-\section{The SPHERE-2 detector \label{sect:detector}}
 
-The \mbox{SPHERE-2} is a compact detector designed to register reflected Cherenkov light from EAS. The detector was lifted using a tethered balloon to altitudes of up to 0.9~km above the snow covered surface. A special tethered balloon BAPA~\cite{Ant20} was developed and manufactured by the Russian Augur balloon systems agency~\cite{Augur}.
+\section{The SPHERE-2 detector telemetry systems\label{sect:detector}}
 
-The \mbox{SPHERE-2} detector optics were comprised of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic (the optical scheme of the detector is shown in Fig.~\ref{fig:optics}).
+The \mbox{SPHERE-2}~\cite{Ant20} is a compact detector designed to register Cherenkov light of air showers reflected from the earth snow. The detector was lifted using a tethered balloon to altitudes of up to 0.9~km above the snow covered surface. A special tethered balloon BAPA~\cite{Ant20} was developed and manufactured by the Russian Augur balloon systems agency~\cite{Augur}.
+
+The \mbox{SPHERE-2} detector optics were comprised of a 1.5~m diameter spherical mirror with a 109 photomultiplier tube (PMT) mosaic. The optical scheme of the detector is shown in Fig.~\ref{fig:optics}.
 
 \begin{figure}[bt]
 \centering
@@ -98,7 +108,7 @@ The \mbox{SPHERE-2} detector optics were comprised of a 1.5~m diameter spherical
 \label{fig:optics}
 \end{figure}
 
-The PMT mosaic was located near the mirror focal surface and recorded light reflected from the snow surface below the detector. The PMTs were arranged in a hexagonal structure on the spherical surface (see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}). FEU-84/3 PMTs were used in the mosaic. The exact numbers of PMTs in each season are given in Tab.~\ref{tab:statistics}. The fields of view of the PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
+The PMT mosaic was located near the mirror focal surface and recorded Cherenkov light reflected from the snow surface below the detector. The PMTs were arranged in a hexagonal structure on the spherical surface, see details in~\cite{Ant20}, or below on Fig.~\ref{fig:2012-3_shore_image}. FEU-84/3 PMTs were used in the mosaic. The exact numbers of PMTs in each season are given in Tab.~\ref{tab:statistics}. The fields of view of the PMTs are fixed in angular terms. The exact shape of the area that a single PMT observes depends on the PMT's position in the mosaic and the detector orientation.
 
 \begin{table}[tb]
 \centering
@@ -107,22 +117,22 @@ The PMT mosaic was located near the mirror focal surface and recorded light refl
 \label{tab:statistics}
 \vspace{1pc}
 \begin{tabular}{|c||c|c|c|r|r|}
-\hline
-year  & flights & PMT    & time, & triggers \\ 
-      &         & number & hours & detected \\ 
-\hline \hline
-\multicolumn{5}{|c|}{test runs} \\
-\hline
-2008 & 1 &  20 &  1 &  6180 \\ 
-2009 & 3 &  64 & 13 & 10312 \\ 
-2010 & 6 &  96 & 30 &  1343 \\
-\hline
-\multicolumn{5}{|c|}{experiment runs} \\
-\hline
-2011 & 4 &  96 & 30 & 20571 \\
-2012 & 5 & 108+1 & 31 &  7716 \\
-2013 & 5 & 108+1 & 33 &  3813 \\
-\hline
+    \hline
+    year  & flights & PMT    & time, & triggers \\ 
+          &         & number & hours & detected \\ 
+    \hline \hline
+    \multicolumn{5}{|c|}{test runs} \\
+    \hline
+    2008 & 1 &  20 &  1 &  6180 \\ 
+    2009 & 3 &  64 & 13 & 10312 \\ 
+    2010 & 6 &  96 & 30 &  1343 \\
+    \hline
+    \multicolumn{5}{|c|}{experiment runs} \\
+    \hline
+    2011 & 4 &  96 & 30 & 20571 \\
+    2012 & 5 & 108+1 & 31 &  7716 \\
+    2013 & 5 & 108+1 & 33 &  3813 \\
+    \hline
 \end{tabular}
 \end{table}
 
@@ -130,7 +140,7 @@ year  & flights & PMT    & time, & triggers \\
 % кратко, что меряем служебного в блоке электроники: ЦАП и АЦП, какие токи, какие температуры, где температуры.
 % кратко про мозаику
 
-The control block of the SPHERE-2 detector contained a large array of different sensors along with the main registration electronics and power system. Sensors located both inside and outside of the control block were used to monitor the detector state and performance and to collect supplementary data for EAS measurements. The list of sensors used, their measuring range, precision and data collection frequency is given in table~\ref{tab:telemetry_sensors}. 
+The control block of the SPHERE-2 detector contained a large set of various sensors, as well as the main recording electronics and a power supply system. Sensors located both inside and outside of the control block were used to monitor the detector state and performance and to collect supplementary data for EAS measurements. The list of sensors used, their measuring range, precision and data collection frequency is given in the Tab.~\ref{tab:telemetry_sensors}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% === Telemetry table === %%%
@@ -200,7 +210,7 @@ The control block of the SPHERE-2 detector contained a large array of different 
 
 The sensors inside the control block measured:
 \begin{itemize}[nosep]
-\item temperature of the FADC boards (two sensors per board) for cooling system operation;
+\item temperature of the FADC boards by two sensors per board for cooling system operation;
 \item voltage on the secondary power supply units for PMT mosaic power stabilization;
 \item voltage and current on the main power supply unit;
 \item overpressure and temperature inside the balloon.
@@ -223,7 +233,7 @@ Some of the data provided by these sensors was used to monitor the flight condit
 \subsection{Orientation control system}
 \label{sect:orientation}
 
-At rest state the detector axis was oriented vertically and the detector observed the snow covered surface just under itself. During the measurements the detector was hung under the balloon and swung and rotated freely. Its inclination is an important factor for shower parameter reconstruction since it determines the overall geometry of the experiment. To control the position and rotation of the detector a dual-axis inclinometer and a digital compass were installed on the PMT mosaic control board. 
+At the rest state the detector axis was oriented vertically and the detector observed the snow covered surface just under itself. During the measurements the detector was hung under the balloon and swung and rotated freely. Its inclination is an important factor for shower parameter reconstruction since it determines the overall geometry of the experiment. To control the position and rotation of the detector a dual-axis inclinometer and a digital compass were installed on the PMT mosaic control board. 
 
 The compass measured the angle of the detector's orientation relative to the Earth's magnetic field with a 2.5~degree precision.
 
@@ -255,6 +265,7 @@ Every ten minutes the detector logged the PMTs supply voltages, voltages at PMTs
 
 The PMTs power supply data was later used to control the operational stability of the optical modules. The registered discriminator triggering rate was used for discriminator thresholds selection in experimental flights. Deviations in power consumption by FADC boards was used to monitor possible malfunctions in the detector electronics. Data from temperature sensors was used for in-flight detector state and cooling system control.
 
+
 \section{Experimental conditions}
 %\section{Site and weather}
 \label{sect:data}
@@ -266,6 +277,18 @@ The \mbox{SPHERE-2} detector was lifted by a tethered balloon BAPA to altitudes 
 
 
 %Unless otherwise specified, all illustrations in the paper are given for the \mbox{SPHERE-2} data of the winter 2013 run. All plots were made with Python Matplotlib plotting library.
+
+\subsection{Weather and snow}
+
+Measurements were carried out during clear moonless nights with low wind conditions. The measurements were started 1.5 hours after sunset or immediately after moon set and finished before moon rise or 1.5 hours before sunrise. If the wind conditions became unsuitable for the flight of the balloon, the detector was landed at once. However, this happened only once during the third flight in 2013. The typical night air temperature on the lake surface was near $-15^\circ$C. According to the \href{https://rp5.ru/Weather_in_the_world}{Reliable Prognosis} data archive~\cite{rp5} from the nearest weather stations 30818 and 30710 the horizontal visibility was `at least 10 km' (the highest possible grade in the system), and the altitude of the base of the lowest clouds was `2500~m or more or no clouds present'.
+
+Our own observations of the atmosphere show that during the day the visibility degraded due to high humidity (as is the case shown in Fig.~\ref{fig:baikal_snow}), but in the evening recovered back. In~Fig.~\ref{fig:baikal_atmo} the background mountains are 55--56~km away therefore the horizontal visibility was good. In the nights the mountains were also visible. The Milky Way was clearly visible during all measurement nights. 
+
+The measurements were performed in the end of winter season when the Baikal lake was covered with thick ice. The snow coverage of the ice differs from year to year and in different areas of the lake according to prevailing winds. However in winters 2010--2013 the lake area near the launch site was covered with a thick (up to 40~cm) layer of snow with occasional snowfalls. In Fig.~\ref{fig:baikal_snow} the snow coverage in 2012 is shown. This was the typical coverage during all measurements. The snow reflection properties were controlled using a photometer. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}.
+
+Another atmosphere property that was monitored during measurements was its density. The optical transparency is a crucial property for Cherenkov-light-reliant methods of EAS studies since it directly influences the measured light fluxes and later the primary particle energy estimations. However, the atmosphere density profile is also vital for the primary particle type studies since it affects the altitude of shower development and its Cherenkov light lateral distribution function (CL LDF). The influence of the selected atmosphere on the CL LDF and its properties are discussed below in section~\ref{sect:atmosphere-profile}.
+
+The atmosphere density profile was reconstructed basing on air pressure and temperature measurements during the initial climb in the beginning of the night and during the descent at the end. During almost all measurement nights the atmosphere remained stable. Stable atmosphere conditions were expected due to the known Siberian High phenomena. However, during two flights 2012-3 and 2013-5 a rapid change in the atmosphere profile was observed (see Fig.~\ref{fig:density}) followed by rapid weather worsening (clear sky changed to cloudy, wind became stronger with gusts), which, unfortunately, is indicative of the climate change and observed weakening of the Siberian anticyclone. 
 
 %% Baikal snow photo %% fig:baikal_snow
 \begin{figure}[tb]
@@ -283,23 +306,14 @@ The \mbox{SPHERE-2} detector was lifted by a tethered balloon BAPA to altitudes 
 \end{center}
 \end{figure}
 
-\subsection{Weather and snow}
-
-Measurements were carried out during clear moonless nights with low wind conditions. The measurements were started 1.5 hours after sunset or immediately after moon set and finished before moon rise or 1.5 hours before sunrise. If the wind conditions became unsuitable for the flight of the balloon, the detector was landed at once (however, this happened only once during the third flight in 2013). The typical night air temperature on the lake surface was near $-15^\circ$C. According to the \href{https://rp5.ru/Weather_in_the_world}{Reliable Prognosis} data archive~\cite{rp5} from the nearest weather stations 30818 and 30710 the horizontal visibility was `at least 10 km' (the highest possible grade in the system), and the altitude of the base of the lowest clouds was `2500~m or more or no clouds present'.
-
-Our own observations of the atmosphere show that during the day the visibility degraded due to high humidity (as is the case shown in Fig.~\ref{fig:baikal_snow}), but in the evening recovered back. In~Fig.~\ref{fig:baikal_atmo} the background mountains are 55--56~km away therefore the horizontal visibility was good. In the nights the mountains were also visible. The Milky Way was clearly visible during all measurement nights. 
-
-The measurements were performed in the end of winter season when the Baikal lake was covered with thick ice. The snow coverage of the ice differs from year to year and in different areas of the lake according to prevailing winds. However in winters 2010--2013 the lake area near the launch site was covered with a thick (up to 40~cm) layer of snow with occasional snowfalls. In Fig.~\ref{fig:baikal_snow} the snow coverage in 2012 is shown. This was the typical coverage during all measurements. The snow reflection properties were controlled using a photometer. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}.
-
-Another atmosphere property that was monitored during measurements was its density. The optical transparency is a crucial property for Cherenkov-light-reliant methods of EAS studies since it directly influences the measured light fluxes (and later the primary particle energy estimations). However, the atmosphere density profile is also vital for the primary particle type studies since it affects the altitude of shower development and its Cherenkov light lateral distribution function (CL LDF). The influence of the selected atmosphere on the CL LDF and its properties are discussed below in section~\ref{sect:atmosphere-profile}.
-
-The atmosphere density profile was reconstructed basing on air pressure and temperature measurements during the initial climb in the beginning of the night and during the descent at the end. During almost all measurement nights the atmosphere remained stable. Stable atmosphere conditions were expected due to the known Siberian High phenomena. However, during two flights 2012-3 and 2013-5 a rapid change in the atmosphere profile was observed (see Fig.~\ref{fig:density}) followed by rapid weather worsening (clear sky changed to cloudy, wind became stronger with gusts), which, unfortunately, is indicative of the climate change and observed weakening of the Siberian anticyclone. 
+% НЕ НАДО ПЕРЕСТАВЛЯТЬ КАРТИНКИ ИЗ РАЗДЕЛОВ, ГДЕ ОНИ ОПИСАНЫ!!! Я ПОТОМ ЗАИП..СЬ ИСКАТЬ ПРИ РЕДАКТИВОВАНИИ ЧТО КУДА ПОТЕРЯЛОСЬ.
+% НЕ НАДО КРАСИВОСТЕЙ ПО ТРЕБОВАНИЯМ ЖУРНАЛА, ЖУРНАЛ НЕ ТРЕБУЕТ НИЧЕГО ОФОРМЛЯТЬ ДО ПРИНЯТИЯ СТАТЬИ В ПЕЧАТЬ!!!
+% OK
 
 \subsection{Detector orientation and telemetry data}
 \label{sect:telemetrydata}
 
-The \mbox{SPHERE-2} detector's position and inclination depend on wind conditions near the detector (see. Fig.~\ref{fig:gps_compass} and Fig.~\ref{fig:inclination}). In Fig.~\ref{fig:gps_compass} the position of the detector with the magnetometer data is shown for some flights of the 2011--2013 seasons. The position was reconstructed using GPS data with the launch point being located at zero coordinates. The detector orientation measured by the magnetometer is indicated by arrows. Figure~\ref{fig:gps_compass} demonstrates that wind was quite constant during most of the time and the balloon position was rather stable and varied slowly.  
-
+The \mbox{SPHERE-2} detector's position and inclination depend on wind conditions near the detector, see. Fig.~\ref{fig:gps_compass} and Fig.~\ref{fig:inclination}. In Fig.~\ref{fig:gps_compass} the position of the detector with the magnetometer data is shown for some flights of the 2011--2013 seasons. The position was reconstructed using GPS data with the launch point being located at zero coordinates. The detector orientation measured by the magnetometer is indicated by arrows. Figure~\ref{fig:gps_compass} demonstrates that wind was quite constant during most of the time and the balloon position was rather stable and varied slowly.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% detector drift figure  %%%
 %%% fig:gps-compass
@@ -402,7 +416,6 @@ Detector altitude above the lake surface according to the GPS data is shown in F
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-However, in third flight of the 2012 season in part of the PMTs an abnormal drop in the currents was observed (see Fig.~\ref{fig:2012-3_currents}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
@@ -414,11 +427,13 @@ However, in third flight of the 2012 season in part of the PMTs an abnormal drop
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The registered currents from some of the PMTs (numbers 5, 14, 29, 50 and 77) are shown in Fig.~\ref{fig:2012-3_currents}~(top panel). These PMTs form a straight line on the PMT mosaic and the currents dropped and restored in them in the same order as they are positioned. This behaviour was observed for a number of PMTs with current drops occurring at the same time. In Fig.~\ref{fig:2012-3_shore_image} the PMTs are colored according to similar patterns in the current drop and restore times.
+However, in third flight of the 2012 season in part of the PMTs an abnormal drop in the currents was observed.
+%(see Fig.~\ref{fig:2012-3_currents}).
+The registered currents from some of the PMTs (numbers 5, 14, 29, 50 and 77) are shown in Fig.~\ref{fig:2012-3_currents}, top panel. These PMTs form a straight line on the PMT mosaic and the currents dropped and restored in them in the same order as they are positioned. This behaviour was observed for a number of PMTs with current drops occurring at the same time. In Fig.~\ref{fig:2012-3_shore_image} the PMTs are colored according to similar patterns in the current drop and restore times.
 
-This anomaly was observed in the first half of the flight during observations made at an altitude of 850~m. At that time according to the GPS the balloon was drifting north from the starting point. Detector altitude and drift are shown in~Fig.~\ref{fig:2012-3_currents}~(central panel). Due to wind strengthening at that altitude the balloon was subsequently lowered to 480~m and the currents returned to their normal behaviour. 
+This anomaly was observed in the first half of the flight during observations made at an altitude of 850~m. At that time according to the GPS the balloon was drifting north from the starting point. Detector altitude and drift are shown in~Fig.~\ref{fig:2012-3_currents}, central panel. Due to wind strengthening at that altitude the balloon was subsequently lowered to 480~m and the currents returned to their normal behaviour. 
 
-Analysis of the detector position and tilt showed that at that time it was observing a part of the shoreline and land surface. At this location the shoreline is a narrow artificial ledge built for the railroad and further changes into a steep snow-less cliff wall with trees atop (see Fig.~\ref{fig:2012--shore-view}). The reflective properties of both rock and pine trees is way lower than that of snow. In Fig.~\ref{fig:2012-drift} the detector trajectory (green line) and starting point (purple cross) are given. The detector position (blue cross) and corresponding PMT centers projections onto the surface are given for time point 15:47 UTC, the moment of the highest current drop and furthest drift north. The behavior of the currents in each PMT is consistent with its crossing of the shoreline. The PMTs that show no drop in their currents by our estimations always observe a clear snow surface of the lake. In all other flights no instances of detector drift to the shore was observed.
+Analysis of the detector position and tilt showed that at that time it was observing a part of the shoreline and land surface. At this location the shoreline is a narrow artificial ledge built for the railroad and further changes into a steep snow-less cliff wall with trees atop (see Fig.~\ref{fig:2012--shore-view}). The reflective properties of both rock and pine trees is way lower than that of snow. In Fig.~\ref{fig:2012-drift} the detector trajectory (green line) and starting point (purple cross) are given. The detector position (blue cross) and corresponding PMT centers projections onto the surface are given for time point 15:47 UTC, the moment of the highest current drop and furthest drift north. \todoi{Написать, что наклон установки в этот момент около 8 градусов в сторону берега согласно компасу и инклинометру in Fig.~\ref{fig:2012-3_currents}, bottom panel.} The behavior of the currents in each PMT is consistent with its crossing of the shoreline. The PMTs that show no drop in their currents by our estimations always observe a clear snow surface of the lake. In all other flights no instances of detector drift to the shore was observed.
 
 This observation itself confirms the consistency of the detector orientation and position monitoring.
 
@@ -439,13 +454,6 @@ Thorough telemetry data analysis revealed that at several periods of time the re
 \label{fig:h_corr}
 \end{figure}
 
-\begin{figure}[t]
-    \includegraphics[width=19pc]{figs/time_on_altitude_c.pdf}%
-    \caption{Altitude distribution over the experiment time.}
-    \label{fig:time_on_altitude}
-    %\todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
-\end{figure}
-
 Affected time intervals are relatively short for most flights, but some events were recorded during these times. In order to correctly estimate the detector altitude for those events, and to maintain the overall data consistency we attempted to correct these smoothed GPS altitude measurements using the pressure data from the barometer, which has a strong and well-understood dependence on the altitude. The correction was made for 220 events for which the difference between the two altitudes was more than 10~m.
 
 First of all, in order to identify the affected time intervals we calculated the approximate `barometric height' from the pressure data using the inverted barometric formula $H_{bar} = H_0 - a \log (P/P_0)$ with parameters $H_0 = 456~\textrm{m}$ (Baikal lake surface level), $P_0 = 1000~\textrm{hPa}$ (close to average March pressure on the Baikal surface) and $a = {RT}/{Mg} \approx 8400~\textrm{m}$ (standard value for the barometric formula). Next, we applied a high-pass digital Butterworth filter to both GPS and barometric altitude data to compare only the fast variations of both values. The cutoff frequency for the filter was set to $0.416~\textrm{mHz}$ ($T=40$ min with telemetry data being recorded each $10~\textrm{sec}$) and slope set to around $12~\textrm{db per octave}$. The resulting high frequency components are shown on Fig. \ref{fig:h_corr}, middle panel.
@@ -456,8 +464,34 @@ After the intervals were picked, for each of them we found two adjacent interval
 
 The total duration of the intervals subjected to corrections was small. The total distribution of the time spent by the detector at each height is presented in Fig.~\ref{fig:time_on_altitude}. Most of the time the detector spent at 400, 500, 580 and 890~m. However, the actual distribution of the registered events across the altitudes is a more complex question since the trigger settings and overall detector performance changed over time and across seasons. Careful analysis of this question will be covered in following publications.
 
+\begin{figure}[t]
+    \includegraphics[width=19pc]{figs/time_on_altitude_c.pdf}%
+    \caption{Altitude distribution over the experiment time.}
+    \label{fig:time_on_altitude}
+    %\todoi{Обновить картинку по исправленным высотам. Бонвеч Е.А.}
+\end{figure}
+
+
 \subsection{Atmosphere density profile}
 \label{sect:atmosphere-profile}
+
+After the corrections were applied to GPS altitudes the atmosphere density profiles were reconstructed. Direct measurements with an on-board barometer and thermometer were taken only at altitudes below 1000~m above the ice, therefore information about higher atmospheric conditions is not available. To obtain the best extrapolation of this data we had to use a set of previously measured and parameterized atmospheres provided by the CORSIKA software~\cite{hec98}.
+
+In CORSIKA the atmosphere is described in terms of mass overburden $t(H)$ that is parameterized as a piecewise continuous function which has exponential behavior in the lower four layers and linear in the highest one. %Since the $T(H)\equiv \int_{h}^{+\infty} \rho(x) dx$.
+%Layer boundaries are selected in a manner that the overall function $T(h)$ can be differentiated continuously. 
+CORSIKA provides 26 atmosphere models corresponding to measurements taken at different seasons in different locations around the globe. For each model of the atmosphere our experimental data was fully located in the lowest layer.
+
+We used the following equations to derive the mass overburden $t$ and density $\rho$ from the measured pressure $p$ and temperature~$T$ data.
+
+\begin{equation}
+t     = \frac{p}{g}, \\
+\rho  = \frac{p \, M}{R \, T} \\
+\end{equation}
+
+Here $g$ is the gravitational acceleration, $M$ is the average molar mass of air, $R$ is the gas constant.
+
+Calculated experimental points for $t$ and $\rho$ in each flight are shown in Fig.~\ref{fig:massoverburden} and Fig.~\ref{fig:density} respectively. CORSIKA atmospheres are shown with solid lines. The profile that was adopted in the preliminary modeling (atmosphere model No 11) is shown by the red line.
+
 %%% Atmosphere profiles figures %%%%
 \begin{figure}[bt]
 \centering
@@ -478,23 +512,6 @@ The total duration of the intervals subjected to corrections was small. The tota
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-After the corrections were applied to GPS altitudes the atmosphere density profiles were reconstructed. Direct measurements with an on-board barometer and thermometer were taken only at altitudes below 1000~m above the ice, therefore information about higher atmospheric conditions is not available. To obtain the best extrapolation of this data we had to use a set of previously measured and parameterized atmospheres provided by the CORSIKA software~\cite{hec98}.
-
-In CORSIKA the atmosphere is described in terms of mass overburden $t(H)$ that is parameterized as a piecewise continuous function which has exponential behavior in the lower four layers and linear in the highest one. %Since the $T(H)\equiv \int_{h}^{+\infty} \rho(x) dx$.
-%Layer boundaries are selected in a manner that the overall function $T(h)$ can be differentiated continuously. 
-CORSIKA provides 26 atmosphere models corresponding to measurements taken at different seasons in different locations around the globe. For each model of the atmosphere our experimental data was fully located in the lowest layer.
-
-We used the following equations to derive the mass overburden $t$ and density $\rho$ from the measured pressure $p$ and temperature~$T$ data.
-
-\begin{equation}
-t     = \frac{p}{g}, \\
-\rho  = \frac{p \, M}{R \, T} \\
-\end{equation}
-
-Here $g$ is the gravitational acceleration, $M$ is the average molar mass of air, $R$ is the gas constant.
-
-Calculated experimental points for $t$ and $\rho$ in each flight are shown in Fig.~\ref{fig:massoverburden} and Fig.~\ref{fig:density} respectively. CORSIKA atmospheres are shown with solid lines. The profile that was adopted in the preliminary modeling (atmosphere model No 11) is shown by the red line.
 
 From this comparison it may be seen that the previously picked atmosphere is inconsistent with our experimental data for $t$ in terms of absolute values, but their derivatives lie relatively close. Therefore either a full remodeling with a better fitting atmosphere or some corrections in the final data are required to reduce the systematic errors in energy and composition estimations.
 
