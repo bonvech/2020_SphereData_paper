@@ -1,81 +1,157 @@
 % Эпиграф: ЭТИМ ПОЛУКРЕСЛОМ МАСТЕР ГАМБС начинает новую партию мебели. 1865 г. Санкт-Петербург
 % Ильф Илья, Петров Евгений. Двенадцать стульев
 
-%\documentclass[review]{elsarticle}
-%\documentclass[preprint]{elsarticle}
-%\documentclass[1p]{elsarticle}
-%\documentclass[3p]{elsarticle}
-%\documentclass[5p]{elsarticle}
-\documentclass[final,5p,times,twocolumn]{elsarticle}
-%\documentclass[final,5p,twocolumn]{elsarticle}
+\documentclass[universe,article,submit,moreauthors,pdftex]{Definitions/mdpi}
 
-\usepackage[utf8]{inputenc} 
-\usepackage[T2A]{fontenc}
-\usepackage[english]{babel}   
-\usepackage{lineno}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage[pdftex, backref, colorlinks]{hyperref}
-\usepackage{multirow}
-\usepackage{enumitem}
-
-
-\graphicspath{{./figs/}}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%  bibliography styles
+%\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 %\modulolinenumbers[5]
-\journal{Universe}
-%\journal{Astroparticle Physics}
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Elsevier bibliography styles
-%%
-%% `Elsevier LaTeX' style
-\bibliographystyle{elsarticle-num}
-%%%%%%%%%%%%%%%%%%%%%%%
-
 %\usepackage{todonotes}
 %\hypersetup{draft} % Без этого не компилируется !!!!!!!!
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+% If you would like to post an early version of this manuscript as a preprint, you may use preprint as the journal and change 'submit' to 'accept'. The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before  posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by: 
+% abstract, addendum, article, benchmark, book, bookreview, briefreport, casereport, changes, comment, commentary, communication, conceptpaper, conferenceproceedings, correction, conferencereport, expressionofconcern, extendedabstract, meetingreport, creative, datadescriptor, discussion, editorial, essay, erratum, hypothesis, interestingimages, letter, meetingreport, newbookreceived, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, supfile, technicalnote, viewpoint
+% supfile = supplementary materials
+
+
+%=================================================================
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{1}
+\pubyear{2021}
+\copyrightyear{2021}
+%\externaleditor{Academic Editor:} % For journal Automation, please change Academic Editor to "Communicated by"
+\datereceived{30 October 2021} 
+\dateaccepted{} 
+\datepublished{} 
+\hreflink{https://doi.org/} % Please use \linebreak if need to do line break
+
+%% MDPI internal command: uncomment if new journal that already uses continuous page numbers 
+%\continuouspages{yes}
+
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+\usepackage[utf8]{inputenc} 
+%\usepackage[T2A]{fontenc}
+%\usepackage[english]{babel}   
+%\usepackage{lineno}
+%\usepackage{graphicx}
+%\usepackage{xcolor}
+%\usepackage[pdftex, backref, colorlinks]{hyperref}
+%\usepackage{multirow}
+%\usepackage{enumitem}
+\graphicspath{{./figs/}}
+
+%\usepackage{subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
+%\captionsetup[subfigure]{labelformat=subcaptionlabel}
+
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+\newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{EAS Observation Conditions in the SPHERE-2 Balloon Experiment}
+\TitleCitation{EAS Observation Conditions in the SPHERE-2 Balloon Experiment}
+%\title{Extensive air shower observation conditions in the SPHERE-2 balloon experiment} 
+
+%%%%%%%%%%% Authors %%%%%%%%%%%%
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0002-6878-357X} % Bonvech
+\newcommand{\orcidauthorB}{0000-0001-5093-9970} % Chernov
+\newcommand{\orcidauthorG}{0000-0002-2387-9156} % Galkin
+\newcommand{\orcidauthorR}{0000-0002-6645-7543} % Roganova
+\newcommand{\orcidauthorF}{0000-0002-7828-9970} % Finger Mir
+\newcommand{\orcidauthorJ}{} % Finger
+\newcommand{\orcidauthorP}{0000-0002-0773-8185} % Podgrudkov
+\newcommand{\orcidauthorV}{0000-0002-8255-3631} % Vaiman
+
+% Authors, for the paper (add full first names)
+%\Author{Firstname Lastname $^{1,\dagger,\ddagger}$\orcidA{}, Firstname Lastname $^{1,\ddagger}$ and Firstname Lastname $^{2,}$*}
+\Author{
+Elena Bonvech      $^{1,\star}$ \orcidA{}, 
+Dmitry Chernov     $^{1}$    \orcidB{}, 
+Miroslav Finger    $^{2, 3}$ \orcidF{}, 
+Michael Finger Jr. $^{2, 3}$ \orcidJ{}, 
+Vladimir Galkin    $^{1, 4}$ \orcidG{}, 
+Dmitry Podgrudkov  $^{1, 4}$ \orcidP{}, 
+Tatiana Roganova   $^{1}$    \orcidR{} 
+and Igor Vaiman    $^{1}$    \orcidV{}
+}
+
+% Contact information of the corresponding author
+\corres{ptrwww@mail.ru (E.B.)}
+%\author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
+
+% Authors, for metadata in PDF
+\AuthorNames{Elena Bonvech, Dmitry Chernov, Miroslav Finger, Michael Finger Jr., Vladimir Galkin, Dmitry Podgrudkov, Tatiana Roganova and Igor Vaiman}
+\AuthorCitation{Bonvech, E., Chernov D., Finger Mir., Finger Mich. Jr., Galkin V., Podgrudkov D., Roganova T. and Vaiman I.}
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad Skobeltsyn Institute of Nuclear Physics (SINP MSU), Federal State Budget Educational Institution of Higher Education, M.V. Lomonosov Moscow State University, 1(2), Leninskie Gory, GSP-1, 119991 Moscow, Russia; ptrwww@mail.ru\\
+$^{2}$ \quad Charles University, Faculty of Mathematics and Physics, Prague, Czech Republic\\
+$^{3}$ \quad Joint Institute for Nuclear Research, Dubna, Russian Federation\\
+$^{4}$ \quad Faculty of Physics Federal State Budget Educational Institution of Higher Education, M.V. Lomonosov Moscow State University, 1(2), Leninskie Gory, GSP-1, 119991 Moscow, Russia}
+
+
+% Current address and/or shared authorship
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\simplesumm{} % Simple summary
+%\conference{} % An extended version of a conference paper
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{The SPHERE project studies primary cosmic rays by detection of the Cherenkov light of extensive air showers reflected from the snowy surface of the earth. Measurements with the aerial-based detector SPHERE-2 were performed in 2011--2013. The detector was lifted by the balloon at altitudes up to 900~m above snowed surface of Lake Baikal, Russia. The results of the experiment are summarized now in a series of papers that opens with this article.
+%The technique of the SPHERE project differs significantly from usual ground-based Cherenkov arrays. It has a number of unique features that must be taken into account during measurements and data processing. Primarily the geometry of the experiment is determined by the detector position, namely, the altitude above the snow, the declination from the vertical and the rotation around the axis of the detector. The orientation control system is used to monitor the detector position.
+An overview of the SPHERE-2 detector telemetry monitoring systems is presented along with the analysis of the measurements conditions including atmosphere profile. The analysis of the detector state and environment atmosphere conditions monitoring provided various cross-checks of detector calibration, positioning and performance.}
+
+% Keywords
+\keyword{primary cosmic rays; extensive air showers; Vavilov-Cherenkov radiation; balloon; reflected Cherenkov light}  % List three to ten pertinent keywords specific to the article, yet reasonably common within the subject discipline.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %\newcommand{\todoi}[1]{\todo[inline]{ #1}}
 %\listoftodos[Notes]
 %\linenumbers
 
-\begin{frontmatter}
-%\title{SPHERE-2 balloon experiment results.\\ Part I: EAS observation conditions.}
-%\title{Extensive air shower observation conditions in the SPHERE-2 balloon experiment} 
-\title{EAS observation conditions in the SPHERE-2 balloon experiment}
+%%%%%%%%%%%%%%%%%%
 
+%The order of the section titles is: Introduction, Materials and Methods, Results, Discussion, Conclusions for these journals: aerospace,algorithms,antibodies,antioxidants,atmosphere,axioms,biomedicines,carbon,crystals,designs,diagnostics,environments,fermentation,fluids,forests,fractalfract,informatics,information,inventions,jfmk,jrfm,lubricants,neonatalscreening,neuroglia,particles,pharmaceutics,polymers,processes,technologies,viruses,vision
 
-\author[address1]{E.A.~Bonvech\corref{correspondingauthor1}}
-\cortext[correspondingauthor1]{Corresponding author}
-\ead{bonvech@yandex.ru}
-\author[address1]{D.V.~Chernov}
-\author[address2,address3]{M.~Finger}
-\author[address2,address3]{M.~Finger Jr.}
-\author[address4]{V.I.~Galkin}
-\author[address4,address1]{D.A.~Podgrudkov}
-\author[address1]{T.M.~Roganova}
-\author[address4,address1]{I.A.~Vaiman}
-\address[address1]{M.V. Lomonosov Moscow State University, Skobeltsyn Institute of Nuclear Physics (SINP MSU), Moscow, Russia}
-\address[address2]{Charles University, Faculty of Mathematics and Physics, Prague, Czech Republic}
-\address[address3]{Joint Institute for Nuclear Research, Dubna, Russian Federation}
-\address[address4]{M.V. Lomonosov Moscow State University, Faculty of Physics, Moscow, Russia}
-
-\begin{abstract}
-The SPHERE project studies primary cosmic rays by detection of the Cherenkov light of extensive air showers reflected from the snowy surface of the earth. Measurements with the aerial-based detector SPHERE-2 were performed in 2011--2013. The detector was lifted by the balloon at altitudes up to 900~m above snowed surface of Lake Baikal, Russia. The results of the experiment are summarized now in a series of papers that opens with this article.
-
-%The technique of the SPHERE project differs significantly from usual ground-based Cherenkov arrays. It has a number of unique features that must be taken into account during measurements and data processing. Primarily the geometry of the experiment is determined by the detector position, namely, the altitude above the snow, the declination from the vertical and the rotation around the axis of the detector. The orientation control system is used to monitor the detector position.
-
-An overview of the SPHERE-2 detector telemetry monitoring systems is presented along with the analysis of the measurements conditions including atmosphere profile. The analysis of the detector state and environment atmosphere conditions monitoring provided various cross-checks of detector calibration, positioning and performance.
-\end{abstract}
-
-\begin{keyword}
-primary cosmic rays\sep extensive air showers\sep Vavilov-Cherenkov radiation\sep balloon \sep reflected Cherenkov light
-\MSC[2010] 00-01\sep  99-00
-\end{keyword}
-% проверить, что у нас корректные ключевые слова
-
-\end{frontmatter}
 
 \section{Introduction}
 The SPHERE-2 experiment was designed for primary cosmic ray (PCR) studies in the 10--1000~PeV energy range. PCR particles induce secondary particle cascades named extensive air showers (EAS) and secondary radiations such as Cherenkov light, fluorescent light, radio emission etc. in the atmosphere that can be registered by different methods by ground-based detectors. 
@@ -309,12 +385,9 @@ The atmosphere density profile was reconstructed basing on air pressure and temp
 
 The measurements were performed in the end of winter season when the Baikal lake was covered with thick ice. The snow coverage of the ice differs from year to year and in different areas of the lake according to prevailing winds. However in winters 2010--2013 the lake area near the launch site was covered with a thick (up to 40~cm) layer of snow with occasional snowfalls. In Fig.~\ref{fig:baikal_snow} the snow coverage in 2012 is shown. This was the typical coverage during all measurements. The snow reflection properties were controlled using a photometer. The influence of the snow state on its reflecting properties has been discussed in detail in our article on the simulation of the SPHERE-2 detector~\cite{Ant19}.
 
-\subsection{Detector orientation and telemetry data}
-\label{sect:telemetrydata}
 
-The \mbox{SPHERE-2} detector's position and inclination depend on wind conditions near the detector, see. Fig.~\ref{fig:gps_compass} and Fig.~\ref{fig:inclination}. In Fig.~\ref{fig:gps_compass} the position of the detector with the magnetometer data is shown for some flights of the 2011--2013 seasons. The position was reconstructed using GPS data with the launch point being located at zero coordinates. The detector orientation measured by the magnetometer is indicated by arrows. Figure~\ref{fig:gps_compass} demonstrates that wind was quite constant during most of the time and the balloon position was rather stable and varied slowly.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% detector drift figure  %%%
+%% Fig. 4  detector drift figure  %%%
 %%% fig:gps-compass
 \begin{figure}[tb]
     \includegraphics[width=0.45\textwidth]{GPS+quiver.pdf}\hspace{2pc}%
@@ -323,89 +396,102 @@ The \mbox{SPHERE-2} detector's position and inclination depend on wind condition
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+ 
+\subsection{Detector orientation and telemetry data}
+\label{sect:telemetrydata}
+
+The \mbox{SPHERE-2} detector's position and inclination depend on wind conditions near the detector, see. Fig.~\ref{fig:gps_compass} and Fig.~\ref{fig:inclination}. In Fig.~\ref{fig:gps_compass} the position of the detector with the magnetometer data is shown for some flights of the 2011--2013 seasons. The position was reconstructed using GPS data with the launch point being located at zero coordinates. The detector orientation measured by the magnetometer is indicated by arrows. Figure~\ref{fig:gps_compass} demonstrates that wind was quite constant during most of the time and the balloon position was rather stable and varied slowly.  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  4 telemetry  pictures %%%
+%% Fig.5 and 6 
 \begin{figure*}[tb]
     \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    %\includegraphics[width=\textwidth]{ClinTh.pdf}
+       \centering
        \includegraphics[width=\textwidth]{Telemetry_inclination.pdf}
        \caption{The detector inclination according to the inclinometer sensor during several flights in 2011-2013.}
-    \label{fig:inclination} 
+       \label{fig:inclination} 
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.48\textwidth}
-    \centering
+       \centering
        \includegraphics[width=\textwidth]{tg-inclination.pdf}
        \caption{Detector inclination against the detector drift from the start point to the detector altitude ratio which roughly translates into the tether inclination angle. See text for details on detector behavior.}
-\label{fig:drift-inclination}
-   
+       \label{fig:drift-inclination}
+   \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig.7 and 8
+\begin{figure*}[tb]    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Telemetry_height.pdf}
+        \caption{Altitude of the SPHERE-2 detector carried by the BAPA tethered balloon according to the GPS module data during 2011--2013 flights.}
+        \label{fig:height}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Telemetry_tmos.pdf}
+        \caption{Air temperature near the PMT mosaic during 2011--2013 runs.}
+        \label{fig:temperature}
     \end{minipage}
 \end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%%  4 telemetry  pictures %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig.9 and 10
+\begin{figure*}[tb]    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Telemetry_pressure.pdf}
+        \caption{Air pressure according to the barometer sensor data during 2011--2013 flights.}
+        \label{fig:pressure}
+    \end{minipage}
+    \hfill
+    %% The central PMT current %%
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{hv-53.pdf}
+        \caption{The central PMT currents in different flights.}
+        \label{fig:current}
+    \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 However, due to the construction of the suspension system to the balloon the detector was deflected by the wind to a certain degree in the corresponding direction away from the launchpad. In Fig.~\ref{fig:inclination} the inclination of the detector is shown for some flights of the 2011--2013 runs. During some of the flights the detector was in a nearly vertical position (2011-1 or 2013-2), while in the others (2013-5) it was tilted to a significant angle. But this declination was steady and varied slowly over time. The maximum inclination angle recorded was about 20$^\circ$. In Fig.~\ref{fig:drift-inclination} the dependence of the detector inclination angle from the ratio of the drift distance from the starting point to the flight altitude (roughly the tangent of the balloon tether angle) is shown for all experimental flights. This ratio, as expected, indicates wind strength which, in turn, defines the inclination angle. Strong fluctuations in flight 2013-3 (orange squares) occurred near midnight and coincided with a rapid change in the atmosphere profile and weather worsening, what resulted in early detector landing due to bad flight conditions. The detector inclination had a significant impact on the experiment `geometry' and was taken into account at the stage of EAS parameters reconstruction.
 
 Detector altitude above the lake surface according to the GPS data is shown in Fig.~\ref{fig:height}. The GPS module had some specific properties that resulted in several minor corrections in the altitude (detailed description see below in section~\ref{sect:gps_correction}). The surrounding air temperature and pressure that were monitored for the control of atmospheric properties are presented in Fig.~\ref{fig:temperature} and Fig.~\ref{fig:pressure} respectively. Detailed description of the real atmosphere profile and overview of its impact on the data analysis is given below in section~\ref{sect:atmosphere-profile}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[thb]    
-    \begin{minipage}[t]{0.48\textwidth}
-    \centering
- \includegraphics[width=\textwidth]{Telemetry_height.pdf}
-    \caption{Altitude of the SPHERE-2 detector carried by the BAPA tethered balloon according to the GPS module data during 2011--2013 flights.}
-    \label{fig:height}
-    
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\textwidth}
-    \centering
-\includegraphics[width=\textwidth]{Telemetry_tmos.pdf}
-    \caption{Air temperature near the PMT mosaic during 2011--2013 runs.}
-    \label{fig:temperature}
-    
-    \end{minipage}
-\end{figure*}
-%%  4 telemetry  pictures %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% radius-inclination
-\begin{figure}[tb]
-    %\includegraphics[width=0.48\textwidth]{radius-inclination.pdf}
-    \includegraphics[width=.48\textwidth]{Telemetry_pressure.pdf}
-    \caption{Air pressure according to the barometer sensor data during 2011--2013 flights.}
-    \label{fig:pressure}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{PMT currents variations}
 
- Fig.\ref{fig:current} shows the anode current of the detector mosaic central PMT for some of the flights. In 2008--2011 seasons in the central position of the mosaic a FEU 84-3 PMT was used and in the seasons 2012--2013 --- a Hamamatsu R3886 PMT. The latter has a larger photocathode and amplification. Also for each flight the voltage on the PMTs was set independently and in some cases was changed mid-flight. The current increase during the last minutes of 2011 flights was due to an increase in the illumination at sunrise. In subsequent seasons the measurements were conducted at earlier dates so the sun rose later and did not affect the measurements. But in general, the PMTs currents variations during the observations followed the variation of the background illumination of the snow.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The central PMT current %%
-\begin{figure}[tb]
-    \includegraphics[width=0.48\textwidth]{hv-53.pdf}
-    \caption{The central PMT currents in different flights.}
-\label{fig:current}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 2012-3 currents
-\begin{figure}[tb]
-    \includegraphics[width=0.48\textwidth]{2012-3_currents_H_dN.pdf}
-    \caption{PMT currents, detector altitude, drift to the North, compass and inclination during flight 2012-3.}
-    \label{fig:2012-3_currents}
-\end{figure}
+%% Fig. 11 and 12
+\begin{figure*}[tb]
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2012-3_currents_H_dN.pdf}
+        \caption{PMT currents, detector altitude, drift to the North, compass and inclination during flight 2012-3.}
+        \label{fig:2012-3_currents}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2012_drift-mod.pdf}
+        \caption{The SPHERE-2 detector drift in 2012-3 flight. Mosaic projection to the show surface is given for the time 15:47 UTC. Detector GPS position at that moment is indicated by the cross.}
+        \label{fig:2012-drift}
+    \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[tb]
-    \includegraphics[width=0.48\textwidth]{2012_drift-mod.pdf}
-    \caption{The SPHERE-2 detector drift in 2012-3 flight. Mosaic projection to the show surface is given for the time 15:47 UTC. Detector GPS position at that moment is indicated by the cross.}
-    \label{fig:2012-drift}
-\end{figure}
+ Fig.\ref{fig:current} shows the anode current of the detector mosaic central PMT for some of the flights. In 2008--2011 seasons in the central position of the mosaic a FEU 84-3 PMT was used and in the seasons 2012--2013 --- a Hamamatsu R3886 PMT. The latter has a larger photocathode and amplification. Also for each flight the voltage on the PMTs was set independently and in some cases was changed mid-flight. The current increase during the last minutes of 2011 flights was due to an increase in the illumination at sunrise. In subsequent seasons the measurements were conducted at earlier dates so the sun rose later and did not affect the measurements. But in general, the PMTs currents variations during the observations followed the variation of the background illumination of the snow.
+
 
 \begin{figure}[tb]
     \includegraphics[width=0.48\textwidth]{DSC_7256_1.jpg}
@@ -413,9 +499,6 @@ Detector altitude above the lake surface according to the GPS data is shown in F
     \label{fig:2012--shore-view}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
 \centering
@@ -437,7 +520,6 @@ Analysis of the detector position and tilt showed that at that time it was obser
 This observation itself confirms the consistency of the detector orientation and position monitoring.
 
 \section{Telemetry analysis}
-%%% Переименовать и пересортировать
 
 The position and inclination of the SPHERE-2 detector are important values for the correct reconstruction of the CL characteristics of registered EAS. In contrast to Cherenkov ground-based arrays, such as~\cite{Yakutsk19,TUNKA133}, the SPHERE-2 detector has a variable registration area depending on both altitude and inclination.
 
@@ -463,7 +545,7 @@ After the intervals were picked, for each of them we found two adjacent interval
 
 The total duration of the intervals subjected to corrections was small. The total distribution of the time spent by the detector at each height is presented in Fig.~\ref{fig:time_on_altitude}. Most of the time the detector spent at 400, 500, 580 and 890~m. However, the actual distribution of the registered events across the altitudes is a more complex question since the trigger settings and overall detector performance changed over time and across seasons. Careful analysis of this question will be covered in following publications.
 
-\begin{figure}[t]
+\begin{figure}[tb]
     \includegraphics[width=19pc]{figs/time_on_altitude_c.pdf}%
     \caption{Altitude distribution over the experiment time.}
     \label{fig:time_on_altitude}
@@ -490,76 +572,72 @@ In CORSIKA the atmosphere is described in terms of mass overburden $t(H)$ that i
 
 Mass overburden data was reconstructed from atmospheric pressure measurements and air density was estimated based on both air pressure and temperature around the balloon. Calculated experimental points for $t$ and $\rho$ for each flight are shown in Fig.~\ref{fig:massoverburden} and Fig.~\ref{fig:density} respectively. CORSIKA atmospheres are shown with solid lines. The profile that was adopted prior to the actual measurements for the preliminary modeling (atmosphere model 11) is shown by the red line. From this comparison it may be seen that the previously picked atmosphere is inconsistent with our experimental data for $t$ in terms of absolute values, but their derivatives lie relatively close. %Therefore either a full remodeling with a better fitting atmosphere or some corrections in the final data are required to reduce the systematic errors in energy and composition estimations.
 
-%%% Atmosphere profiles figures %%%%
-\begin{figure}[bt]
-\centering
-\begin{minipage}[t]{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figs/atmosphere_T.pdf}
-    \vspace{-1.0pc}
-    \caption{Mass overburden versus altitude experimental data (points) in each flight and CORSIKA profiles (solid lines with corresponding model numbers). For preliminary SPHERE-2 modeling and analysis the N0 11 atmosphere was used.}
-\label{fig:massoverburden}
-\end{minipage}
-\vfill
-\vspace{1pc}
-\begin{minipage}[t]{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
-    \vspace{-1.0pc}
-    \caption{Density versus altitude experimental data (points) in each flight and CORSIKA model density profiles (solid lines) same as in Fig. \ref{fig:massoverburden}).}
-\label{fig:density}
-\end{minipage}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Atmosphere profiles figures %%%%
+\begin{figure*}[tb]
+    \begin{minipage}[t]{0.48\textwidth}
+       \centering
+       \includegraphics[width=\textwidth]{figs/atmosphere_T.pdf}
+       \caption{Mass overburden versus altitude experimental data (points) in each flight and CORSIKA profiles (solid lines with corresponding model numbers). For preliminary SPHERE-2 modeling and analysis the N0 11 atmosphere was used.}
+        \label{fig:massoverburden}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figs/atmosphere_rho.pdf}
+        \caption{Density versus altitude experimental data (points) in each flight and CORSIKA model density profiles (solid lines) same as in Fig. \ref{fig:massoverburden}).}
+        \label{fig:density}
+   \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-%% влияние атмосферы на высоты генерации света на (Галкин)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% === Table CORSIKA
-\begin{table}[t]
+\begin{table}[tbh]
 \centering
 \caption{Total Cherenkov photons numbers ratios for different CORSIKA atmosphere model pairs: means, variations, relative variations given for 10 PeV primary protons. Zenith angle 15 $\deg$. Sample volume 30 events.}
 \label{tab:atmmod}
 \vspace{1pc}
 \begin{tabular}{|c|c|c|c|}
-\hline
-model/primary   & mean &  variation   & relative variation \\ 
-     pair       &  $m$ & $\sigma$     & $\sigma/m$          \\ 
+\hline model/primary   & mean &  variation   & relative variation \\ 
+            pair       &  $m$ & $\sigma$     & $\sigma/m$ \\ 
 \hline 
-\hline 
- 3/4 &  1.015    &  0.0490     &   0.0483   \\
+\hline  3/4 &  1.015     &  0.0490     &   0.0483   \\
+\hline 11/3 &  0.9834    &  0.0511     &   0.0520    \\
+\hline 11/4 &  0.9963    &  0.0443     &   0.0445    \\
 \hline
-11/3 &  0.9834    &  0.0511     &   0.0520    \\
-\hline
-11/4 &  0.9963    &  0.0443     &   0.0445    \\
-\hline
-\hline
-p/Fe &  1.232     &  0.0686     &   0.0557     \\
+\hline p/Fe &  1.232     &  0.0686     &   0.0557     \\
 \hline
 \end{tabular}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% === LDF Calculation
 \begin{figure*}[tb]
- \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    %\includegraphics[width=19pc]{11d3}%
-    \includegraphics[width=19pc]{10PeV_pro_15deg_m11_over_m04}%
-    \vspace{-1.0pc}
-    \caption{Sample mean of the CL LDF ratio for CORSIKA atmosphere model pair 11/4. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
-\label{fig:4d11}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \centering
-    %\includegraphics[width=19pc]{11d4}%
-    \includegraphics[width=19pc]{10PeV_15deg_pro_over_Fe}%
-    \vspace{-1.0pc}
-    \caption{Sample mean of the CL LDF ratio for the nuclear pair proton/Fe for CORSIKA atmosphere model 11. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
-\label{fig:pdFe}
-\end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        %\includegraphics[width=19pc]{11d3}%
+        \includegraphics[width=19pc]{10PeV_pro_15deg_m11_over_m04}%
+        \vspace{-1.0pc}
+        \caption{Sample mean of the CL LDF ratio for CORSIKA atmosphere model pair 11/4. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
+        \label{fig:4d11}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        %\includegraphics[width=19pc]{11d4}%
+        \includegraphics[width=19pc]{10PeV_15deg_pro_over_Fe}%
+        \vspace{-1.0pc}
+        \caption{Sample mean of the CL LDF ratio for the nuclear pair proton/Fe for CORSIKA atmosphere model 11. Bin size 50~m $\times$ 50~m. 10~PeV primary protons. Zenith angle 15~$\deg$. Sample volume 30~events.}
+        \label{fig:pdFe}
+    \end{minipage}
 \end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{paracol}{2}
 
 CORSIKA atmosphere model 11 was selected based on available monthly averages from Irkutks airport weather station located 70 km to the North of the balloon launch site. The model was used for preliminary modelling and estimations at the experiment planning stage. However, our data show that this choice was not ideal.
 
@@ -587,14 +665,19 @@ For the reflected CL method the information on detector position and orientation
 Measurements of air pressure and temperature during flights gave information on the atmosphere state that will allow to introduce different atmospheric models into analysis and to account their strong impact on the results. Availability of the data on the atmosphere state at the moment of the EAS detection allows higher primary mass reconstruction.
 
   
-\section{Acknowledgments}
-%done
+\acknowledgments{
+We are grateful to the Lebedev Physical Institute of the Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.}
 
-We are grateful to the Lebedev Physical Institute of the Russian Academy of Sciences group (leader S.B.~Shaulov) for assistance in assembling and testing the electronic equipment and in preparation of expeditions. We also thank the Baikal-GVD collaboration and G.V.~Domogatsky (Institute for Nuclear Research, Russian Academy of Sciences) for the support of the SPHERE experiment at the Baikal Lake scientific station.
-M. Finger and M. Finger Jr. were supported by MEYS of Czech Republic grants LG14004 and LG18022.
+\funding{M. Finger and M. Finger Jr. were supported by MEYS of Czech Republic grants LG14004 and LG18022.}
 
-\section{References}
+\end{paracol}
 
+\reftitle{References}
+%\section{References}
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+\externalbibliography{yes}
+%\bibliography{your_external_BibTeX_file}
 \bibliography{Sphere-Data.bib}
-
 \end{document}
