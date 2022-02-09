@@ -205,14 +205,28 @@ FUNCTION {format.names}
     { namesleft #0 > }
     { s nameptr "{vv~}{ll}{, jj}{, f{.}}." format.name$ 't :=
       nameptr #1 >
-	{ namesleft #1 >
-	    { "; " * t * }
-	    { numnames #2 >
-		{ "" * }
+        {
+          nameptr #10
+          #1 + =
+          numnames #10
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { "; " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              numnames #2 >
+       { "" * }
 		'skip$
 	      if$
 	      t "others" =
-		{ " et~al." * }
+		{"; " * " et~al." * }
 		{ "; " * t * }
 	      if$
 	    }
@@ -224,6 +238,13 @@ FUNCTION {format.names}
       namesleft #1 - 'namesleft :=
     }
   while$
+}
+
+FUNCTION {format.key}
+{ empty$
+    { key field.or.null }
+    { "" }
+  if$
 }
 
 FUNCTION {format.key}
@@ -1321,9 +1342,7 @@ ITERATE {forward.pass}
 REVERSE {reverse.pass}
 
 FUNCTION {begin.bib}
-{ "\begin{thebibliography}{-------}"
-  write$ newline$
-  "\providecommand{\natexlab}[1]{#1}"
+{ "\begin{thebibliography}{999}"
   write$ newline$
 }
 
